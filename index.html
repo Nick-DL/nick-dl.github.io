@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <title>ND's Website - 主页</title>
+    <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png" type="image/x-icon"/>
+  </head>
+  <body class="mdui-drawer-body-left">
+    <div class="mdui-appbar">
+      <div class="mdui-toolbar mdui-color-theme">
+        <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '菜单'}" mdui-drawer="{target: '#left-drawer'}">
+          <i class="mdui-icon material-icons">menu</i>
+        </button>
+        <a href="./" class="mdui-typo-headline">ND's Website</a>
+        <a href="javascript:;" class="mdui-typo-title">主页</a>
+        <div class="mdui-toolbar-spacer"></div>
+        <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '锦坷垃'}">
+          <i class="mdui-icon material-icons">more_vert</i>
+        </button>
+        <ul class="mdui-menu" id="more">
+          <li class="mdui-menu-item" disabled>
+            <a href="javascript:;" class="mdui-ripple">感谢有你</a>
+          </li>
+          <li class="mdui-menu-item" disabled>
+            <a href="javascript:;" class="mdui-ripple">大家一起加油鸭</a>
+         </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    <div class="mdui-drawer" id="left-drawer">
+    <ul class="mdui-list">
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">move_to_inbox</i>
+        <div class="mdui-list-item-content">Inbox</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
+        <div class="mdui-list-item-content">Starred</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">send</i>
+        <div class="mdui-list-item-content">Sent mail</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">drafts</i>
+        <div class="mdui-list-item-content">Drafts</div>
+      </li>
+      <li class="mdui-subheader">Subheader</li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">email</i>
+        <div class="mdui-list-item-content">All mail</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">delete</i>
+        <div class="mdui-list-item-content">Trash</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+        <div class="mdui-list-item-content">Spam</div>
+      </li>
+    </ul>
+  </div>
+  
+  
+    <div class="mdui-container">
+      <div class="mdui-row">
+        <div class="mdui-col-sm-12"> 
+          <h1 class="title mdui-text-color-blue-700">Hello World</h1>
+          <div class="intro mdui-typo">
+            <p>欢迎来到我的新站。本站暂时基于 GitHub 打造，采用 Material Design 设计。</p>
+            <p>目前的区区几行代码，只是一座大厦的基石。对于那样一座大厦，我们满怀期待。</p>
+            <b>最想写的两条（bushi）：</b>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-row">
+        <div class="mdui-col-sm-6"> 
+          <div class="mdui-card">
+            <div class="mdui-card-media">
+              <img src="./media/dead_dog_logo.png"/>
+              <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                  <div class="mdui-card-primary-title">黑屏（原名“死狗”）</div>
+                  <div class="mdui-card-primary-subtitle">乱做的 PPT，一打开就能起黑屏的效果</div>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-card-actions">
+              <a href="https://github.com/Nick-DL/Dead-Dog/" class="mdui-btn mdui-ripple">GitHub 仓库</a>
+              <a href="https://github.com/Nick-DL/Dead-Dog/releases/" class="mdui-btn mdui-ripple">GitHub 发行版</a>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <div class="mdui-col-sm-6"> 
+          <div class="mdui-card">
+            <div class="mdui-card-media">
+              <img src="./media/nick_dl_logo.png"/>
+              <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                  <div class="mdui-card-primary-title">Nick_DL</div>
+                  <div class="mdui-card-primary-subtitle">联系我</div>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-card-actions">
+              <a href="https://b23.tv/nYsLQWp" class="mdui-btn mdui-ripple">哔哩哔哩</a>
+              <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3196225386" class="mdui-btn mdui-ripple">QQ</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav mdui-color-grey-400">
+      <div class="mdui-container">
+        <div class="mdui-row">
+          <p></p>
+          <div class="mdui-col-sm-12"> 
+            <p></p>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
+            <ul class="mdui-menu" id="showthanks">
+              <li class="mdui-menu-item">
+                <a href="https://github.com" class="mdui-ripple">GitHub</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p></p>
+        <div class="mdui-row">
+          <div class="mdui-col-sm-12"> 
+            <div class="intro mdui-typo">
+              <p>于2022/12/31。<a href="/indexbak221230.html">前往昨天的版本→</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MDUI JavaScript -->
+    <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js">
+    </script>
+  </body>
+</html>
