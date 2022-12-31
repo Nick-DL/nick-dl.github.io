@@ -12,14 +12,14 @@
     <title>ND's Website - 主页</title>
     <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png" type="image/x-icon"/>
   </head>
-  <body class="mdui-drawer-body-left">
-    <div class="mdui-appbar">
-      <div class="mdui-toolbar mdui-color-theme">
-        <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '菜单'}" mdui-drawer="{target: '#left-drawer'}">
+  <body class="mdui-appbar-with-toolbar mdui-drawer-body-left">
+    <div class="mdui-appbar mdui-appbar-fixed">
+      <div class="mdui-toolbar mdui-color-grey-100">
+        <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '导航'}" mdui-drawer="{target: '#left-drawer'}">
           <i class="mdui-icon material-icons">menu</i>
         </button>
-        <a href="./" class="mdui-typo-headline">ND's Website</a>
-        <a href="javascript:;" class="mdui-typo-title">主页</a>
+        <a href="/" class="mdui-typo-headline">ND's Website</a>
+        <a href="/" class="mdui-typo-title">主页</a>
         <div class="mdui-toolbar-spacer"></div>
         <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '锦坷垃'}">
           <i class="mdui-icon material-icons">more_vert</i>
@@ -31,46 +31,39 @@
           <li class="mdui-menu-item" disabled>
             <a href="javascript:;" class="mdui-ripple">大家一起加油鸭</a>
          </li>
+         <li class="mdui-menu-item">
+            <a href="/about" class="mdui-ripple">大家一起加油鸭</a>
+         </li>
         </ul>
       </div>
     </div>
-    
-    
     <div class="mdui-drawer" id="left-drawer">
-    <ul class="mdui-list">
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">move_to_inbox</i>
-        <div class="mdui-list-item-content">Inbox</div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
-        <div class="mdui-list-item-content">Starred</div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">send</i>
-        <div class="mdui-list-item-content">Sent mail</div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">drafts</i>
-        <div class="mdui-list-item-content">Drafts</div>
-      </li>
-      <li class="mdui-subheader">Subheader</li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">email</i>
-        <div class="mdui-list-item-content">All mail</div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">delete</i>
-        <div class="mdui-list-item-content">Trash</div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
-        <div class="mdui-list-item-content">Spam</div>
-      </li>
-    </ul>
-  </div>
-  
-  
+      <ul class="mdui-list">
+        <a href="/">
+        <li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+          <div class="mdui-list-item-content">主页</div>
+        </li></a>
+        <li class="mdui-subheader" mdui-tooltip="{content: '不予置评。', position: 'right'}">😒（未开放）</li>
+        <a href="/dead-dog/"><li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">photo_album</i>
+          <div class="mdui-list-item-content">黑屏</div>
+        </li></a>
+        <li class="mdui-subheader">版块（未开放）</li>
+        <a href="/resource-share/"><li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">share</i>
+          <div class="mdui-list-item-content">资源分享</div>
+        </li></a>
+        <a href="/leave-comments/"><li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">message</i>
+          <div class="mdui-list-item-content">留言 (做不到)</div>
+        </li></a>
+        <a href="/free-talk/"><li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">lightbulb_outline</i>
+          <div class="mdui-list-item-content">唠点废话</div>
+        </li></a>
+      </ul>
+    </div>
     <div class="mdui-container">
       <div class="mdui-row">
         <div class="mdui-col-sm-12"> 
@@ -120,7 +113,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-nav mdui-color-grey-400">
+    <div class="footer-nav mdui-color-blue-grey-100">
       <div class="mdui-container">
         <div class="mdui-row">
           <p></p>
@@ -140,8 +133,8 @@
         <p></p>
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
-            <div class="intro mdui-typo">
-              <p>于2022/12/31。<a href="/indexbak221230.html">前往昨天的版本→</a></p>
+            <div class="intro mdui-typo" mdui-tooltip="{content: '新年快乐！🎈✨🎉', position: 'left'}">
+              <p>编辑于 2022/12/31。<a href="/indexbak221230.html">前往昨天的版本 →</a></p>
             </div>
           </div>
         </div>
