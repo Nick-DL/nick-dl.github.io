@@ -6,7 +6,6 @@
     <meta name="renderer" content="webkit"/>
     <meta name="force-rendering" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
     <title>ND's Website - 留言</title>
     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/>
@@ -84,6 +83,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="vcomments"></div>
+    <div class="mdui-container">
       <div class="mdui-row">
         <div class="mdui-col-sm-12"> 
           <div id="gitalk-container"></div>
@@ -111,7 +113,7 @@
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo" mdui-tooltip="{content: '新年快乐！🎈✨🎉'}">
-              <p>编辑于 2023/1/2。</p>
+              <p>编辑于 2023/1/24。</p>
               <p><b>©</b>Copyright by Nick_DL 2022-2023. All rights reserved.</p>
             </div>
           </div>
@@ -120,20 +122,13 @@
     </div>
     <!-- MDUI JavaScript -->
     <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <script language="javascript">
-      const gitalk = new Gitalk({
-        clientID: '3a35ef53bd36bf9fd68f',
-        clientSecret: 'bc8ed31909bda1c820e58dab5debefb40b25ca3c',
-        repo: 'nick-dl.github.io',      // The repository of store comments,
-        owner: 'Nick-DL',
-        admin: ['Nick-DL'],
-        id: Leave_comments,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false,  // Facebook-like distraction free mode
-        title: 'Leave-comments'
-      })
-
-      gitalk.render('gitalk-container')
+        new Valine({
+            el: '#vcomments',
+            appId: 'RAZGOrF5oMc6PEDyEZF7lAGk-gzGzoHsz',
+            appKey: 'HEkLPApuUvHO7Vz0IWJoA1v0'
+        })
     </script>
   </body>
 </html>
