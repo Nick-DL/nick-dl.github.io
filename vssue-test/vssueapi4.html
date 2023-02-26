@@ -1,0 +1,99 @@
+<!doctype html> 
+ <html lang="zh-cmn-Hans"> 
+   <head> 
+     <meta charset="utf-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/> 
+     <meta name="renderer" content="webkit"/> 
+     <meta name="force-rendering" content="webkit"/> 
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/> 
+     <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css"/>
+     <title>ND's Website - Vssue 留言板测试页</title> 
+     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/> 
+   </head> 
+   <body class="mdui-appbar-with-toolbar"> 
+     <div class="mdui-appbar mdui-appbar-fixed"> 
+       <div class="mdui-toolbar mdui-color-green-a400"> 
+         <a href="./" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
+           <i class="mdui-icon material-icons">arrow_back</i> 
+         </a> 
+         <a href="/" class="mdui-typo-headline mdui-hidden-xs">ND's Website</a> 
+         <a href="/vssue-test" class="mdui-typo-title">Vssue 留言板测试页</a> 
+         <div class="mdui-toolbar-spacer"></div> 
+         <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '更多选项'}"> 
+           <i class="mdui-icon material-icons">more_vert</i> 
+         </button> 
+         <ul class="mdui-menu" id="more"> 
+           <li class="mdui-menu-item"> 
+             <a href="/about" class="mdui-ripple">关于本站</a> 
+           </li> 
+         </ul> 
+       </div> 
+     </div> 
+     <div class="mdui-container"> 
+       <div class="mdui-row">
+         <div class="mdui-col-sm-12">  
+           <h1 class="mdui-text-color-light-green-a700">GitHub API 4</h1>
+           <p></p>
+           <div class="mdui-card"> 
+             <div class="mdui-card-primary">
+               <div class="mdui-card-primary-title">备注</div>
+             </div>
+             <div class="mdui-card-content mdui-typo"> 
+               <p>使用第四版API的评论系统具有以下特性：</p>
+               <ul>
+                 <li>评论可以排序</li>
+                 <li>评论可以编辑</li>
+                 <li>评论可以删除</li>
+                 <li><b>要求登陆后才能浏览评论</b></li>
+               </ul>
+             </div>
+           </div> 
+           <p></p>
+           <div class="mdui-card"> 
+             <div class="mdui-card-content">
+		       <div id="vssue"></div>
+             </div>
+           </div>
+         </div>
+       </div> 
+     </div>
+     <p></p>
+     <div class="footer-nav mdui-color-green-a100"> 
+       <div class="mdui-container"> 
+         <div class="mdui-row"> 
+           <div class="mdui-col-sm-12">  
+             <div class="intro mdui-typo" mdui-tooltip="{content: '中考加油'}"> 
+               <p></p> 
+               <p>编辑于 2023/1/25。</p> 
+               <p>©Copyright by Nick_DL 2022-2023. All rights reserved.</p><p></p> 
+               <p></p>
+             </div> 
+           </div> 
+         </div> 
+       </div> 
+     </div> 
+     <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"> </script> 
+     <script src="https://unpkg.com/vue@2/dist/vue.runtime.min.js"></script>
+     <script src="https://unpkg.com/vssue/dist/vssue.github-v4.min.js"></script>
+     <script type="text/javascript">
+      new Vue({
+      el: '#vssue',
+
+      render: h => h('Vssue', {
+        props: {
+          issueId: '2',
+
+          options: {
+            owner: 'Nick-DL',
+            repo: 'nick-dl.github.io',
+            clientId: '3a35ef53bd36bf9fd68f',
+            clientSecret: 'bc8ed31909bda1c820e58dab5debefb40b25ca3c', 
+          },
+        }
+      })
+      })
+     </script>
+   </body> 
+ </html> 
+ <style>body {background-color: #f1f3f5;}</style>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+		var dt1=new Date('2023-06-11 09:00:00');
+		var dt2=new Date();
+		
+		
+		var times=(dt1-dt2)/1000;
+		
+		var tian=parseInt(times/60/60/24);
+		var hour=parseInt(times/60/60%24);
+		var minute=parseInt(times/60%60);
+		var second=parseInt(times%60);
+		
+		
+		
+		document.write('距离中考'+'还有'+'<br>');
+		document.write(tian+'天'+hour+'小时'+minute+'分钟'+second+'秒'+'<br>');
+
+		function reload(){
+		   window.location.reload();
+		}
+		   setInterval('reload()',1000); 
+		
+
+		</script>
+	</body>
+</html>
