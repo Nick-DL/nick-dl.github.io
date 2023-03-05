@@ -1,7 +1,8 @@
-<html><head></head><body><svg width="960" height="360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
+<svg width="960" height="360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 overflow="hidden">
 	<defs>
 		<clipPath id="clip0">
-			<rect x="0" y="0" width="1280" height="720"></rect>
+			<rect x="0" y="0" width="1280" height="720" />
 		</clipPath>
 	</defs>
 	<g clip-path="url(#clip0)">
@@ -12,7 +13,7 @@
 		<text font-family="NDWDIN1145" font-weight="400" font-size="37" transform="translate(169.6 255)">HIGH SCHOOL ENTRANCE EXAMINATION</text>
 		<text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231" transform="translate(329.6 192)">97</text>
 		<text id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="37" transform="translate(169.6 308)">IN 97 DAYS</text>
-		<path d="M156 121 156 313.023" stroke="#FF0000" stroke-width="6" stroke-miterlimit="8" fill="none" fill-rule="evenodd"></path>
+		<path d="M156 121 156 313.023" stroke="#FF0000" stroke-width="6" stroke-miterlimit="8" fill="none" fill-rule="evenodd" />
 	</g>
 	<style type="text/css">
 		@font-face {
@@ -32,16 +33,32 @@
         var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
         var countdown1El = document.getElementById("countdown1");
-        if (daysDiff &lt;= 0) {
+        if (daysDiff == 0) {
           countdown1El.textContent = "00";
-        } else if (daysDiff &lt;= 9) {
-          countdown1El.textContent = "0" + daysDiff;
+        } else if (daysDiff == 1) {
+          countdown1El.textContent = "01";
+        } else if (daysDiff == 2) {
+          countdown1El.textContent = "02";
+        } else if (daysDiff == 3) {
+          countdown1El.textContent = "03";
+        } else if (daysDiff == 4) {
+          countdown1El.textContent = "04";
+        } else if (daysDiff == 5) {
+          countdown1El.textContent = "05";
+        } else if (daysDiff == 6) {
+          countdown1El.textContent = "06";
+        } else if (daysDiff == 7) {
+          countdown1El.textContent = "07";
+        } else if (daysDiff == 8) {
+          countdown1El.textContent = "08";
+        } else if (daysDiff == 9) {
+          countdown1El.textContent = "09";
         } else {
           countdown1El.textContent = daysDiff;
         }
 
         var countdown2El = document.getElementById("countdown2");
-        if (daysDiff &lt;= 0) {
+        if (daysDiff === 0) {
           countdown2El.textContent = "IN 0 DAY";
         } else if (daysDiff === 1) {
           countdown2El.textContent = "IN 1 DAY";
@@ -52,6 +69,6 @@
 
       updateCountdown();
 
-	// 文字排版由 PowerPoint 制作完成，Javascript 部分由 ChatGPT 编写
+	// 文字排版由 PowerPoint 制作完成，JavaScript 部分由 ChatGPT 编写
     </script>
-</svg></body></html>
+</svg>
