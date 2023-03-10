@@ -18,11 +18,11 @@
 	<style type="text/css">
 		@font-face {
 		        font-family: NDWDIN1145;
-		        src: url('DIN1451NDW.woff') format('woff');   
+		        src: url('DIN1451e.woff') format('woff');   
 		}
 		@font-face {
                     font-family: zihunchuangcuhei;
-		        src: url('ZHCCH.woff') format('woff');      
+		        src: url('ZHCCHe.woff') format('woff');      
 		}
 	</style>
     <script>
