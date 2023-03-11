@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "https://nick-dl.github.io/404.md"
+  status = 404
