@@ -2,7 +2,7 @@
 
 My Personal Website - being tested......
 
-[![github Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo="GitHub"&style="flat")](https://nick-dl.github.io)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo="GitHub"&style="flat")](https://nick-dl.github.io)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/841507c1-6860-401e-b646-0523d0575531/deploy-status)](https://www.nickdl.site)
 
 <p align="center"> 
@@ -15,6 +15,8 @@ My Personal Website - being tested......
 
 本站目前启用了全新域名（[**nickdl.site**](https://nickdl.site)）。目前域名有效期至 
  **2024-02-20**，届时此域名将失效。
+
+另外，添加 www 前缀的网址使用了 Netlify 加速。经测试，在国内部分地区，Netlify 的访问速度会比 GitHub Pages 稍快。如果可以，推荐大家访问 https://www.nickdl.site  。
 
 首先，原来的网址（ **https://nick-dl.github.io** ）将永远可用，无论将来网站发生什么变化。*目前，打开此链接会自动跳转至新域名。*
 
