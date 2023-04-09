@@ -20,6 +20,7 @@
             		        src: url('./tools/Countdown/ZHCCHe.woff') format('woff');      
             		}
     </style>
+    <link rel="manifest" href="./media/manifest.json" />
   </head>
   <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
     <div class="mdui-appbar mdui-appbar-fixed">
@@ -94,7 +95,7 @@
       <div class="mdui-row">
         <div class="mdui-col-sm-6">
           <p></p>
-          <div class="mdui-card mdui-color-blue-50">
+          <div class="mdui-card mdui-hoverable mdui-color-blue-50">
             <div class="mdui-card-primary">
               <div class="mdui-card-primary-title">中考加油！网站缓更</div>
             </div>
@@ -106,7 +107,7 @@
         </div>
         <div class="mdui-col-sm-6">
           <p></p>
-          <div class="mdui-card mdui-color-indigo-50">
+          <div class="mdui-card mdui-hoverable mdui-color-indigo-50">
             <div class="mdui-card-content">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
                 <defs>
@@ -182,7 +183,7 @@
       <div class="mdui-row">
         <div class="mdui-col-sm-10">
           <h4>Works</h4>
-          <div class="mdui-card">
+          <div class="mdui-card mdui-hoverable">
             <a href="/dlfmts/">
               <div class="mdui-card-media">
                 <img src="./media/dlfmts.png" />
@@ -204,7 +205,7 @@
       <div class="mdui-row">
         <p></p>
         <div class="mdui-col-sm-5">
-          <div class="mdui-card">
+          <div class="mdui-card mdui-hoverable">
             <a href="/dead-dog/">
               <div class="mdui-card-media">
                 <img src="./media/dead_dog_logo.svg" />
@@ -223,7 +224,7 @@
         </div>
         <p></p>
         <div class="mdui-col-sm-5">
-          <div class="mdui-card">
+          <div class="mdui-card mdui-hoverable">
             <div class="mdui-card-media">
               <img src="./media/nick_dl_logo.svg" />
               <div class="mdui-card-media-covered">
@@ -250,7 +251,7 @@
         </div>
         <div class="mdui-col-sm-5">
           <h4>网站版块</h4>
-          <div class="mdui-card">
+          <div class="mdui-card mdui-hoverable">
             <ul class="mdui-list">
               <a href="/resource-share/">
                 <li class="mdui-list-item mdui-ripple">
@@ -278,7 +279,7 @@
         <div class="mdui-col-sm-5">
           <p></p>
           <h4>子网站</h4>
-          <div class="mdui-card">
+          <div class="mdui-card mdui-hoverable">
             <ul class="mdui-list">
               <a href="https://msl.nickdl.site/">
                 <li class="mdui-list-item mdui-ripple">
@@ -348,5 +349,15 @@
       </div>
     </div>
     <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+  <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("./media/serviceWorker.js")
+            .then((res) => console.log("service worker registered"))
+            .catch((err) => console.log("service worker not registered", err));
+        });
+      }
+  </script>
   </body>
 </html>
