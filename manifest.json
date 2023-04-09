@@ -8,8 +8,8 @@
   "theme_color": "#fff",
   "icons": [
     {
-      "src": "144.png",
-      "sizes": "144x144",
+      "src": "/media/ic_gallery_discover_filled.png",
+      "sizes": "48x48",
       "type": "image/png"
     }
   ]
