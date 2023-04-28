@@ -1,8 +1,7 @@
 {
-  "name": "NDW",
+  "name": "ND%27s Website",
   "short_name": "NDW",
-  "start_url": "/index.html",
-  "id": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ddd",
   "theme_color": "#fff",
