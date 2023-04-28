@@ -1,0 +1,97 @@
+<!doctype html> 
+ <html lang="zh-cmn-Hans"> 
+   <head> 
+     <meta charset="utf-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/> 
+     <meta name="renderer" content="webkit"/> 
+     <meta name="force-rendering" content="webkit"/> 
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/> 
+     <title>ND's Website - 黑屏：文档和教程</title> 
+     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/> 
+   </head> 
+   <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto"> 
+     <div class="mdui-appbar mdui-appbar-fixed"> 
+       <div class="mdui-toolbar mdui-color-blue-grey-700"> 
+         <a href="../" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
+           <i class="mdui-icon material-icons">arrow_back</i> 
+         </a> 
+         <a href="/" class="mdui-typo-headline mdui-hidden-xs">ND's Website</a> 
+         <a href="./jokes.html" class="mdui-typo-title">黑屏</a> 
+         <div class="mdui-toolbar-spacer"></div> 
+         <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '更多选项'}"> 
+           <i class="mdui-icon material-icons">more_vert</i> 
+         </button> 
+         <ul class="mdui-menu" id="more"> 
+           <li class="mdui-menu-item"> 
+             <a href="/about" class="mdui-ripple">关于本站</a> 
+           </li> 
+         </ul> 
+       </div> 
+     </div> 
+     <div class="mdui-container"> 
+       <div class="mdui-row">
+        <div class="mdui-typo mdui-col-sm-12">  
+         <h1 class="title mdui-text-color-red-a400"><b>文档和教程</b></h1>
+         <p></p>
+        <div class="mdui-card">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title mdui-text-color-red-a400" style="font-weight: 500; " id="use">使用方法</div>
+          </div>
+          <div class="mdui-card-content mdui-typo">
+            <h4>一、固定至任务栏上 WPS Office 或 PowerPoint 图标的“快捷访问”栏中</h4>
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;在 Windows 10及以下设备中：</h5>
+            <p>将黑屏 PPT 拖拽至已经固定好的任务栏图标上，出现“将文件固定到快速访问”提示，松手，此后右键点击（长按）此图标即可找到 PPT 的快捷链接。</p>
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;在 Windows 11及以下设备中：</h5>
+            <p>先打开黑屏 PPT，将 WPS Office 或 PowerPoint 固定于任务栏，右键（长按），在最近访问的文件中找到并固定 PPT，即成为快捷链接。</p>
+            <img src="./1.png">
+            <h4>二、制作快捷方式并固定至任务栏</h4>
+            <p>因为任务栏里不能直接放入普通文件的快捷方式，只能是.exe文件的，且Windows 11相比之前的版本有更严格的添加限制，这里介绍最稳妥的方法。</p>
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;创建快捷方式</h5>
+            <p>在桌面新建快捷方式，文件地址填写<code>"C:\Windows\System32\taskkill.exe"</code>或其他生僻的无害程序，输入快捷方式名“黑屏”，点击“完成”，将新建的快捷方式拖至任务栏。</p>
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;完善快捷方式</h5>
+            <p>右击任务栏上的快捷方式，右击“黑屏”，点击属性，打开快捷方式修改页面。</p>
+            <img src="./2.png">            
+            <p>右击黑屏 PPT，点击“复制文件地址”，粘贴填入快捷方式的“目标”，“起始位置”请填写为空，“快捷键”可以填写（光标闪动时按下）<kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>D</kbd>；</p>
+            <p>点击<a href="./dead_dog_icon.ico">此处</a>下载黑屏的 .ICO 图标，点击“更改图标”，选中下载好的图标，再点击确定，确定，保存快捷方式的设置以后重启电脑即可看到配置好的任务栏 Shortcut。</p>
+            <img src="./3.png">
+            <h4>三、将黑屏添加到任务计划程序</h4>
+            <p><kbd>Win</kbd>&nbsp;+&nbsp;<kbd>R</kbd>打开运行，输入<code>taskschd.msc</code>打开任务计划程序，切换进“任务计划程序（本地） > 任务计划程序库”，点击<a href="./dead_dog.xml">此处</a>下载任务计划程序配置文件，点击右侧的“导入任务...”选择导入。</p>
+            <p>此后，请校准该自动脚本中的触发器（时间）、操作（启动程序的路径，重要！）是否填写正确！如果不正确，右键点击黑屏自动触发器，点击“属性”修改！修改完成后，请右键点击“运行”做一次测试！</p>
+            <img src="./4.png">
+            </div>
+        </div>
+        <p></p>
+                <div class="mdui-card">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title mdui-text-color-red-a400" style="font-weight: 500; " id="attention">注意事项</div>
+          </div>
+          <div class="mdui-card-content mdui-typo">
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;若使用“黑屏”临时使屏幕处于黑屏状态，请确保电脑上没有任何悬浮球和悬浮窗！如果使用 Epic Pen 一类工具，黑屏时记得关闭，并将<abbr title="taskkill -im 程序名.exe -t -f">关闭其进程的指令</abbr>设定在任务计划程序中！</h5>
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;“黑屏”不适用于显示屏类的电教设备，因为这些设备打开黑屏时屏幕背板总是会有适当发光！因此“黑屏”只适合<abbr title="所以说去了绵中，黑屏就一无是处啦。">用光学投影仪作为显示器的电脑</abbr>！</h5>
+            <h5><i class="mdui-icon material-icons mdui-text-color-red-a400">adjust</i>&nbsp;“黑屏”仅适用于临时使屏幕处于黑屏状态，长时间（比如一下午，一晚上）是强烈不提倡的事情！4月22日是地球日，减少电脑无意义的运行时间，减少消耗的电脑，就是减少碳排放，为地球母亲贡献一份力量！</h5>
+          </div>
+        </div>
+         <p></p>  
+        </div>
+       </div> 
+     </div> 
+     <p></p> 
+     <div class="footer-nav mdui-color-blue-grey-100"> 
+       <div class="mdui-container"> 
+         <div class="mdui-row"> 
+           <div class="mdui-col-sm-12">  
+             <div class="intro mdui-typo" mdui-tooltip="{content: '中考加油'}"> 
+               <p></p> 
+               <p>编辑于2023/4/28。</p> 
+               <p>©Copyright by Nick_DL 2022-2023. All rights reserved.</p><p></p> 
+             </div> 
+           </div> 
+         </div> 
+       </div> 
+     </div> 
+     <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"> 
+     </script> 
+   </body> 
+ </html> 
+ <style>body {background-color: #f1f3f5;}</style>
