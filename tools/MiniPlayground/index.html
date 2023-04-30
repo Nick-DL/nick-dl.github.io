@@ -51,26 +51,75 @@
 
   <div class="code code-html">
     <div class="code-label">HTML</div>
-    <pre id="ace-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+    <pre id="ace-html">&lt;html&gt;
 &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
   &lt;title&gt;Playground&lt;/title&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.bytedance.com/cdn/mdui/1.0.2/css/mdui.min.css&quot;/&gt;
+  &lt;style&gt;
+      fluent-card {
+        --card-height: auto;
+    }
+
+    .card-padding {
+        padding: 20px;
+    }
+&lt;/style&gt;
 &lt;/head&gt;
 &lt;body class=&quot;mdui-theme-primary-indigo mdui-theme-accent-pink&quot;&gt;
-
+  
   &lt;div class=&quot;mdui-container&quot;&gt;
-    &lt;p/&gt;这里是一个迷你的代码试验场，也叫Playground，什么东西都可以拿过来试。开始输入吧。
-    &lt;p/&gt;&lt;button class=&quot;mdui-btn&quot;&gt;ND's Website&lt;/button&gt;
-    &lt;button class=&quot;mdui-btn mdui-ripple mdui-btn-raised&quot;&gt;ND's Website&lt;/button&gt;
-    &lt;button class=&quot;mdui-btn mdui-color-blue-600 mdui-ripple&quot;&gt;ND's Website&lt;/button&gt;
+    &lt;h2&gt;这里是一个迷你的代码试验场，什么东西都可以拿过来试。开始输入吧。&lt;/h2&gt;
+    &lt;p&gt;以下是最近接触到的几种网页组件。&lt;/p&gt;
+    &lt;div class=&quot;mdui-card mdui-hoverable&quot;&gt;
+      &lt;div class=&quot;mdui-card-primary&quot;&gt;
+        &lt;div class=&quot;mdui-card-primary-title&quot;&gt;MDUI&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;mdui-card-content&quot;&gt;
+        &lt;button class=&quot;mdui-btn&quot; disabled&gt;ND&#x27;s Website&lt;/button&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple mdui-btn-raised&quot;&gt;ND&#x27;s Website&lt;/button&gt;
+        &lt;button class=&quot;mdui-btn mdui-color-blue-600 mdui-ripple mdui-btn-raised&quot;&gt;ND&#x27;s Website&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;div class=&quot;mdui-card mdui-hoverable&quot;&gt;
+      &lt;div class=&quot;mdui-card-primary&quot;&gt;
+        &lt;div class=&quot;mdui-card-primary-title&quot;&gt;Material Web (MD3)&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;mdui-card-content&quot;&gt;
+        &lt;md-outlined-button&gt;ND&#x27;s Website&lt;/md-outlined-button&gt;
+        &lt;md-tonal-button&gt;ND&#x27;s Website&lt;/md-tonal-button&gt;
+        &lt;md-filled-button&gt;ND&#x27;s Website&lt;/md-filled-button&gt;
+        &lt;md-elevated-button&gt;ND&#x27;s Website&lt;/md-elevated-button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;fluent-card class=&quot;custom mdui-hoverable&quot;&gt;
+      &lt;div class=&quot;mdui-card-primary&quot;&gt;
+        &lt;div class=&quot;mdui-card-primary-title&quot;&gt;Fluent UI&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;mdui-card-content&quot;&gt;
+        &lt;fluent-button Disabled=&quot;true&quot;&gt;ND&#x27;s Website&lt;/fluent-button&gt;
+        &lt;fluent-button&gt;ND&#x27;s Website&lt;/fluent-button&gt;
+        &lt;fluent-button appearance=&quot;accent&quot;&gt;ND&#x27;s Website&lt;/fluent-button&gt;
+      &lt;/div&gt;
+    &lt;/fluent-card&gt;
+    &lt;p&gt;&lt;/p&gt;
   &lt;/div&gt;
 
   &lt;script src=&quot;https://cdn.bytedance.com/cdn/mdui/1.0.2/js/mdui.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;module&quot;&gt;
+    import &#x27;https://unpkg.com/@material/web/button/filled-button.js&#x27;;
+    import &#x27;https://unpkg.com/@material/web/button/outlined-button.js&#x27;;
+    import &#x27;https://unpkg.com/@material/web/button/elevated-button.js&#x27;;
+    import &#x27;https://unpkg.com/@material/web/button/tonal-button.js&#x27;;
+  &lt;/script&gt;
+  &lt;script type=&quot;module&quot; src=&quot;https://unpkg.com/@fluentui/web-components&quot;&gt;&lt;/script&gt;
+  &lt;style&gt;body {background-color: #f1f3f5;}&lt;/style&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;
+ </pre>
   </div>
   <div class="code code-css">
     <div class="code-label">CSS</div>
