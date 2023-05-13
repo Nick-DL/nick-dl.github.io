@@ -349,15 +349,5 @@
       </div>
     </div>
     <script type="text/javascript" src="https://cdn.bytedance.com/cdn/mdui/1.0.2/js/mdui.min.js"></script>
-  <script type="text/javascript">
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker
-            .register("./serviceWorker.js")
-            .then((res) => console.log("service worker registered"))
-            .catch((err) => console.log("service worker not registered", err));
-        });
-      }
-  </script>
   </body>
 </html>

@@ -1,16 +1,16 @@
 {
   "name": "ND%27s Website",
   "short_name": "NDW",
-  "start_url": "/",
-  "display": "standalone",
   "background_color": "#ddd",
   "theme_color": "#fff",
+  "display": "standalone",
+  "start_url": "/",
   "icons": [
     {
       "src": "/media/ic_gallery_discover_filled.png",
       "sizes": "48x48",
       "type": "image/png"
     }
+    }
   ]
 }
-
