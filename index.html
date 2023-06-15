@@ -20,7 +20,6 @@
                 		        src: url('./tools/Countdown/ZHCCHe.woff') format('woff');      
                 		}
   </style>
-  <link rel="manifest" href="./manifest.json" crossOrigin="use-credentials"/>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed">
@@ -281,13 +280,5 @@
     </div>
   </div>
   <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
-  <script>
-    if (navigator.serviceWorker != null) {
-      navigator.serviceWorker.register('sw.js')
-        .then(function(registration) {
-          console.log('Registered events at scope: ', registration.scope);
-        });
-    }
-  </script>
 </body>
 </html>
