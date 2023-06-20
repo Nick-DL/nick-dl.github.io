@@ -10,16 +10,6 @@
   <title>ND's Website - 主页</title>
   <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png"
         type="image/x-icon" />
-  <style type="text/css">
-    @font-face {
-                		        font-family: NDWDIN1145;
-                		        src: url('./tools/Countdown/DIN1451e.woff') format('woff');   
-                		}
-                		@font-face {
-                                    font-family: zihunchuangcuhei;
-                		        src: url('./tools/Countdown/ZHCCHe.woff') format('woff');      
-                		}
-  </style>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed">
@@ -56,20 +46,19 @@
           <div class="mdui-list-item-content">主页</div>
         </li>
       </a>
-      <li class="mdui-subheader" mdui-tooltip="{content: '不予置评。'}">😒</li>
-      <a href="/dead-dog/">
+      <a href="/about/">
         <li class="mdui-list-item mdui-ripple">
-          <i class="mdui-list-item-icon mdui-icon material-icons">collections</i>
-          <div class="mdui-list-item-content">黑屏</div>
-        </li>
-      </a>
-      <a href="/dlfmts/">
-        <li class="mdui-list-item mdui-ripple">
-          <i class="mdui-list-item-icon mdui-icon material-icons">games</i>
-          <div class="mdui-list-item-content">DLFM The Spectre</div>
+          <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+          <div class="mdui-list-item-content">关于本站</div>
         </li>
       </a>
       <li class="mdui-subheader">版块</li>
+      <a href="/works/">
+        <li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">web</i>
+          <div class="mdui-list-item-content">Works</div>
+        </li>
+      </a>
       <a href="/resource-share/">
         <li class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon material-icons">share</i>
@@ -100,58 +89,55 @@
           <p>目前的几行代码，只是一座大厦的基石。对于那样一座大厦，我们满怀期待。</p>
           <div class="mdui-divider"></div>
           <p></p>
-          <p />我是一个普通的中学生，接触网络大概有九年了，但没弄出什么大的成果。
-          <p />大部分能拿的出来的都在这里了。
-          <div class="mdui-divider"></div>
-          <h4 mdui-tooltip="{content: '此数据从 2023 年 1 月 20 日 14:30 起计；只统计主页浏览量；从 2022 年底到此刻大概有 500 次访问；当然大部分都是我自己在访问。'}">网站浏览量统计：
-            <img src="https://camo.githubusercontent.com/013288cc5a1cfea3da7f1174496f22d0fa6d8d3458040fc1472ba0c7c2ffcc1b/68747470733a2f2f70726f66696c652d636f756e7465722e676c697463682e6d652f4e69636b2d444c2f636f756e742e737667">
-            </img> 人次</h4>
-          <div class="mdui-divider"></div>
+          <p />我是一个普通的初中毕业生，接触网络大概有九年了，但没弄出什么大的成果。
+          <p />大部分能拿的出来的都在这里了。<br>　
         </div>
       </div>
     </div>
     <div class="mdui-row">
-      <div class="mdui-col-sm-10">
-        <h4>Works</h4>
-        <div class="mdui-card mdui-hoverable">
-          <a href="/dlfmts/">
-            <div class="mdui-card-media">
-              <img src="./media/dlfmts.png" />
-              <div class="mdui-card-media-covered">
-                <div class="mdui-card-primary">
-                  <div class="mdui-card-primary-title">DLFM The Spectre</div>
-                  <div class="mdui-card-primary-subtitle">自制跳舞的线低技术关卡，从 2018
-                    年做到现在</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <div class="mdui-card-actions">
-            <a href="/dlfmts/" class="mdui-btn mdui-ripple">查看介绍</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mdui-row">
-      <p></p>
       <div class="mdui-col-sm-5">
         <div class="mdui-card mdui-hoverable">
-          <a href="/dead-dog/">
-            <div class="mdui-card-media">
-              <img src="./media/dead_dog_logo.svg" />
-              <div class="mdui-card-media-covered">
-                <div class="mdui-card-primary">
-                  <div class="mdui-card-primary-title">黑屏（原名“死狗”）</div>
-                  <div class="mdui-card-primary-subtitle">乱做的 PPT，一打开就能起黑屏的效果</div>
+          <div class="mdui-card-primary">
+            <li class="mdui-list-item">
+            <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-accent">web</i>
+            <div class="mdui-list-item-content">Works</div>
+            <a href="/works">
+              <div class="mdui-color-blue-accent mdui-btn mdui-ripple mdui-float-right">
+                <i class="mdui-icon mdui-icon-right material-icons">arrow_forward</i>查看更多
+              </div>
+            </a>
+            </li>
+          </div>
+          <div class="mdui-card-content">
+            <div class="mdui-grid-tile">
+              <a href="/works/dlfmts/"><img src="./media/dlfmts.png"/></a>
+              <div class="mdui-grid-tile-actions">
+                <div class="mdui-grid-tile-text">
+                  <div class="mdui-grid-tile-title">DLFM The Spectre</div>
+                  <div class="mdui-grid-tile-subtitle">自制跳舞的线低技术关卡，从 2018 年做到现在</div>
+                </div>
+                <div class="mdui-grid-tile-buttons">
+                  <a href="/works/dlfmts/" class="mdui-btn mdui-ripple">查看介绍</a>
                 </div>
               </div>
             </div>
-          </a>
-          <div class="mdui-card-actions">
-            <a href="/dead-dog/" class="mdui-btn mdui-ripple">查看介绍</a>
+            <div class="mdui-grid-tile">
+              <a href="/works/dead-dog/"><img src="./media/dead_dog_logo_cover.svg"/></a>
+              <div class="mdui-grid-tile-actions">
+                <div class="mdui-grid-tile-text">
+                  <div class="mdui-grid-tile-title">黑屏</div>
+                  <div class="mdui-grid-tile-subtitle">一个直接使电脑黑屏的PPT，用在教室的电脑上</div>
+                </div>
+                <div class="mdui-grid-tile-buttons">
+                  <a href="/works/dead-dog/" class="mdui-btn mdui-ripple">查看介绍</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        
       </div>
+      </div>
+      <p></p>
       <p></p>
       <div class="mdui-col-sm-5">
         <div class="mdui-card mdui-hoverable">
@@ -253,10 +239,14 @@
       <div class="mdui-row">
         <p></p>
         <div class="mdui-col-sm-12">
+          <h4 mdui-tooltip="{content: '此数据从 2023 年 1 月 20 日 14:30 起计；只统计主页浏览量；从 2022 年底到此刻大概有 500 次访问；当然大部分都是我自己在访问。'}">　<br>网站浏览量统计：
+            <img src="https://camo.githubusercontent.com/013288cc5a1cfea3da7f1174496f22d0fa6d8d3458040fc1472ba0c7c2ffcc1b/68747470733a2f2f70726f66696c652d636f756e7465722e676c697463682e6d652f4e69636b2d444c2f636f756e742e737667">
+            </img> 人次</h4>
+          <div class="mdui-divider"></div>
           <p></p>
           <button class="mdui-btn mdui-ripple mdui-color-blue-600"
                   mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
-          <a href="/about" class="mdui-btn mdui-ripple mdui-color-blue-600">关于本站</a>
+          <a href="/notice-board/" class="mdui-btn mdui-ripple mdui-color-blue-600">历史公告栏</a>
           <ul class="mdui-menu" id="showthanks">
             <li class="mdui-menu-item">
               <a href="https://github.com" class="mdui-ripple">GitHub</a>
@@ -271,7 +261,7 @@
       <div class="mdui-row">
         <div class="mdui-col-sm-12">
           <div class="intro mdui-typo">
-            <p mdui-tooltip="{content: '中考加油！！！！', position: 'top'}">编辑于 2023/06/03。</p>
+            <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">编辑于 2023/06/20。</p>
             <p />
             <b>©</b>Copyright by Nick_DL 2022-2023. All rights reserved.
           </div>

@@ -14,7 +14,7 @@ My Personal Website - being tested......
 ### 以下是这一年内访问本站的一些小提示，望周知！
 
 本站目前启用了全新域名（[**nickdl.site**](https://nickdl.site)）。目前域名有效期至 
- **2024-02-20**，届时此域名将失效。
+ **2024-02-20**，届时此域名将失效，不过我大概率会给域名续期。
 
 另外，添加 www 前缀的网址使用了 Netlify 加速。经测试，在国内部分地区，Netlify 的访问速度会比 GitHub Pages 稍快。如果可以，推荐大家访问 https://www.nickdl.site  。
 
