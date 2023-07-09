@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <title>ND's Website - BRXY Win11镜像</title>
+    <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/>
+  </head>
+  <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto">
+    <div class="mdui-appbar mdui-appbar-fixed"> 
+      <div class="mdui-toolbar mdui-color-blue-600"> 
+        <a href="../" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
+          <i class="mdui-icon material-icons">arrow_back</i> 
+        </a> 
+        <a href="/" class="mdui-typo-headline mdui-hidden-xs">ND's Website</a> 
+        <a href="./" class="mdui-typo-title">BRXY Win11镜像</a> 
+        <div class="mdui-toolbar-spacer"></div> 
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '更多选项'}"> 
+          <i class="mdui-icon material-icons">more_vert</i> 
+        </button> 
+        <ul class="mdui-menu" id="more"> 
+          <li class="mdui-menu-item"> 
+            <a href="/about" class="mdui-ripple">关于本站</a> 
+          </li> 
+        </ul> 
+      </div> 
+    </div> 
+    <div class="mdui-container">
+      <div class="mdui-row">
+        <div class="mdui-col-sm-12"> 
+          <h1 class="title mdui-text-color-blue-a400">BRXY Win11镜像</h1>
+          <div class="intro mdui-typo">
+            <h3>简介</h3>
+            <p>此镜像基于 Windows 11 22H2 (10.0.22621.105) 不忘初心精简版本改装，适配 dc 弘毅楼的博瑞星云一体机，安装了MS Office、WPS、PotPlayer、QQ、几何画板等常用软件。</p>
+            <p>鄙人自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，存在一系列需要还原镜像以后再进行的善后操作，具体见下。</p>
+            <div class="mdui-card" style="border: 2px solid #FF4081;">
+              <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
+                <div class="mdui-card-content">请认真阅读以下内容，否则镜像会用出问题的。</div>
+              </div>
+            </div>
+         <p></p>
+            <div class="mdui-divider"></div>
+            <h3>系统特点</h3>
+            <p>1. 基于精简版Windows 11，运行速度相对于原版Win 11较快，几乎无软件兼容性问题。</p>
+            <p>2. 安装完约占18 GB空间。</p>
+            <p>3. 内置鸿合白板触屏驱动，安装的最常用软件。</p>
+            <p>4. 用Ghost封装，此方式利于在硬件参数相同的设备间配置镜像。驱动运行，软件激活等将不会受到新硬件的影响。</p>
+            <div class="mdui-divider"></div>
+            <h3>注意事项</h3>
+            <p><b>1. 由于封装镜像时仓促，Ghost程序会出现“分区未对齐”的提醒。</b>
+              <br>解决方案：在PE系统中先运行Ghost程序，再从任务栏右键点击它，右键点击程序名，点击属性，通过文件位置定位到Ghost程序文件的位置。在此目录下按住<kbd>Shift</kbd>，在空白处点右键，点击“在命令提示符中打开”，输入<code>(ghost程序名).exe -ntexact</code>，运行ghost程序即可安装。</p>
+            <p><b>2. 内置驱动若导致触摸屏幕时不出现灰色圆点，同时导致打开某些程序时触控失灵，请在下方下载旧版的触控驱动并安装。</b>
+              <br>这种问题的产生大概是由于dc的所有红外白板大致分为两种硬件版本：旧版硬件的白板在安装新版驱动（即本镜像内置驱动）时出现触摸屏幕时不出现灰色圆点，同时导致打开某些程序时触控失灵的情况；新版硬件的白板在安装旧版驱动（即下方链接内备用的驱动）时开机出现“最低驱动版本：XXX”的弹窗。</p>
+            <p><b>3. 三指下滑回到桌面的手势会导致系统UI死机（这可能是22621.105版本存在的BUG）。</b>
+              <br>解决方案：请务必前往Windows设置 > 蓝牙和其他设备 > 触摸板（触控）界面，关闭手势！</p>
+            <p><b>4. 千万勿更新！</b>
+              <br>更新可能导致Win11冗余服务（最恶心的：Defender）卷土重来，引发系统卡顿甚至死机；也有可能会产生意想不到的问题（亲历过的：因为更新到一半教学楼断电，系统直接进入了半崩溃状态）。为防止自动更新，甚至不要打开更新页面。可以在下方下载<a href="./#dl">Windows 11 轻松设置</a>，直接禁更新20年！</p>
+            <p><b>5. 请勿更新内置的Epic Pen。</b>
+              <br>Epic Pen在该内置的版本的下一版正式长成了流氓软件，将会内置BigData。不用这软件的话，建议卸载。</p>
+            <p><b>6. WPS Office打开后会提示登录后即可编辑文档。</b>
+              <br>请到<a href="https://www.wps.cn">官网</a>下载新版WPS并断网（建议方法：关闭网络适配器）安装。安装后可在WPS“配置和修复工具”中关闭多余的右键功能、联网功能和广告。</p>
+            <p><b>7. QQ打开该版本会提示版本过低。</b>
+              <br>请重新到<a href="https://im.qq.com/pcqq/index.shtml">官网</a>下载（推荐新版QQ）。安装时建议关闭勾选“开机自动运行”。</p>
+            <div class="mdui-divider"></div>
+            <p></p>
+            <div class="mdui-card" style="border: 2px solid #FF4081;">
+              <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
+                <div class="mdui-card-content">这个系统的问题竟然比特点多……我很想重新封装一次，但估计得去学校电脑才行，现在看是不可能了。怎么办……</div>
+              </div>
+            </div>
+            <p></p>
+            <div class="mdui-divider"></div>
+            <h3>下载</h3>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-row">
+        <div class="mdui-col-sm-10"> 
+          <div class="mdui-card mdui-hoverable">
+            <div class="mdui-card-media">
+              <img src="./media/win11.jpg"/>
+              <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                  <div class="mdui-card-primary-title">BRXY Win11镜像</div>
+                  <div mdui-tooltip="{content: '真的会有人想下载吗'}" class="mdui-card-primary-subtitle">鉴于阿里云盘对分享文件格式的限制，现在暂时只能提供 AList for NDW 的下载方式。但是，不要过多地访问 AList，否则我的阿里云盘的 API 调用次数多了会被封禁的……</div>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-card-actions" id="dl">
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 22H2.gho" class="mdui-btn mdui-ripple">前往 ALIST FOR NDW 下载</a>
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/鸿合旧版驱动.zip" class="mdui-btn mdui-ripple">HiteDriver (旧版驱动)</a>
+              <a href="https://azhutoolbox.lanzouw.com/ifosN0zszekd" class="mdui-btn mdui-ripple">Windows 11 轻松设置</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav mdui-color-blue-grey-100">
+      <div class="mdui-container">
+        <div class="mdui-row">
+          <p></p>
+          <div class="mdui-col-sm-12"> 
+            <p></p>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-a400" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
+            <ul class="mdui-menu" id="showthanks">
+              <li class="mdui-menu-item">
+                <a href="https://github.com" class="mdui-ripple">GitHub</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p></p>
+        <div class="mdui-row">
+          <div class="mdui-col-sm-12"> 
+            <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
+              <p>编辑于 2023/7/9。</p>
+              <p/><b>©</b>Copyright by Nick_DL 2022-2023. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+  </body>
+</html>
+    <style>body {background-color: #f1f3f5;}</style>
