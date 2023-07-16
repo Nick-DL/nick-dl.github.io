@@ -12,7 +12,7 @@
   </head>
   <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto">
     <div class="mdui-appbar mdui-appbar-fixed"> 
-      <div class="mdui-toolbar mdui-color-blue-600"> 
+      <div class="mdui-toolbar mdui-color-blue-700"> 
         <a href="../" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
           <i class="mdui-icon material-icons">arrow_back</i> 
         </a> 
@@ -34,29 +34,84 @@
         <div class="mdui-col-sm-12"> 
           <h1 class="title mdui-text-color-blue-a400">希沃Win11镜像</h1>
           <div class="intro mdui-typo">
-            <h3></h3>
-            <p></p>
+            <h3>简介</h3>
+            <p>此镜像基于 Windows 11 22H2 (10.0.22621.1926) 官方版本改装，适配 mz 的希沃一体机（主板型号 MT51），安装了MS Office、WPS、PotPlayer、微信、网易云音乐、酷狗音乐、火绒、QQ、几何画板等常用软件。</p>
+            <p>鄙人自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，存在一系列需要还原镜像以后再进行的善后操作，具体见下。</p>
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
-                <div class="mdui-card-content">还在研究中。目前已经恢复了原厂系统，正尝试安装软件、升级Win11，再做进一步优化。</div>
+                <div class="mdui-card-content">请认真阅读以下内容，否则镜像会用出问题的。</div>
               </div>
             </div>
          <p></p>
             <div class="mdui-divider"></div>
-            <div class="mdui-divider"></div>
+            <h3>系统特点</h3>
+            <p>1. 直接由希沃官方Windows 10系统升级而来，驱动全部自带</p>
+            <p>2. 在对系统的清理优化后，C盘占用仅20 GB（不包含分页文件和虚拟内存转储），D盘占用5 GB左右；镜像大小相较于官方下降了近 300 MB</p>
+            <p>3. 全部预装软件版本如下：
+              <div class="mdui-panel" mdui-panel="{accordion: true}">
+                <div class="mdui-panel-item">
+                  <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">预装软件及版本公示</div>
+                  <div class="mdui-panel-item-body">
+                    <table class="mdui-table">
+                      <tbody>
+                        <tr>
+                          <td>QQ</td>
+                          <td>v9.9.0.14569</td>
+                        </tr>
+                        <tr mdui-tooltip="{content:'KMS自动延期激活，若不喜欢可以重装零售版'}">
+                          <td>Microsoft Offce</td>
+                          <td>2021 LTSC ProPlus Volume (2108)</td>
+                        </tr>
+                        <tr>
+                          <td>酷狗音乐</td>
+                          <td>v10.1.93</td>
+                        </tr>
+                        <tr>
+                          <td>网易云音乐</td>
+                          <td>v3.0.1.201499 (Beta 版)</td>
+                        </tr>
+                        <tr>
+                          <td>PotPlayer</td>
+                          <td>v230705</td>
+                        </tr>
+                        <tr>
+                          <td>火绒安全软件</td>
+                          <td>v5.0.73.7-2023.07.08.1</td>
+                        </tr>
+                        <tr>
+                          <td>微信</td>
+                          <td>v3.9.5</td>
+                        </tr>
+                        <tr>
+                          <td>WPS Offce</td>
+                          <td>最新 Beta 版</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </p>
             <div class="mdui-divider"></div>
             <p></p>
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
+                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意事项</div>
                 <div class="mdui-card-content">
-                  <p>现在遇到过这些问题：
-                    <br>· 官方镜像是百度网盘资源，我为此开了人生第一个度盘SVIP；
-                    <br>· 官方镜像封装的是整个硬盘，一般的Ghost软件用了就闪退，他们提供的CGI备份还原才能用。
-                    <br>但是我的PE在希沃上运行个别软件触控会失灵，他们电脑不配鼠标键盘！于是装了个虚拟触控板软件凑合着操作。
-                    <br>· mz电信网不稳定，一会飞快一会404，安装的app和系统要在家里提前准备好。……
+                  <p>1. 在没有实体键盘的情况下，建议的进入PE盘的方法：
+                    <br>进入设置，找到高级启动并点击重启，在WinRE里会有从媒体介质启动的选项；
                   </p>
+                  <p>2. 为处理好 UEFI 启动，安装此镜像会直接覆盖整个固态硬盘，故请检查电脑显示的前3个有效分区是否有重要数据。
+                    <br>mz 的电脑还内置另一个 1TB 的机械硬盘，建议将镜像放置在此硬盘的分区里。
+                    <br>另外，Ghost若出现闪退现象，建议还原镜像是不要修改各目标分区容量。实在不行，请使用官方提供的CGI_Plus备份还原（见下）。
+                  </p>
+                  <p>3. <b>若完成还原后开机蓝屏提示“未连接或无法访问所需设备”，请看！非常重要！</b>
+                    <br>目前发现是UEFI引导的问题。请进入自己的PE系统，打开Dism++，打开电脑硬盘系统（而非PE系统）的对话，在工具里选择“引导修复”；
+                    <br>修复完成后系统可以启动，但开机会出现2个“Windows 11”，请进入第一个，然后在 Windows 搜索里搜索“系统配置”(msconfig)然后删去第二个引导项。
+                  </p>
+                  <p mdui-tooltip="{content: '正在尝试破解绵中的管理员密码，很快了！'}">4. 若你班的电脑重启后C盘文件自动重置，那么就是打开了希沃管家里的“冰点还原”，请不要安装本系统，否则相当于关闭了冰点还原，会招来电教老师和技术人员！！</p>
                 </div>
               </div>
             </div>
@@ -75,17 +130,26 @@
               <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
                   <div class="mdui-card-primary-title">希沃Win11镜像</div>
-                  <div mdui-tooltip="{content: '真的会有人想下载吗'}" class="mdui-card-primary-subtitle">研究中，先放希沃官方 Windows 10 镜像</div>
+                  <div mdui-tooltip="{content: '真的会有人想下载吗'}" class="mdui-card-primary-subtitle">鉴于阿里云盘对分享文件格式的限制，现在暂时只能提供 AList for NDW 的下载方式。但是，不要过多地访问 AList，否则我的阿里云盘的 API 调用次数多了会被封禁的……</div>
                 </div>
               </div>
             </div>
-            <div class="mdui-card-primary" id="dl">
-              <div class="mdui-typo">出厂镜像比较大，需要下载全部文件，才可以解压生成GHO镜像问题
-                <br>微PE下载链接：<a style="text-decoration: none;" href="http://url.0nirii.cn/pecgi" target="_blank" rel="noopener noreferrer">http://url.0nirii.cn/pecgi</a>
-                <br>镜像下载链接：链接：<a style="text-decoration: none;" href="https://pan.baidu.com/s/14B4MH0yjWUocI9kNkzlakg" target="_blank" rel="noopener noreferrer">https://pan.baidu.com/s/14B4MH0yjWUocI9kNkzlakg</a> 提取码：2505 
-                <br>GHO重装操作视频：<a style="text-decoration: none;" href="https://drive.cvte.com/p/DTJmgxMQvvoCGOb7EQ" target="_blank" rel="noopener noreferrer">https://drive.cvte.com/p/DTJmgxMQvvoCGOb7EQ</a>
-                <br>PS：操作如需要使用U盘，U盘在制作启动盘过程中会进行格式化。建议使用空U盘，如U盘中有数据请提前做好备份，防止出现操作失误或系统故障导致数据丢失。重装后设备如提示激活Windows系统需联系设备提供方/经销商咨询确认处理。若设备上有认系统的软件在重装系统后也有导致丢失原激活版的使用功能希沃无法为您恢复原状态，请您留意慎重考虑。
-                <br>这是希沃官方的PDF说明：<a href="https://www.123pan.com/s/he7rVv-HjMO.html">https://www.123pan.com/s/he7rVv-HjMO.html</a>
+            <div class="mdui-card-actions">
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for Seewo.GHO" class="mdui-btn mdui-ripple">前往 ALIST FOR NDW 下载</a>
+            </div>
+          </div>
+          <p></p>
+          <div class="mdui-panel" mdui-panel="{accordion: true}">
+            <div class="mdui-panel-item">
+              <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">附：希沃官方 Windows 10 镜像及官方教程</div>
+              <div class="mdui-panel-item-body">
+                <div class="mdui-typo">出厂镜像比较大，需要下载全部文件，才可以解压生成GHO镜像问题
+                  <br>微PE和CGI下载链接：<a style="text-decoration: none;" href="http://url.0nirii.cn/pecgi" target="_blank" rel="noopener noreferrer">http://url.0nirii.cn/pecgi</a>
+                  <br>镜像下载链接：链接：<a style="text-decoration: none;" href="https://pan.baidu.com/s/14B4MH0yjWUocI9kNkzlakg" target="_blank" rel="noopener noreferrer">https://pan.baidu.com/s/14B4MH0yjWUocI9kNkzlakg</a> 提取码：2505 
+                  <br>GHO重装操作视频：<a style="text-decoration: none;" href="https://drive.cvte.com/p/DTJmgxMQvvoCGOb7EQ" target="_blank" rel="noopener noreferrer">https://drive.cvte.com/p/DTJmgxMQvvoCGOb7EQ</a>
+                  <br>PS：操作如需要使用U盘，U盘在制作启动盘过程中会进行格式化。建议使用空U盘，如U盘中有数据请提前做好备份，防止出现操作失误或系统故障导致数据丢失。重装后设备如提示激活Windows系统需联系设备提供方/经销商咨询确认处理。若设备上有认系统的软件在重装系统后也有导致丢失原激活版的使用功能希沃无法为您恢复原状态，请您留意慎重考虑。
+                  <br>这是希沃官方的PDF说明：<a href="https://www.123pan.com/s/he7rVv-HjMO.html">https://www.123pan.com/s/he7rVv-HjMO.html</a>
+                </div>
               </div>
             </div>
           </div>
@@ -113,7 +177,7 @@
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
-              <p>编辑于 2023/7/9。</p>
+              <p>编辑于 2023/7/16。</p>
               <p/><b>©</b>Copyright by Nick_DL 2022-2023. All rights reserved.
             </div>
           </div>
