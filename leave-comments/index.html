@@ -100,21 +100,38 @@
           <p></p>
           <div class="mdui-col-sm-12"> 
             <p></p>
-            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
-            <ul class="mdui-menu" id="showthanks">
-              <li class="mdui-menu-item">
-                <a href="https://github.com" class="mdui-ripple">GitHub</a>
-              </li>
-              <li class="mdui-menu-item">
-                <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
-              </li>
-              <li class="mdui-menu-item">
-                <a href="https://valine.js.org/" class="mdui-ripple">Valine</a>
-              </li>
-              <li class="mdui-menu-item">
-                <a href="https://leancloud.cn" class="mdui-ripple">LeanCloud</a>
-              </li>
-            </ul>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-600"
+            mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
+    <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
+      <li class="mdui-subheader">操作</li>
+      <li class="mdui-menu-item">
+        <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看网页源代码</a>
+      </li>
+      <li class="mdui-subheader">更多</li>
+      <li class="mdui-menu-item">
+        <a href="https://forms.office.com/r/xtQHCBPqsR" class="mdui-ripple">反馈问题 (错别字、错链、图片异常等)</a>
+      </li>
+      <li class="mdui-menu-item">
+        <a href="https://forms.office.com/r/vN3TM1ge4t" class="mdui-ripple">Translate Needed</a>
+      </li>
+    </ul>
+    <script>
+      function redirectToGitHub() {
+    var currentURL = window.location.href; 
+    var urlObject = new URL(currentURL); 
+  
+    var domain = urlObject.hostname;
+    var path = urlObject.pathname;
+  
+    if (path.charAt(0) === '/') {
+      path = path.substr(1);
+    }
+  
+    var gitHubURL = 'https://github.com/Nick-DL/nick-dl.github.io/blob/main/' + path;
+  
+    window.location.href = gitHubURL;
+  }
+    </script>
           </div>
         </div>
         <p></p>

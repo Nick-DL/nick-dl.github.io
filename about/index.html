@@ -94,19 +94,116 @@
           </a></td>
         </tr>
         <tr>
-          <td>            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">感谢</button>
-            <ul class="mdui-menu" id="showthanks">
-              <li class="mdui-menu-item">
-                <a href="https://github.com" class="mdui-ripple">GitHub</a>
-              </li>
-              <li class="mdui-menu-item">
-                <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
-              </li>
-            </ul></td>
+          <td>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-dialog="{target: '#showthanks'}">感谢</button>
+          </td>
           <td><a href="https://www.netlify.com/"><img class="mdui-img-fluid" src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg"/></a></td>
         </tr>
         </tbody>
       </table>
+          <div class="mdui-dialog" id="showthanks">
+            <div class="mdui-dialog-title">感谢</div>
+            <div class="mdui-container mdui-dialog-content">
+              <div class="mdui-row mdui-list">
+                <div class="mdui-col-sm-12">
+                  <ul class="mdui-list">
+                  <li class="mdui-subheader">主要组件</li>
+                  <a mdui-tooltip="{content: '网站绝大部分为 MDUI 组件'}" href="https://mdui.org"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    MDUI
+                    </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <li class="mdui-subheader">组件</li>
+                  <a mdui-tooltip="{content: 'Windows 11 风格尝鲜'}" href="https://react.fluentui.dev/"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                      Fluent UI
+                    </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '开发中'}" href="https://m3.material.io"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                      Material Web
+                    </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '留给初中档案馆'}" href="https://theme-hope.vuejs.press/"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    vuepress-theme-hope
+                    </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <li class="mdui-subheader">插件</li>
+                  <a mdui-tooltip="{content: '留言'}" href="https://valine.js.org"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Valine
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '挂载云盘'}" href="https://alist.nn.ci"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Alist
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '新必应镜像'}" href="https://github.com/adams549659584/go-proxy-bingai"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    go-proxy-bingai
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <li class="mdui-subheader">平台</li>
+                  <a mdui-tooltip="{content: '最重要的平台'}" href="https://github.com"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    GitHub
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: 'CDN 服务商，负责留言和一些小文件'}" href="https://leancloud.cn"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    LeanCloud
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: 'CDN 服务商，负责 NDW 主要镜像站'}" href="https://netlify.com"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Netlify
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: 'CDN 服务商，有免费轻量服务器，负责 Alist'}" href="https://render.com"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Render
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: 'CDN 服务商，负责 BingAI 镜像站'}" href="https://vercel.com"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Vercel
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '在线 IDE'}" href="https://gitpod.io"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Gitpod
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '负责管理域名'}" href="https://cloud.tencent.com"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    腾讯云
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <li class="mdui-subheader">软件</li>
+                  <a mdui-tooltip="{content: 'IDE 软件'}" href="https://code.visualstudio.com/"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Visual Studio Code
+                    </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                  <a mdui-tooltip="{content: '加速'}" href="https://github.com/dotnetcore/FastGithub"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    FastGithub
+                    </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+                </ul>
+                </div>
+                <div class="mdui-col-sm-12">
+                  <p>最重要的是：一直支持和鼓励着我在网站上整活的同学和我的爸爸妈妈！在这里一并感谢大家！</p>
+                  <p>欢迎大家朝我这里扔网站的友情链接。</p>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+            </div>
+          </div>
           <p></p>
           <div class="intro mdui-typo">
             <p>记得上一次操纵这些大于小于还是在 2020 年夏天。
@@ -147,9 +244,9 @@
       <div class="mdui-container">
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
-            <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
+            <div class="intro mdui-typo">
               <p></p>
-              <p>编辑于 2023/06/03。</p>
+              <p mdui-tooltip="{content: '加油'}">编辑于 2023/08/14。</p>
               <p mdui-tooltip="{content: '（但是呢，这些都是静态网页，还有 75% 的行都滥竽充数）', position: 'top'}">2023
                 元旦几天给 7 个页面都写了一两百行代码，网站已经成型了，以后就不给每天的首页立个备份版了。<a href="./pagebak/indexbak230102.html">前往主页
                   2023 年 1 月 2 日的版本 →</a>

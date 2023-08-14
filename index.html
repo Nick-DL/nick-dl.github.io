@@ -247,16 +247,22 @@
           <div class="mdui-divider"></div>
           <p></p>
           <button class="mdui-btn mdui-ripple mdui-color-blue-600"
-                  mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
+                  mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
           <a href="/notice-board/" class="mdui-btn mdui-ripple mdui-color-blue-600">历史公告栏</a>
-          <ul class="mdui-menu" id="showthanks">
+          <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
+            <li class="mdui-subheader">操作</li>
             <li class="mdui-menu-item">
-              <a href="https://github.com" class="mdui-ripple">GitHub</a>
+              <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看网页源代码</a>
+            </li>
+            <li class="mdui-subheader">更多</li>
+            <li class="mdui-menu-item">
+              <a href="https://forms.office.com/r/xtQHCBPqsR" class="mdui-ripple">反馈问题 (错别字、错链、图片异常等)</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
+              <a href="https://forms.office.com/r/vN3TM1ge4t" class="mdui-ripple">Translate Needed</a>
             </li>
           </ul>
+<script src="/media/RedirectToGitHub.js"></script>
         </div>
       </div>
       <p></p>

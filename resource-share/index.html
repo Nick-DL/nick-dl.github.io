@@ -89,16 +89,18 @@
           <div id="clouddrive" class="intro mdui-typo">
             <div class="mdui-divider"></div>
             <p></p>
-            <h3>云盘资源</h3>
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-typo mdui-card-content"><p />先写在最前面：<small>分享这些，我的目的是能够及时帮到同学，朋友和其他有需要的人。</small>
             </div></div>
             <p></p>
-            <p class="mdui-typo-subheading" mdui-tooltip="{content: '(2023/06/15更新)'}"/><a href="https://bingai.nickdl.site"><b>BingAI 聊天（NDW 镜像）</b></a><br><small>这里可以无需登录与 BingAI 聊天，这是全球几乎唯一能免费使用的 GPT-4 模型。若聊天服务失效，请在右上角“服务选择”里填入本站备用服务地址（注：近期短暂故障，请等待修复！） <code>https://bingai.nick-dl.workers.dev/</code>！</small>
+            <p class="mdui-typo-subheading" mdui-tooltip="{content: '(2023/06/15更新)'}"/><a href="https://bingai.nickdl.site"><b>BingAI 聊天（NDW 镜像）</b></a><br><small>这里可以无需登录与 BingAI 聊天，这是全球几乎唯一能免费使用的 GPT-4 模型。（注：近期短暂故障，建议弃用或参考<a href="https://github.com/Harry-zklcdc/go-proxy-bingai/wiki/%E8%A7%A3%E5%86%B3-%E6%97%A0%E6%95%88%E5%9F%9F&%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81">这篇文章</a>使用。）</small>
             <p class="mdui-typo-subheading" mdui-tooltip="{content: '(2023/05/14更新)'}"/><a href="https://alist.nickdl.site"><b>AList for ND's Website</b></a><br><small>这里挂载了我的阿里云盘，里面的资料大家尽情品阅。有需要的话，可以在 123 网盘目录里可以上传文件，具体方式详见里面的公告。注意不要滥用，尤其是阿里云盘，其API 的调用，同一 IP 在 60 分钟内仅能请求 10 次。所以不要滥用！</small>
             <p mdui-tooltip="{content: '(2023/04/01更新)本来我想更新许多最近电影相关的资源的，奈何阿里云盘经常封锁资源。'}"/>QQ 频道：<b><a href="https://pd.qq.com/s/174kk3rv7">此间微凉</a></b>。
             <p mdui-tooltip="{content: '禁更新20年，关Defender，各种优化，还是很厉害了，下次装机必用'}"/>
-            <a href="https://azhutoolbox.lanzouw.com/ifosN0zszekd">Windows 11 轻松设置</a>
+            <p></p>
+            <div class="mdui-divider"></div>
+            <h3>云盘资源</h3>
+            <p/><a href="https://azhutoolbox.lanzouw.com/ifosN0zszekd">Windows 11 轻松设置</a>
             <p />
             <a href="https://www.aliyundrive.com/s/n1nPTSggzpE" mdui-tooltip="{content: '阿里云盘链接'}">2022 绵阳市中考试卷全合集</a>
             <p />
@@ -510,15 +512,21 @@
           <p></p>
           <div class="mdui-col-sm-12">
             <p></p>
-            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
-            <ul class="mdui-menu" id="showthanks">
-              <li class="mdui-menu-item">
-                <a href="https://github.com" class="mdui-ripple">GitHub</a>
-              </li>
-              <li class="mdui-menu-item">
-                <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
-              </li>
-            </ul>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
+          <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
+            <li class="mdui-subheader">操作</li>
+            <li class="mdui-menu-item">
+              <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看网页源代码</a>
+            </li>
+            <li class="mdui-subheader">更多</li>
+            <li class="mdui-menu-item">
+              <a href="https://forms.office.com/r/xtQHCBPqsR" class="mdui-ripple">反馈问题 (错别字、错链、图片异常等)</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://forms.office.com/r/vN3TM1ge4t" class="mdui-ripple">Translate Needed</a>
+            </li>
+          </ul>
+<script src="/media/RedirectToGitHub.js"></script>
           </div>
         </div>
         <p></p>

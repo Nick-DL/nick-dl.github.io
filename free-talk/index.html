@@ -6,8 +6,6 @@
     <meta name="renderer" content="webkit"/>
     <meta name="force-rendering" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-    <!-- MDUI CSS -->
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
     <title>ND's Website - 唠点废话</title>
     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/>
@@ -83,6 +81,10 @@
         <div class="mdui-col-sm-12"> 
           <h1 class="title mdui-text-color-blue-700">唠点废话</h1>
           <div class="intro mdui-typo">
+            <p><h3>2023年8月14日</h3></p>
+            <p>初升高暑假接近尾声，只能说过的太开心了。</p>
+            <p>网站几乎没什么改动。哈哈</p>
+            <div class="mdui-divider"></div>
             <p><h3>2023年7月6日</h3></p>
             <p>这快一个月间玩了很久。但是非常不幸的是的暑假剩下这45天会有一大半在学校里……</p>
             <p>完全没想到啊！这下很多计划都结束了，受影响最大的该是网站了。</p>
@@ -155,15 +157,21 @@
           <p></p>
           <div class="mdui-col-sm-12"> 
             <p></p>
-            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">无意义的感谢</button>
-            <ul class="mdui-menu" id="showthanks">
-              <li class="mdui-menu-item">
-                <a href="https://github.com" class="mdui-ripple">GitHub</a>
-              </li>
-              <li class="mdui-menu-item">
-                <a href="https://mdui.org" class="mdui-ripple">MDUI</a>
-              </li>
-            </ul>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
+          <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
+            <li class="mdui-subheader">操作</li>
+            <li class="mdui-menu-item">
+              <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看网页源代码</a>
+            </li>
+            <li class="mdui-subheader">更多</li>
+            <li class="mdui-menu-item">
+              <a href="https://forms.office.com/r/xtQHCBPqsR" class="mdui-ripple">反馈问题 (错别字、错链、图片异常等)</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://forms.office.com/r/vN3TM1ge4t" class="mdui-ripple">Translate Needed</a>
+            </li>
+          </ul>
+          <script src="/media/RedirectToGitHub.js"></script>
           </div>
         </div>
         <p></p>
@@ -177,7 +185,6 @@
         </div>
       </div>
     </div>
-    <!-- MDUI JavaScript -->
     <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js">
     </script>
   </body>
