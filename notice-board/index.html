@@ -83,26 +83,26 @@
                                                                
                     var countdown1El = document.getElementById("countdown1");
                     if (daysDiff &lt;= 0) {
-                                                                                countdown1El.textContent = "00";
-                                                                              } else if (daysDiff &lt;= 9) {
-                                                                                countdown1El.textContent = "0" + daysDiff;
-                                                                              } else {
-                                                                                countdown1El.textContent = daysDiff;
-                                                                              }
+                        countdown1El.textContent = "00";
+                    } else if (daysDiff &lt;= 9) {
+                        countdown1El.textContent = "0" + daysDiff;
+                    } else {
+                    countdown1El.textContent = daysDiff;
+                    }
+                                                          
+                    var countdown2El = document.getElementById("countdown2");
+                    if (daysDiff &lt;= 0) {
+                      countdown2El.textContent = "IN 0 DAY";
+                    } else if (daysDiff === 1) {
+                      countdown2El.textContent = "IN 1 DAY";
+                    } else {
+                      countdown2El.textContent = "IN " + daysDiff + " DAYS";
+                    }
+                  }
                                                                       
-                                                                              var countdown2El = document.getElementById("countdown2");
-                                                                              if (daysDiff &lt;= 0) {
-                                                                                countdown2El.textContent = "IN 0 DAY";
-                                                                              } else if (daysDiff === 1) {
-                                                                                countdown2El.textContent = "IN 1 DAY";
-                                                                              } else {
-                                                                                countdown2El.textContent = "IN " + daysDiff + " DAYS";
-                                                                              }
-                                                                            }
+                  updateCountdown();
                                                                       
-                                                                            updateCountdown();
-                                                                      
-                    // 文字排版由 PowerPoint 制作完成，Javascript 部分由 ChatGPT 编写
+                  // 文字排版由 PowerPoint 制作完成，Javascript 部分由 ChatGPT 编写
                 </script>
               </svg>
             </a>
