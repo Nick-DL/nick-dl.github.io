@@ -103,7 +103,7 @@
       </table>
           <div class="mdui-dialog" id="showthanks">
             <div class="mdui-dialog-title">感谢</div>
-            <div class="mdui-container mdui-dialog-content">
+            <div class="mdui-dialog-content">
               <div class="mdui-row mdui-list">
                 <div class="mdui-col-sm-12">
                   <ul class="mdui-list">
@@ -243,6 +243,29 @@
     <div class="footer-nav mdui-color-blue-grey-100">
       <div class="mdui-container">
         <div class="mdui-row">
+            <p></p>
+            <div class="mdui-col-sm-12"> 
+              <p></p>
+              <button class="mdui-btn mdui-ripple mdui-color-blue-a400" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#tool'}">网页工具</button>
+            <ul class="mdui-list mdui-menu mdui-menu-cascade" id="tool">
+              <li class="mdui-subheader">操作</li>
+              <li class="mdui-menu-item">
+                <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看本页源代码</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a onclick="EditToGitHub()" class="mdui-ripple">在 GitHub 上编辑本页</a>
+              </li>
+              <li class="mdui-subheader">更多</li>
+              <li class="mdui-menu-item">
+                <a href="https://forms.office.com/r/xtQHCBPqsR" class="mdui-ripple">反馈问题 (错别字、错链、图片异常等)</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="https://forms.office.com/r/vN3TM1ge4t" class="mdui-ripple">Translate Needed</a>
+              </li>
+            </ul>
+            <script src="/media/RedirectToGitHub.js"></script>
+            </div>
+          <p></p>
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo">
               <p></p>

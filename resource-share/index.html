@@ -80,27 +80,139 @@
       <div class="mdui-row">
         <div class="mdui-col-sm-12">
           <h1 class="title mdui-text-color-blue-700">资源分享</h1>
-          <div class="mdui-tab" mdui-tab>
+          <div class="mdui-tab " mdui-tab>
+            <a href="#ndw" class="mdui-ripple">本站资源</a>
             <a href="#clouddrive" class="mdui-ripple">云盘资源</a>
-            <a href="#starred" class="mdui-ripple">收藏的网址</a>
+            <a href="#starred" class="mdui-ripple">收藏的网站</a>
             <a href="#videos" class="mdui-ripple">视频</a>
             <a href="#tools" class="mdui-ripple">小工具</a>
+          </div>
+          <div id="ndw" class="intro">
+            <div class="mdui-typo">
+              <div class="mdui-divider"></div>
+              <p></p>
+              <h3>本站资源</h3>
+              <div class="mdui-card" style="border: 2px solid #FF4081;">
+                <div class="mdui-typo mdui-card-content"><p />先写在最前面：<small>分享这些，我的目的是能够及时帮到同学，朋友和其他有需要的人。
+                  另外，关于 AI 模型的所有内容仅用作测试研究。
+                </small>
+              </div></div>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="mdui-card mdui-hoverable">
+              <ul class="mdui-list">
+                <a mdui-dialog="{target: '#Alist'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons" style="background-color: #0A59F7;">cloud</i>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">Alist For ND's Website</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">这里挂载了我的阿里云盘等。</div>
+                    </div>
+                  </li>
+                </a>
+                <li class="mdui-divider-inset mdui-m-y-0"></li>
+                <a mdui-dialog="{target: '#chat1'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-pink-500">assistant</i>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">AI-ChatGPT</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话，1号站</div>
+                    </div>
+                  </li>
+                </a>
+                <li class="mdui-divider-inset mdui-m-y-0"></li>
+                <a mdui-dialog="{target: '#chat2'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-200 mdui-text-color-white">assistant</i>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">Chatbot UI</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话，2号站</div>
+                    </div>
+                  </li>
+                </a>
+                <li class="mdui-subheader">维护中</li>
+                <a mdui-dialog="{target: '#Bing'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar">
+                      <img src="./media/bing.png"/>
+                    </div>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">BingAI</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">免魔法与 Bing AI 对话。</div>
+                    </div>
+                  </li>
+                </a>
+                <li class="mdui-divider-inset mdui-m-y-0"></li>
+                <a mdui-dialog="{target: '#chat3'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-green-a400 mdui-text-color-white">assistant</i>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">AI Chatbot</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话，3号站</div>
+                    </div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+            <div class="mdui-divider"></div>
+          </div>
+          <div class="mdui-dialog" id="Alist">
+            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons" style="background-color: #0A59F7; ">cloud</i>&nbsp;&nbsp;Alist For ND's Website</div>
+            <div class="mdui-dialog-content">这里挂载了我的阿里云盘，里面的资料大家尽情品阅。
+              有需要的话，可以在 123 网盘目录里可以上传文件，具体方式详见里面的公告。
+              注意不要滥用，尤其是阿里云盘，其API 的调用，同一 IP 在 60 分钟内仅能请求 10 次。所以不要滥用！
+              <br><br><b>提示：由于 123 云盘自身原因，近期上传功能暂时关闭，请等待新的替代品！</b>
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+              <a href="https://alist.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
+            </div>
+          </div>
+          <div class="mdui-dialog" id="Bing">
+            <div class="mdui-dialog-title">BingAI 聊天（NDW 镜像）</div>
+            <div class="mdui-dialog-content mdui-typo">这里可以无需登录与 BingAI 聊天，这是全球几乎唯一能免费使用的 GPT-4 模型。
+              <br><br><b>近期短暂故障，建议弃用或参考<a href="https://github.com/Harry-zklcdc/go-proxy-bingai/wiki/%E8%A7%A3%E5%86%B3-%E6%97%A0%E6%95%88%E5%9F%9F&%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81">这篇文章</a>使用。</b>
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+              <a href="https://bingai.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
+            </div>
+          </div>
+          <div class="mdui-dialog" id="chat1">
+            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-pink-500">assistant</i>&nbsp;&nbsp;AI-ChatGPT</div>
+            <div class="mdui-dialog-content mdui-typo">
+              网站上使用了我自购的 OpenAI 账号的 API，虽然免费余额有限，正常使用肯定不会用尽，只是希望大家不要外传，谢谢。
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+              <a href="https://chat.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
+            </div>
+          </div>
+          <div class="mdui-dialog" id="chat2">
+            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-200 mdui-text-color-white">assistant</i>&nbsp;&nbsp;Chatbot UI</div>
+            <div class="mdui-dialog-content mdui-typo">网站上使用了我自购的 OpenAI 账号的 API，虽然免费余额有限，正常使用肯定不会用尽，只是希望大家不要外传，谢谢。
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+              <a href="https://chat2.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
+            </div>
+          </div>
+          <div class="mdui-dialog" id="chat3">
+            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-green-a400 mdui-text-color-white">assistant</i>&nbsp;&nbsp;AI Chatbot</div>
+            <div class="mdui-dialog-content mdui-typo">网站上使用了我自购的 OpenAI 账号的 API，虽然免费余额有限，正常使用肯定不会用尽，只是希望大家不要外传，谢谢。<br><br>这个似乎有点小问题，正在调试。
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+              <a href="https://chat3.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
+            </div>
           </div>
           <div id="clouddrive" class="intro mdui-typo">
             <div class="mdui-divider"></div>
             <p></p>
-            <div class="mdui-card" style="border: 2px solid #FF4081;">
-              <div class="mdui-typo mdui-card-content"><p />先写在最前面：<small>分享这些，我的目的是能够及时帮到同学，朋友和其他有需要的人。</small>
-            </div></div>
-            <p></p>
-            <p class="mdui-typo-subheading" mdui-tooltip="{content: '(2023/06/15更新)'}"/><a href="https://bingai.nickdl.site"><b>BingAI 聊天（NDW 镜像）</b></a><br><small>这里可以无需登录与 BingAI 聊天，这是全球几乎唯一能免费使用的 GPT-4 模型。（注：近期短暂故障，建议弃用或参考<a href="https://github.com/Harry-zklcdc/go-proxy-bingai/wiki/%E8%A7%A3%E5%86%B3-%E6%97%A0%E6%95%88%E5%9F%9F&%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81">这篇文章</a>使用。）</small>
-            <p class="mdui-typo-subheading" mdui-tooltip="{content: '(2023/05/14更新)'}"/><a href="https://alist.nickdl.site"><b>AList for ND's Website</b></a><br><small>这里挂载了我的阿里云盘，里面的资料大家尽情品阅。有需要的话，可以在 123 网盘目录里可以上传文件，具体方式详见里面的公告。注意不要滥用，尤其是阿里云盘，其API 的调用，同一 IP 在 60 分钟内仅能请求 10 次。所以不要滥用！</small>
-            <p mdui-tooltip="{content: '(2023/04/01更新)本来我想更新许多最近电影相关的资源的，奈何阿里云盘经常封锁资源。'}"/>QQ 频道：<b><a href="https://pd.qq.com/s/174kk3rv7">此间微凉</a></b>。
-            <p mdui-tooltip="{content: '禁更新20年，关Defender，各种优化，还是很厉害了，下次装机必用'}"/>
-            <p></p>
-            <div class="mdui-divider"></div>
             <h3>云盘资源</h3>
-            <p/><a href="https://azhutoolbox.lanzouw.com/ifosN0zszekd">Windows 11 轻松设置</a>
+            <p mdui-tooltip="{content: '(2023/04/01更新)本来我想更新许多最近电影相关的资源的，奈何阿里云盘经常封锁资源。'}"/>QQ 频道：<b><a href="https://pd.qq.com/s/174kk3rv7">此间微凉</a></b>。
+            <p mdui-tooltip="{content: '禁更新20年，关Defender，各种优化，还是很厉害了，下次装机必用'}"/><a href="https://azhutoolbox.lanzouw.com/ifosN0zszekd">Windows 11 轻松设置</a>
             <p />
             <a href="https://www.aliyundrive.com/s/n1nPTSggzpE" mdui-tooltip="{content: '阿里云盘链接'}">2022 绵阳市中考试卷全合集</a>
             <p />
@@ -132,7 +244,7 @@
           <div id="starred" class="intro mdui-typo">
             <div class="mdui-divider"></div>
             <p></p>
-            <h3>收藏的网址</h3>
+            <h3>收藏的网站</h3>
             <p />2023/04/01更新：
             <p />
             <a href="http://www.wetools.com/html-formatter">在线代码格式化</a>
@@ -517,6 +629,9 @@
             <li class="mdui-subheader">操作</li>
             <li class="mdui-menu-item">
               <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看本页源代码</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a onclick="EditToGitHub()" class="mdui-ripple">在 GitHub 上编辑本页</a>
             </li>
             <li class="mdui-subheader">更多</li>
             <li class="mdui-menu-item">
