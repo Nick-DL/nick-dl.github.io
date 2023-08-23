@@ -12,7 +12,7 @@
   </head>
   <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto">
     <div class="mdui-appbar mdui-appbar-fixed"> 
-      <div class="mdui-toolbar mdui-color-blue-600"> 
+      <div class="mdui-toolbar mdui-color-green-600"> 
         <a href="../" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
           <i class="mdui-icon material-icons">arrow_back</i> 
         </a> 
@@ -32,30 +32,130 @@
     <div class="mdui-container">
       <div class="mdui-row">
         <div class="mdui-col-sm-12"> 
-          <h1 class="title mdui-text-color-blue-a400">村村通</h1>
+          <h1 class="title mdui-text-color-green-600">村村通</h1>
           <div class="intro mdui-typo">
             <h3>简介</h3>
             <p>从 2018 年做到现在的 MC 地图。原先一直模仿希望之城的简式风格，至今未有大变化。</p>
-            <p>在本地图中，目前已探明 30 余个村庄。它们由不同 MC 版本生成，由铁路或轻轨连成一体。</p>
+            <p>在本地图中，目前已探明 40 余个村庄。它们由不同 MC 版本生成，由铁路或轻轨连成一体。</p>
+            <p>本地图现已建成 8 条线路，分别为黄绿环线以及 1~7 号线。规划建造 10 余条线路，其中包括高铁、观光线路等。</p>
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
-                <div class="mdui-card-content">没有注意</div>
+                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">info_outline</i>&nbsp;线路信息表</div>
+                <div class="mdui-card-content">
+                  <div class="mdui-table-fluid">
+                    <table class="mdui-typo" width="1000" >
+                      <thead>
+                        <tr>
+                          <th>编号</th>
+                          <th>走向</th>
+                          <th>站点</th>
+                          <th>开通时间</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style="background-color:#00B047; color:white;">YG (黄绿环线)</td>
+                          <td>环线；支线：教堂—绿坡村</td>
+                          <td>绿坡村、集市、教堂、刷怪笼、沙崖村西、沙崖码头、大崖、绿坡村北</td>
+                          <td>1.0</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#0094D8; color:white;">1</td>
+                          <td>绿坡村—沙塔村沙漠神殿</td>
+                          <td>绿坡村、沙崖村、宝树村、宝树村沙漠神殿、双塔村、双塔村沙漠神殿</td>
+                          <td>1.0</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#FFB81C; color:white;">2</td>
+                          <td>沙崖村—沙塔村</td>
+                          <td>沙崖村、绿坡村、沙亭村、沙塔村</td>
+                          <td>2.0</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#008e9c; color:white;">3</td>
+                          <td>环线；湖山村—湖山村地狱门</td>
+                          <td>沙塔村、沙亭村、湖山村、湖山村地狱门、北岭谷村、北岭湾村、北岭坡村</td>
+                          <td>2.0（沙塔村—沙亭村）、3.0（沙亭村—北岭坡村）</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#D9027D; color:white;">4</td>
+                          <td>宝树村—红屋村</td>
+                          <td>宝树村、红屋村</td>
+                          <td>1.0</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#476205; color:white;">5</td>
+                          <td>红屋村—沙塔村</td>
+                          <td>红屋村、红屋村沙漠神殿、班内村、西海5号线海底隧道西、东预备站、红屋村、沙塔村</td>
+                          <td>3.0</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#d90627; color:white;">6</td>
+                          <td>绿坡村—南江村地狱门</td>
+                          <td>绿坡村、沙崖村、南江村、南江村地狱门</td>
+                          <td>3.0</td>
+                        </tr>
+                        <tr>
+                          <td style="background-color:#9c4f01; color:white;">7</td>
+                          <td>红屋村—双塔村</td>
+                          <td>红屋村、红屋村沙漠神殿、沙中村沙漠神殿、沙中村、松林村沙漠神殿、松林村、双塔村</td>
+                          <td>3.0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
          <p></p>
             <div class="mdui-divider"></div>
             <h3>线路图</h3>
-            <p>版本 2023/08/14</p>
-            <img src="./media/map0814.svg">
-            <p></p>
-            <p>GeoGebra 线路图：<a href="https://ggb123.cn/m/zxaywyha">https://ggb123.cn/m/zxaywyha</a></p>
-            <div class="mdui-divider"></div>
-            <div class="mdui-divider"></div>
-            <h3>下载</h3>
-            <p>Alist for NDW 下载链接：<a href="https://alist.nickdl.site/阿里云盘/Games/Minecraft/村村通">https://alist.nickdl.site/阿里云盘/Games/Minecraft/村村通</a></p>
+            <p>版本 2023/08/23</p>
+            <img src="./media/map0823.svg">
             <p></p>
           </div>
+            <div class="mdui-card mdui-hoverable">
+              <ul class="mdui-list">
+                <a href="https://alist.nickdl.site/阿里云盘/Games/Minecraft/村村通/地图合集">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-brown-400">map</i>
+                    <div class="mdui-list-item-content">地图合集</div>
+                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                  </li>
+                </a>
+                <li class="mdui-divider-inset mdui-m-y-0"></li>
+                <a href="https://ggb123.cn/m/zxaywyha">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-purple-accent">map</i>
+                    <div class="mdui-list-item-content">GeoGebra 线路图</div>
+                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+            <p></p>
+            <div class="mdui-divider"></div>
+            <div class="mdui-typo">
+              <div class="mdui-divider"></div>
+              <h3>截图（敬请期待）</h3>
+              <p></p>
+              <div class="mdui-divider"></div>
+              <h3>下载</h3>
+            </div>
+            <p></p>
+            <div class="mdui-card mdui-hoverable">
+              <ul class="mdui-list">
+                <a href="https://alist.nickdl.site/阿里云盘/Games/Minecraft/村村通">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">file_download</i>
+                    <div class="mdui-list-item-content">Alist for NDW 下载链接</div>
+                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+            <p></p>
+          
         </div>
       </div>
     </div>
@@ -65,7 +165,7 @@
           <p></p>
           <div class="mdui-col-sm-12"> 
             <p></p>
-            <button class="mdui-btn mdui-ripple mdui-color-blue-a400" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
+            <button class="mdui-btn mdui-ripple mdui-color-brown-400" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
           <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
             <li class="mdui-subheader">操作</li>
             <li class="mdui-menu-item">
@@ -89,7 +189,7 @@
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
-              <p>编辑于 2023/8/14。</p>
+              <p>编辑于 2023/8/23。</p>
               <p/><b>©</b>Copyright by Nick_DL 2022-2023. All rights reserved.
             </div>
           </div>

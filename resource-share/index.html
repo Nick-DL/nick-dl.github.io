@@ -114,20 +114,10 @@
                 <li class="mdui-divider-inset mdui-m-y-0"></li>
                 <a mdui-dialog="{target: '#chat1'}">
                   <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-pink-500">assistant</i>
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">assistant</i>
                     <div class="mdui-list-item-content">
-                      <div class="mdui-list-item-title">AI-ChatGPT</div>
-                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话，1号站</div>
-                    </div>
-                  </li>
-                </a>
-                <li class="mdui-divider-inset mdui-m-y-0"></li>
-                <a mdui-dialog="{target: '#chat2'}">
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-200 mdui-text-color-white">assistant</i>
-                    <div class="mdui-list-item-content">
-                      <div class="mdui-list-item-title">Chatbot UI</div>
-                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话，2号站</div>
+                      <div class="mdui-list-item-title">ChatGPT</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话</div>
                     </div>
                   </li>
                 </a>
@@ -140,16 +130,6 @@
                     <div class="mdui-list-item-content">
                       <div class="mdui-list-item-title">BingAI</div>
                       <div class="mdui-list-item-text mdui-list-item-one-line">免魔法与 Bing AI 对话。</div>
-                    </div>
-                  </li>
-                </a>
-                <li class="mdui-divider-inset mdui-m-y-0"></li>
-                <a mdui-dialog="{target: '#chat3'}">
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-green-a400 mdui-text-color-white">assistant</i>
-                    <div class="mdui-list-item-content">
-                      <div class="mdui-list-item-title">AI Chatbot</div>
-                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话，3号站</div>
                     </div>
                   </li>
                 </a>
@@ -180,31 +160,23 @@
             </div>
           </div>
           <div class="mdui-dialog" id="chat1">
-            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-pink-500">assistant</i>&nbsp;&nbsp;AI-ChatGPT</div>
-            <div class="mdui-dialog-content mdui-typo">
+            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">assistant</i>&nbsp;&nbsp;ChatGPT</div>
+            <div class="mdui-dialog-content">
+              <div class="mdui-typo">
               网站上使用了我自购的 OpenAI 账号的 API，虽然免费余额有限，正常使用肯定不会用尽，只是希望大家不要外传，谢谢。
+              <p></p>
+              <div class="mdui-divider"></div>
+              <h3>请选择站点并进入</h3>
+              <p></p>
+              </div>
+              <a href="https://chat.nickdl.site" class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-block mdui-color-pink-500">AI-ChatGPT</a>
+              <p></p>
+              <a href="https://chat2.nickdl.site/" class="mdui-btn mdui-ripple mdui-btn-block mdui-btn-raised mdui-color-blue-200">Chatbot UI（推荐）</a>
+              <p></p>
+              <a href="https://chat3.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-green-a400 mdui-text-color-white mdui-btn-raised mdui-btn-block">AI Chatbot（不推荐）</a>
             </div>
             <div class="mdui-dialog-actions">
               <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-              <a href="https://chat.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
-            </div>
-          </div>
-          <div class="mdui-dialog" id="chat2">
-            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-200 mdui-text-color-white">assistant</i>&nbsp;&nbsp;Chatbot UI</div>
-            <div class="mdui-dialog-content mdui-typo">网站上使用了我自购的 OpenAI 账号的 API，虽然免费余额有限，正常使用肯定不会用尽，只是希望大家不要外传，谢谢。
-            </div>
-            <div class="mdui-dialog-actions">
-              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-              <a href="https://chat2.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
-            </div>
-          </div>
-          <div class="mdui-dialog" id="chat3">
-            <div class="mdui-dialog-title"><i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-green-a400 mdui-text-color-white">assistant</i>&nbsp;&nbsp;AI Chatbot</div>
-            <div class="mdui-dialog-content mdui-typo">网站上使用了我自购的 OpenAI 账号的 API，虽然免费余额有限，正常使用肯定不会用尽，只是希望大家不要外传，谢谢。<br><br>这个似乎有点小问题，正在调试。
-            </div>
-            <div class="mdui-dialog-actions">
-              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-              <a href="https://chat3.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
             </div>
           </div>
           <div id="clouddrive" class="intro mdui-typo">
