@@ -35,7 +35,7 @@
           <h1 class="title mdui-text-color-blue-a400">希沃Win11镜像</h1>
           <div class="intro mdui-typo">
             <h3>简介</h3>
-            <p>此镜像基于 Windows 11 22H2 (10.0.22621.1926) 官方版本改装，适配 mz 的希沃一体机（主板型号 MT51），安装了MS Office、WPS、PotPlayer、微信、网易云音乐、酷狗音乐、火绒、QQ、几何画板等常用软件。</p>
+            <p>此镜像基于 Windows 11 22H2 (10.0.22621.1702) 官方版本改装，适配 mz 的希沃一体机（主板型号 MT51），安装了MS Office、WPS、PotPlayer、微信、网易云音乐、酷狗音乐、火绒、QQ、几何画板等常用软件。</p>
             <p>鄙人自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，存在一系列需要还原镜像以后再进行的善后操作，具体见下。</p>
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-card-primary">
@@ -111,7 +111,40 @@
                     <br>目前发现是UEFI引导的问题。请进入自己的PE系统，打开Dism++，打开电脑硬盘系统（而非PE系统）的对话，在工具里选择“引导修复”；
                     <br>修复完成后系统可以启动，但开机会出现2个“Windows 11”，请进入第一个，然后在 Windows 搜索里搜索“系统配置”(msconfig)然后删去第二个引导项。
                   </p>
-                  <p mdui-tooltip="{content: '正在尝试破解绵中的管理员密码，很快了！'}">4. 若你班的电脑重启后C盘文件自动重置，那么就是打开了希沃管家里的“冰点还原”，请不要安装本系统，否则相当于关闭了冰点还原，会招来电教老师和技术人员！！</p>
+                  <p>4. <b>已知 WPS 内测结束以后会强制要求手动安装最新版，请看！</b>
+                    <br>直接按提示安装即可。之前远志楼涉及此问题的几台已安装本镜像的设备目前已经修复此问题。
+                  </p>
+                  <p mdui-tooltip="{content: '正在尝试破解绵中的管理员密码，很快了！'}">5. 若你班的电脑重启后C盘文件自动重置，那么就是打开了希沃管家里的“冰点还原”，请不要安装本系统，否则相当于关闭了冰点还原，会招来电教老师和技术人员！！</p>
+                </div>
+              </div>
+            </div>
+            <p></p>
+            <div class="mdui-divider"></div>
+            <h3>系统截图</h3>
+            <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-grid-list">
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/11.png"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/22.png"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/3.png"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/4.png"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/5.png"/>
                 </div>
               </div>
             </div>
