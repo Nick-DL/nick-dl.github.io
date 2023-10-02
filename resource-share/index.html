@@ -103,16 +103,6 @@
             <div class="mdui-card mdui-hoverable">
               <ul class="mdui-list">
 
-                <a mdui-dialog="{target: '#chat1'}">
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">assistant</i>
-                    <div class="mdui-list-item-content">
-                      <div class="mdui-list-item-title">ChatGPT</div>
-                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话</div>
-                    </div>
-                  </li>
-                </a>
-                <li class="mdui-subheader">维护中，暂不可用</li>
                 <a mdui-dialog="{target: '#Alist'}">
                   <li class="mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-avatar mdui-icon material-icons" style="background-color: #0A59F7;">cloud</i>
@@ -123,6 +113,16 @@
                   </li>
                 </a>
                 <li class="mdui-divider-inset mdui-m-y-0"></li>
+                <a mdui-dialog="{target: '#chat1'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">assistant</i>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">ChatGPT</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">直接与 ChatGPT 对话</div>
+                    </div>
+                  </li>
+                </a>
+                <li class="mdui-subheader">维护中，暂不可用</li>
                 <a mdui-dialog="{target: '#Bing'}">
                   <li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-avatar">
@@ -141,13 +141,13 @@
           <div class="mdui-dialog" id="Alist">
             <div class="mdui-dialog-title"><a href="https://infatuateddearinterfaces--ndwproject.repl.co/"><i class="mdui-list-item-avatar mdui-icon material-icons" style="background-color: #0A59F7; ">cloud</i></a>&nbsp;&nbsp;Alist For ND's Website</div>
             <div class="mdui-dialog-content">这里挂载了我的阿里云盘，里面的资料大家尽情品阅。
-              有需要的话，可以在 123 网盘目录里可以上传文件，具体方式详见里面的公告。
+              有需要的话，可以在天翼网盘目录里可以上传文件，具体方式详见里面的公告。
               注意不要滥用，尤其是阿里云盘，其API 的调用，同一 IP 在 60 分钟内仅能请求 10 次。所以不要滥用！
-              <br><br><b>提示：Render 平台目前已禁止托管 Alist 相关程序（包括之前的 BingAI 聊天同样被禁止），欺负学生党，无语。</b>
+              <br><br><b>提示：当前可以使用，但托管平台和上传文件方式等均有变动，打开链接后查看详情。</b>
             </div>
             <div class="mdui-dialog-actions">
               <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-              <a href="https://alist2.nickdl.site/" class="mdui-btn mdui-ripple">新站点测试中</a>
+              <a href="https://alist2.nickdl.site/" class="mdui-btn mdui-ripple" mdui-tooltip="{content: '实际上是一样的'}">备用链接</a>
               <a href="https://alist.nickdl.site/" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</a>
             </div>
           </div>
