@@ -17,11 +17,11 @@
    <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto"> 
      <div class="mdui-appbar mdui-appbar-fixed"> 
        <div class="mdui-toolbar mdui-color-indigo-accent"> 
-         <a href="./" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
+         <a href="../" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
            <i class="mdui-icon material-icons">arrow_back</i> 
          </a> 
          <a href="/" class="mdui-typo-headline">ND's Website</a> 
-         <a href="./term.html" class="mdui-typo-title mdui-hidden-xs">Waline-test</a> 
+         <a href="../term.html" class="mdui-typo-title mdui-hidden-xs">Waline-test</a> 
          <div class="mdui-toolbar-spacer"></div> 
          <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '更多选项'}"> 
            <i class="mdui-icon material-icons">more_vert</i> 
@@ -90,7 +90,7 @@
 
     init({
       el: '#waline',
-      serverURL: 'https://walinemanagement.nickdl.site/',
+      serverURL: 'https://waline.nickdl.site/.netlify/functions/comment',
     });
     </script>
    </body> 
