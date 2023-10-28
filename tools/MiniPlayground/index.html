@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>迷你网页代码试验场</title>
-  
-  <link rel="preconnect" href="//cdn.w3cbus.com">
   <link rel="stylesheet" href="https://cdn.bytedance.com/cdn/mdui/1.0.2/css/mdui.min.css"><link rel="stylesheet" href="./1.css">
       <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png"
           type="image/x-icon" />
@@ -57,6 +55,7 @@
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
   &lt;title&gt;Playground&lt;/title&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.bytedance.com/cdn/mdui/1.0.2/css/mdui.min.css&quot;/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/mdui@2.0.1/mdui.css&quot;/&gt;
   &lt;style&gt;
       fluent-card {
         --card-height: auto;
@@ -67,12 +66,12 @@
     }
 &lt;/style&gt;
 &lt;/head&gt;
-&lt;body class=&quot;mdui-theme-primary-indigo mdui-theme-accent-pink&quot;&gt;
+&lt;body class=&quot;mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto&quot;&gt;
   
   &lt;div class=&quot;mdui-container mdui-typo&quot;&gt;
     &lt;h2&gt;这里是一个迷你的代码试验场，什么东西都可以拿过来试。开始输入吧。&lt;/h2&gt;
     &lt;p&gt;以下是最近接触到的几种网页组件。&lt;/p&gt;
-    &lt;a href=&quot;./empty.html&quot;&gt;&lt;small&gt;./empty.html&lt;/small&gt;&lt;/a&gt;
+    &lt;a href=&quot;./empty.html&quot;&gt;&lt;small&gt;空页面纯享版广场&nbsp;./empty.html&lt;/small&gt;&lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
     &lt;div class=&quot;mdui-card mdui-hoverable&quot;&gt;
       &lt;div class=&quot;mdui-card-primary&quot;&gt;
@@ -85,17 +84,17 @@
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;p&gt;&lt;/p&gt;
-    &lt;div class=&quot;mdui-card mdui-hoverable&quot;&gt;
+    &lt;mdui-card style=&quot;width: 100%&quot;class=&quot;mdui-hoverable&quot;&gt;
       &lt;div class=&quot;mdui-card-primary&quot;&gt;
-        &lt;div class=&quot;mdui-card-primary-title&quot;&gt;Material Web (MD3, 开发中)&lt;/div&gt;
+        &lt;div class=&quot;mdui-card-primary-title&quot;&gt;MDUI v2 (基于 Material Web)&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;mdui-card-content&quot;&gt;
-        &lt;md-outlined-button&gt;ND&#x27;s Website&lt;/md-outlined-button&gt;
-        &lt;md-tonal-button&gt;ND&#x27;s Website&lt;/md-tonal-button&gt;
-        &lt;md-filled-button&gt;ND&#x27;s Website&lt;/md-filled-button&gt;
-        &lt;md-elevated-button&gt;ND&#x27;s Website&lt;/md-elevated-button&gt;
+        &lt;mdui-button variant=&quot;outlined&quot;&gt;ND&#x27;s Website&lt;/mdui-button&gt;
+        &lt;mdui-button variant=&quot;tonal&quot;&gt;ND&#x27;s Website&lt;/mdui-button&gt;
+        &lt;mdui-button variant=&quot;filled&quot;&gt;ND&#x27;s Website&lt;/mdui-button&gt;
+        &lt;mdui-button variant=&quot;elevated&quot;&gt;ND&#x27;s Website&lt;/mdui-button&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/mdui-card&gt;
     &lt;p&gt;&lt;/p&gt;
     &lt;fluent-card class=&quot;custom mdui-hoverable&quot;&gt;
       &lt;div class=&quot;mdui-card-primary&quot;&gt;
@@ -111,12 +110,7 @@
   &lt;/div&gt;
 
   &lt;script src=&quot;https://cdn.bytedance.com/cdn/mdui/1.0.2/js/mdui.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;module&quot;&gt;
-    import &#x27;https://unpkg.com/@material/web/button/filled-button.js&#x27;;
-    import &#x27;https://unpkg.com/@material/web/button/outlined-button.js&#x27;;
-    import &#x27;https://unpkg.com/@material/web/button/elevated-button.js&#x27;;
-    import &#x27;https://unpkg.com/@material/web/button/tonal-button.js&#x27;;
-  &lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/mdui@2.0.1/mdui.global.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;module&quot; src=&quot;https://unpkg.com/@fluentui/web-components&quot;&gt;&lt;/script&gt;
   &lt;style&gt;body {background-color: #f1f3f5;}&lt;/style&gt;
 &lt;/body&gt;

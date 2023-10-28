@@ -95,7 +95,7 @@
         </tr>
         <tr>
           <td>
-            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-dialog="{target: '#showthanks'}">感谢</button>
+            <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-dialog="{target: '#showthanks'}"><i class="mdui-icon mdui-icon-left material-icons">card_giftcard</i>感谢</button>
           </td>
           <td><a href="https://www.netlify.com/"><img class="mdui-img-fluid" src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg"/></a></td>
         </tr>
@@ -104,8 +104,38 @@
           <div class="mdui-dialog" id="showthanks">
             <div class="mdui-dialog-title">感谢</div>
             <div class="mdui-dialog-content">
-              <div class="mdui-row mdui-list">
+              <div class="mdui-row">
                 <div class="mdui-col-sm-12">
+                  <p></p>
+                  <p mdui-tooltip="{content: '这句诗不知道哪来的'}">云深山坞，烟冷江皋，人生未易相逢。</p>
+                  <p>最重要的是：一直支持和鼓励着我在网站上整活的同学和我的爸爸妈妈！在这里一并感谢大家！</p>
+                  <p>欢迎大家朝我这里扔网站的友情链接。</p>
+                  <ul class="mdui-list">
+                    <li class="mdui-subheader">本站友情赞助者 (不分先后，2+)</li>
+                    <li class="mdui-list-item mdui-ripple">
+                      <i class="mdui-list-item-avatar">
+                        <img src="./media/asounden.jpg">
+                      </i>
+                      <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title">Asounden</div>
+                        <div class="mdui-list-item-text mdui-list-item-one-line">轻舟已过万重山</div>
+                      </div>
+                    </li>
+                    <li class="mdui-divider-inset mdui-m-y-0"></li>
+                    <li class="mdui-list-item mdui-ripple">
+                      <i class="mdui-list-item-avatar">
+                        <img src="./media/wyq.jpg">
+                      </i>
+                      <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title">wyq_2008</div>
+                        <div class="mdui-list-item-text mdui-list-item-one-line">大笑大笑还大笑，刀砍东风，于我何有哉</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mdui-col-sm-12">
+                  <p></p>
+                  <div class="mdui-divider"></div>
                   <ul class="mdui-list">
                   <li class="mdui-subheader">主要组件</li>
                   <a mdui-tooltip="{content: '网站绝大部分为 MDUI 组件'}" href="https://mdui.org"><li class="mdui-list-item mdui-ripple">
@@ -119,12 +149,12 @@
                       Fluent UI
                     </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
                   </li></a>
-                  <a mdui-tooltip="{content: '开发中'}" href="https://m3.material.io"><li class="mdui-list-item mdui-ripple">
+                  <a mdui-tooltip="{content: '已经被用于MDUI新版的重构'}" href="https://m3.material.io"><li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-content">
                       Material Web
                     </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
                   </li></a>
-                  <a mdui-tooltip="{content: '留给初中档案馆'}" href="https://theme-hope.vuejs.press/"><li class="mdui-list-item mdui-ripple">
+                  <a mdui-tooltip="{content: '留给初中档案馆和blog'}" href="https://theme-hope.vuejs.press/"><li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-content">
                     vuepress-theme-hope
                     </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
@@ -140,6 +170,13 @@
                     Alist
                   </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
                   </li></a>
+
+                  <a mdui-tooltip="{content: 'ChatGPT'}" href="https://chatbotui.com/"><li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-content">
+                    Chatbot UI
+                  </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
+                  </li></a>
+
                   <a mdui-tooltip="{content: '新必应镜像'}" href="https://github.com/adams549659584/go-proxy-bingai"><li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-content">
                     go-proxy-bingai
@@ -156,7 +193,7 @@
                     LeanCloud
                   </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
                   </li></a>
-                  <a mdui-tooltip="{content: 'CDN 服务商，负责 NDW 主要镜像站'}" href="https://netlify.com"><li class="mdui-list-item mdui-ripple">
+                  <a mdui-tooltip="{content: 'CDN 服务商，负责 NDW 主要镜像站和Waline后端'}" href="https://netlify.com"><li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-content">
                     Netlify
                   </div><i class="mdui-list-item-icon mdui-icon material-icons">chevron_right</i>
@@ -194,10 +231,6 @@
                   </li></a>
                 </ul>
                 </div>
-                <div class="mdui-col-sm-12">
-                  <p>最重要的是：一直支持和鼓励着我在网站上整活的同学和我的爸爸妈妈！在这里一并感谢大家！</p>
-                  <p>欢迎大家朝我这里扔网站的友情链接。</p>
-                </div>
               </div>
             </div>
             <div class="mdui-dialog-actions">
@@ -211,14 +244,26 @@
             因为在这个过程中需要给网页做些适配，我最后也就只学会了给网页加个图标，划一个长方形做成链接，再做个居中展示之类的。</p>
             <p>2022 年底，再次接触到这些，我才知道当初的方法有多么复杂。如果用 MDUI 这一类网页框架，做网页真的是信手拈来！
               现在唯一需要的，只有灵感。</p>
+            <div class="mdui-divider"></div>
             <p></p>
+            <p>以下这段文字可能是对本站在整个 2023 年发展过程的总结。</p>
+            <p>在上半年，伴随我中考迂回的冲刺，网站的太多角落都藏着我心路历程上的标识。在不看源码的情况下，可能很多由 ToolTip 展示出的文字大家都没发现。想当一部分是我自己对某些事的调侃，还有少部分说明。</p>
+            <p>在下半年，一个不长的暑假，还是给我留下了许多打磨网站“细节”的时间。于是，网站很多地方的风格都逐渐有所调整，比如许多普通富文本链接和按钮都变成了列表的形式。还有 3 项新“作品”的介绍，对 ChatGPT、AList、Waline 评论、初中档案馆的建设等，就不一一阐述了。</p>
+            <p>高中开学以后，在学习上我确实感觉和之前大有不同。具体体现在每天都写不完几张小练习、被常规和生竞两边夹击等等又抽象又傻的事，成绩同样如此，这些内容就不便细说了。周末时间相当少，估计这些文字已经可以成为 2023 年的总结。</p>
+            <p>以后网站可能会用上 MDUI 2.0，但是目前这个新版还稍显简陋，之前的文字排版和页面布局辅助工具都还没有，而把两个版本的组件混在一起用是很不靠谱的行为。所以目前，一切规划都还尚不明确。哎，累了，就到这里吧。</p>
+
+            <div class="mdui-divider"></div>
+            <h3>通 知</h3>
+            <p>近来，网站有两件非常重要的大事，望大家悉知：</p>
+            <p>一、大概从 2024 年开始，本站将迁移至新站 <a href="https://www.nickdl.cn/"><b>nickdl.cn</b></a>。现在的 nickdl.site 将在大约 2025 年初废止。请大家牢记新网址！</p>
+            <p>二、2023年10月17日，Material You 风格的 MDUI 2.0 版正式发布，会成为网站未来采用的组件。</p>
             <div class="mdui-divider"></div>
             <h3>时光机</h3>
-            <p>时光机现在开放啦！目前处于临时展览阶段，大家第一眼看到 2020 的文物可能会有些不适应。
+            <p>时光机现在开放啦！目前处于临时展览阶段，大家第一眼看到 2020 年的文物可能会有些不适应。
             文物里的许多东西可能需要我额外说明，但说明还没完全写好，所以就请随便看看吧。</p>
             <p></p>
           </div>
-          <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-amber-600" mdui-dialog="{target: '#tips'}">进入时光机</button>
+          <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-amber-600" mdui-dialog="{target: '#tips'}"><i class="mdui-icon mdui-icon-left material-icons">history</i>进入时光机</button>
           <div class="intro mdui-typo">
             <p/>
             <p mdui-tooltip="{content: '还有，这段时间之所以我觉得编网站轻松多了，大概可能也因为终于没有疼讯云的各种恶心操作和网站备案的各种离谱要求了吧'}"/><b>此页完结</b>
@@ -233,7 +278,7 @@
         </div>
         <div class="mdui-dialog-actions">
           <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-          <a href="/timetraveller/guide.html" class="mdui-btn mdui-ripple mdui-btn-raised mdui-color-pink-accent">继续</a>
+          <a href="/timetraveller/guide.html" class="mdui-btn mdui-ripple mdui-btn-raised mdui-color-pink-accent"><i class="mdui-icon mdui-icon-left material-icons">input</i>继续</a>
         </div>
       </div>
       <div class="mdui-row">
@@ -246,7 +291,7 @@
             <p></p>
             <div class="mdui-col-sm-12"> 
               <p></p>
-              <button class="mdui-btn mdui-ripple mdui-color-blue-a400" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#tool'}">网页工具</button>
+              <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#tool'}">网页工具</button>
             <ul class="mdui-list mdui-menu mdui-menu-cascade" id="tool">
               <li class="mdui-subheader">操作</li>
               <li class="mdui-menu-item">
@@ -269,7 +314,7 @@
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo">
               <p></p>
-              <p mdui-tooltip="{content: '加油'}">编辑于 2023/08/14。</p>
+              <p mdui-tooltip="{content: '加油'}">编辑于 2023/10/29。</p>
               <p mdui-tooltip="{content: '（但是呢，这些都是静态网页，还有 75% 的行都滥竽充数）', position: 'top'}">2023
                 元旦几天给 7 个页面都写了一两百行代码，网站已经成型了，以后就不给每天的首页立个备份版了。<a href="./pagebak/indexbak230102.html">前往主页
                   2023 年 1 月 2 日的版本 →</a>
