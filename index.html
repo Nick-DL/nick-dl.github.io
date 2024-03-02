@@ -10,36 +10,28 @@
   <title>ND's Website - 主页</title>
   <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png"
         type="image/x-icon" />
-        <style type="text/css">
-          @font-face {
-                            font-family: s;
-                            src: url('https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-serif-pro/WOFF2/TTF/SourceSerif4Caption-Bold.ttf.woff2') format('woff2'); font-weight: 700;  
-                          }
-                          @font-face {
-                                          font-family: s;
-                                  src: url('https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-serif-pro/WOFF2/TTF/SourceSerif4Subhead-Semibold.ttf.woff2') format('woff2'); font-weight: 600;     
-                          }
-                          @font-face {
-                                          font-family: s;
-                                  src: url('https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-serif-pro/WOFF2/TTF/SourceSerif4SmText-Regular.ttf.woff2') format('woff2'); font-weight: 500;     
-                          }
-        </style>
-    
-  <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=Source_Han_Serif:400,600:Source_Han_Serif" rel="external nofollow"  />
-
-<style>
-.mdui-card1 {
-background-image: url(/media/2024sfbg.jpg); 
-background-size: cover; 
-background-position: center; 
-background-repeat: no-repeat; 
-}
-</style>
-
+  <style>
+    .ndw-card-bg-atpsynthase {
+    background-image: url(/media/CF0-CF1-masked.png); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    }
+  </style>
+  <style type="text/css">
+    @font-face {
+      font-family: NDWDIN1145;
+      src: url('/tools/Countdown/DIN1451e.woff') format('woff');   
+    }
+    @font-face {
+      font-family: zihunchuangcuhei;
+      src: url('/tools/Countdown/ZHCCHe2.woff') format('woff');      
+    }
+  </style>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed">
-    <div class="mdui-toolbar mdui-color-deep-orange-a200">
+    <div class="mdui-toolbar mdui-color-grey-100">
       <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '导航'}"
               mdui-drawer="{target: '#left-drawer'}">
         <i class="mdui-icon material-icons">menu</i>
@@ -107,29 +99,68 @@ background-repeat: no-repeat;
   </div>
   <div class="mdui-container">
     <div class="mdui-row">
-      <div class="mdui-col-sm-12" style="font-family: Source Han Serif; "> 
+      <div class="mdui-col-sm-12"> 
         <p></p>
-        <div class="mdui-card mdui-card1 mdui-hoverable mdui-color-pink-50" align="center">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title" align="center">
-                            <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-orange-a400">wb_sunny</i>&nbsp;<b>新年快乐！</b>
-            </div>
-          </div>
-          <div class="mdui-card-content"><p>龙腾盛世，瑞气盈门<br>
-            旧岁已展千重锦，新年进百尺杆头<br>
-            值此新春佳节之际<br>
-            祝愿你平安喜乐，龙年大吉<br>
-            龙行蠃蠃，前程似锦<br>
-          </p>
+        <div class="mdui-card ndw-card-bg-atpsynthase mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: 'ATP 合酶，又称 CFₒ-CF₁，通过质子流动改变线粒体内膜两侧的质子动力势，将能量用于 ATP 的合成。（学得有点构式，见谅）'}">
+          <div class="mdui-card-content">
+            <a href="/tools/Countdown/Countdown.html">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 0 1040 360" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
+                <defs>
+                  <clipPath id="clip0">
+                    <rect x="-80" y="0" width="1280" height="720"></rect>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#clip0)">
+                  <text font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="-70.4" y="86">距生物联赛</text>
+                  <text font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="169.6" y="182">还剩</text>
+                  <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231" x="329.6" y="192">45</text>
+                  <text font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="551.5" y="182">天</text>
+                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="649.6" y="182">[5月12日]</text>
+                  <text font-family="NDWDIN1145" font-weight="400" font-size="40.55" x="173" y="255">NATIONAL HIGH SCHOOL BIOLOGY LEAGUE</text>
+                  <text id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="173" y="312">IN 45 DAYS</text>
+                  <path d="M150 121 150 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none" fill-rule="evenodd"></path>
+                </g>
+                <script>
+                  function updateCountdown() {
+                    var now = new Date(); 
+                    var examDate = new Date("2024-05-12"); 
+                    var timeDiff = examDate.getTime() - now.getTime(); 
+                    var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                                                               
+                    var countdown1El = document.getElementById("countdown1");
+                    if (daysDiff &lt;= 0) {
+                        countdown1El.textContent = "00";
+                    } else if (daysDiff &lt;= 9) {
+                        countdown1El.textContent = "0" + daysDiff;
+                    } else {
+                    countdown1El.textContent = daysDiff;
+                    }
+                                                          
+                    var countdown2El = document.getElementById("countdown2");
+                    if (daysDiff &lt;= 0) {
+                      countdown2El.textContent = "IN 0 DAY";
+                    } else if (daysDiff === 1) {
+                      countdown2El.textContent = "IN 1 DAY";
+                    } else {
+                      countdown2El.textContent = "IN " + daysDiff + " DAYS";
+                    }
+                  }
+                                                                      
+                  updateCountdown();
+                                                                      
+                  // 文字排版由 PowerPoint 制作完成，JavaScript 部分由 ChatGPT 编写
+                </script>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
       <div class="mdui-col-sm-12"> 
         <p></p>
-        <div class="mdui-card mdui-hoverable mdui-color-orange-50">
+        <div class="mdui-card mdui-hoverable mdui-color-blue-50">
           <div class="mdui-card-primary">
             <div class="mdui-card-primary-title">
-              <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-orange-a400">directions</i>&nbsp;<b>提示</b>
+              <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-indigo-accent">directions</i>&nbsp;<b>提示</b>
               <!-- <a href=""><div class="mdui-color-indigo-accent mdui-btn mdui-ripple mdui-float-right">
                 <i class="mdui-icon mdui-icon-right material-icons">arrow_forward</i>查看详情
               </div></a> -->
@@ -146,7 +177,7 @@ background-repeat: no-repeat;
     <div class="mdui-row">
       <div class="mdui-col-sm-12">
         <p></p>
-        <h1 class="title mdui-text-color-deep-orange-700" style="font-weight: 700">草木萌发，春山可望</h1>
+        <h1 class="title mdui-text-color-blue-700" style="font-weight: 700;font-size: 36px;">平芜尽处是春山</h1>
         <div class="intro mdui-typo">
           <p>欢迎来到我的新网站。本站托管于 GitHub，采用不太规范的 Material Design 设计。</p>
           <p>目前的几行代码，只是一座大厦的基石。对于那样一座大厦，我们满怀期待。</p>
@@ -297,7 +328,7 @@ background-repeat: no-repeat;
       </div>
     </div>
   </div>
-  <div class="footer-nav mdui-color-deep-orange-100">
+  <div class="footer-nav mdui-color-blue-grey-100">
     <div class="mdui-container">
       <div class="mdui-row">
         <p></p>
@@ -310,9 +341,9 @@ background-repeat: no-repeat;
           <p></p>
           <div class="mdui-divider"></div>
           <p></p>
-          <button class="mdui-btn mdui-ripple mdui-color-deep-orange-a400"
+          <button class="mdui-btn mdui-ripple mdui-color-blue-600"
                   mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
-          <a href="/notice-board/" class="mdui-btn mdui-ripple mdui-color-deep-orange-a400">历史公告栏</a>
+          <a href="/notice-board/" class="mdui-btn mdui-ripple mdui-color-blue-600">历史公告栏</a>
           <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
             <li class="mdui-subheader">操作</li>
             <li class="mdui-menu-item">
@@ -337,7 +368,7 @@ background-repeat: no-repeat;
         <div class="mdui-col-sm-12">
           <div class="intro mdui-typo">
           </div>
-                  <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">编辑于 2024/2/9。</p>
+                  <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">编辑于 2024/3/3。</p>
             <p />
             <b>©</b>Copyright by Nick_DL 2022-2024. All rights reserved.
         </div>
@@ -346,5 +377,4 @@ background-repeat: no-repeat;
   </div>
   <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
 </body>
-<style>body {background-color: #ffe4c4;}</style>
 </html>
