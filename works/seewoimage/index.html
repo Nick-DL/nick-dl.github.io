@@ -36,18 +36,41 @@
           <div class="intro mdui-typo">
             <h3>简介</h3>
             <p>此镜像基于 Windows 11 22H2 (10.0.22621.1702) 官方版本改装，适配 mz 的希沃一体机（主板型号 MT51），安装了MS Office、WPS、PotPlayer、微信、网易云音乐、酷狗音乐、火绒、QQ、几何画板等常用软件。</p>
-            <p>鄙人自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，存在一系列需要还原镜像以后再进行的善后操作，具体见下。</p>
-            <div class="mdui-card" style="border: 2px solid #FF4081;">
-              <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
-                <div class="mdui-card-content">请认真阅读以下内容，否则镜像会用出问题的。</div>
-              </div>
-            </div>
+            <p>鄙人自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，应该还存在些许需要还原镜像前后进行的额外操作，具体见下。</p>
+            <p></p>
+          </div>
+          <div class="mdui-card mdui-hoverable">
+              <ul class="mdui-list">
+                <a href="#download">
+                  <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">file_download</i>
+                    <div class="mdui-list-item-content">下载</div>
+                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                  </li>
+                </a>
+              </ul>
+          </div>
+          <h3 class="mdui-typo-headline">系统介绍</h3>
          <p></p>
-            <div class="mdui-divider"></div>
-            <h3>系统特点</h3>
+         <div class="mdui-tab mdui-tab-full-width" mdui-tab>
+          <a href="#v2" class="mdui-ripple">V2 镜像</a>
+          <a href="#v1" class="mdui-ripple">V1 镜像</a>
+        </div>
+        <div class="mdui-typo" id="v2">
+          <p></p>
+          <b><p>V2 镜像：更新于 2024/03/30</p>
+          <p>更新内容：</p>
+          <p>• 升级了各软件的版本</p>
+          <p>• 修复了 PotPlayer 和 7-zip 的文件格式关联问题</p>
+          <p>• 安装了新微软雅黑的 SemiBold 和 SemiLight 样式字体，以配合 Windows 11 整体风格，并安装了一些常用字体</p>
+          <p>• 给 Office 上了新风格</p>
+          <p>• 新增C、D分开打包的镜像（需后期重新配置 UEFI 引导），避免整个硬盘的格式化</p>
+          <p>……相当多细节的修正，在此不再赘述</p></b>
+          <p></p>
+          <div class="mdui-divider"></div>
+          <p></p>
             <p>1. 直接由希沃官方Windows 10系统升级而来，驱动全部自带</p>
-            <p>2. 在对系统的清理优化后，C盘占用仅20 GB（不包含分页文件和虚拟内存转储），D盘占用5 GB左右；镜像大小相较于官方下降了近 300 MB</p>
+            <p>2. 在对系统的清理优化后，C盘占用仅20 GB（不包含分页文件和虚拟内存转储），D盘占用5 GB左右</p>
             <p>3. 全部预装软件版本如下：
               <div class="mdui-panel" mdui-panel="{accordion: true}">
                 <div class="mdui-panel-item">
@@ -56,37 +79,39 @@
                     <table class="mdui-table">
                       <tbody>
                         <tr>
-                          <td>QQ</td>
+       <!--v2-->                   <td>QQ</td>
                           <td>v9.9.0.14569</td>
                         </tr>
+                          
                         <tr mdui-tooltip="{content:'KMS自动延期激活，若不喜欢可以重装零售版'}">
-                          <td>Microsoft Office</td>
-                          <td>2021 LTSC ProPlus Volume (2108)</td>
-                        </tr>
-                        <tr>
-                          <td>酷狗音乐</td>
-                          <td>v10.1.93</td>
-                        </tr>
-                        <tr>
-                          <td>网易云音乐</td>
-                          <td>v3.0.1.201499 (Beta 版)</td>
-                        </tr>
-                        <tr>
-                          <td>PotPlayer</td>
-                          <td>v230705</td>
-                        </tr>
-                        <tr>
-                          <td>火绒安全软件</td>
-                          <td>v5.0.73.7-2023.07.08.1</td>
-                        </tr>
-                        <tr>
-                          <td>微信</td>
-                          <td>v3.9.5</td>
-                        </tr>
-                        <tr>
-                          <td>WPS Office</td>
-                          <td>最新 Beta 版</td>
-                        </tr>
+                          <!--v2-->                     <td>Microsoft Office</td>
+                                               <td>2016 Mondo Volume (2403)</td>
+                                             </tr>
+                                             <tr>
+                                               <td>酷狗音乐</td>
+                                               <td>v10.2.50</td>
+                                             </tr>
+                                             <tr>
+                                               <td>网易云音乐</td>
+                                               <td>v3.0.0.Beta.03.12.202664.64</td>
+                          <!--v2-->                   </tr>
+                                             <tr>
+                                               <td>PotPlayer</td>
+                                               <td>v240305</td>
+                                             </tr>
+                                             <tr>
+                                               <td>火绒安全软件</td>
+                                               <td>v5.0.1.1</td>
+                                             </tr>
+                                             <tr>
+                                               <td>微信</td>
+                                               <td>v3.9.9</td>
+                                             </tr>
+                                             <tr>
+                                               <td>WPS Office</td>
+                                               <td>16412</td>
+                   
+        <!--v2-->                </tr>
 
                       </tbody>
                     </table>
@@ -99,27 +124,105 @@
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意事项</div>
-                <div class="mdui-card-content">
+       <!--v2-->         <div class="mdui-card-content">
                   <p>1. 在没有实体键盘的情况下，建议的进入PE盘的方法：
                     <br>进入设置，找到高级启动并点击重启，在WinRE里会有从媒体介质启动的选项；
                   </p>
-                  <p>2. 为处理好 UEFI 启动，安装此镜像会直接覆盖整个固态硬盘，故请检查电脑显示的前3个有效分区是否有重要数据。
+                  <p>2. V2 镜像提供了<b>⌈各分区分开打包⌋</b>和<b>⌈整个硬盘打包⌋</b>两种方式。若为了处理好 UEFI 启动，可选择后者，此时<b>请检查电脑显示的前3个有效分区是否有重要数据</b>。但如果 D、E 盘有重要数据，可以使用第一种方法：覆写 C 盘数据后，将 D 盘文件的压缩包直接解压到 D 盘根目录，再<b>通过 Dism++ 修复引导</b>。
                     <br>mz 的电脑还内置另一个 1TB 的机械硬盘，建议将镜像放置在此硬盘的分区里。
-                    <br>另外，Ghost若出现闪退现象，建议还原镜像是不要修改各目标分区容量。实在不行，请使用官方提供的CGI_Plus备份还原（见下）。
+                    <br>另外，若采用后者，Ghost出现闪退现象，建议还原镜像时不要修改各目标分区容量。实在不行，请使用官方提供的CGI_Plus备份还原（见下）。
                   </p>
-                  <p>3. <b>若完成还原后开机蓝屏提示“未连接或无法访问所需设备”，请看！非常重要！</b>
-                    <br>目前发现是UEFI引导的问题。请进入自己的PE系统，打开Dism++，打开电脑硬盘系统（而非PE系统）的对话，在工具里选择“引导修复”；
-                    <br>修复完成后系统可以启动，但开机会出现2个“Windows 11”，请进入第一个，然后在 Windows 搜索里搜索“系统配置”(msconfig)然后删去第二个引导项。
+
+                  <p>3. 没有检查 V2 镜像的全硬盘版本是否存在 V1 版镜像那样的引导问题。若遇到了，请参考 V1 的解决方案（即打开 Dism++ 进行修复）。
                   </p>
-                  <p>4. <b>已知 WPS 内测结束以后会强制要求手动安装最新版，请看！</b>
-                    <br>直接按提示安装即可。之前远志楼涉及此问题的几台已安装本镜像的设备目前已经修复此问题。
-                  </p>
-                  <p mdui-tooltip="{content: '正在尝试破解绵中的管理员密码，很快了！'}">5. 若你班的电脑重启后C盘文件自动重置，那么就是打开了希沃管家里的“冰点还原”，请不要安装本系统，否则相当于关闭了冰点还原，会招来电教老师和技术人员！！</p>
+                  <p mdui-tooltip="{content: '关于绵中的管理员密码，请参考“玩转绵中希沃（进阶版）”'}">4. 若你班的电脑重启后C盘文件自动重置，那么就是打开了希沃管家里的“冰点还原”，请不要安装本系统，否则相当于关闭了冰点还原，会招来电教老师和技术人员！！</p>
+                  <p>4. 由于硬件上一些奇怪的问题，V1 镜像的永久数字激活在还原后可能保持不了太久。加上 2023 年底微软关闭了永久数字激活的通道，这次 V2 镜像在安装时不得不采用了 KMS38 的激活方式，望谅解。</p>
                 </div>
               </div>
             </div>
             <p></p>
             <div class="mdui-divider"></div>
+          </div>
+          <div class="mdui-typo" id="v1">
+            <p></p>
+            <p><b>V1 镜像：制作于 2023/07/10</b></p>
+              <p>1. 直接由希沃官方Windows 10系统升级而来，驱动全部自带</p>
+              <p>2. 在对系统的清理优化后，C盘占用仅20 GB（不包含分页文件和虚拟内存转储），D盘占用5 GB左右；镜像大小相较于官方下降了近 300 MB</p>
+              <p>3. 全部预装软件版本如下：
+                <div class="mdui-panel" mdui-panel="{accordion: true}">
+      <!--v1-->            <div class="mdui-panel-item">
+                    <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">预装软件及版本公示</div>
+                    <div class="mdui-panel-item-body">
+                      <table class="mdui-table">
+                        <tbody>
+                          <tr>
+                            <td>QQ</td>
+                            <td>v9.9.8_240325</td>
+                          </tr>
+                          <tr mdui-tooltip="{content:'KMS自动延期激活，若不喜欢可以重装零售版'}">
+                            <td>Microsoft Office</td>
+                            <td>2021 LTSC ProPlus Volume (2108)</td>
+                          </tr>
+                          <tr>
+                            <td>酷狗音乐</td>
+                            <td>v10.1.93</td>
+                          </tr>
+                          <tr>
+                            <td>网易云音乐</td>
+          <!--v1-->                  <td>v3.0.1.201499 (Beta 版)</td>
+                          </tr>
+                          <tr>
+                            <td>PotPlayer</td>
+                            <td>v230705</td>
+                          </tr>
+                          <tr>
+                            <td>火绒安全软件</td>
+                            <td>v5.0.73.7-2023.07.08.1</td>
+                          </tr>
+                          <tr>
+                            <td>微信</td>
+                            <td>v3.9.5</td>
+                          </tr>
+                          <tr>
+                            <td>WPS Office</td>
+                            <td>最新 Beta 版</td>
+                          </tr>
+  
+       <!--v1-->                 </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </p>
+              <div class="mdui-divider"></div>
+              <p></p>
+              <div class="mdui-card" style="border: 2px solid #FF4081;">
+                <div class="mdui-card-primary">
+                  <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意事项</div>
+       <!--v1-->           <div class="mdui-card-content">
+                    <p>1. 在没有实体键盘的情况下，建议的进入PE盘的方法：
+                      <br>进入设置，找到高级启动并点击重启，在WinRE里会有从媒体介质启动的选项；
+                    </p>
+                    <p>2. 为处理好 UEFI 启动，安装此镜像会直接覆盖整个固态硬盘，故请检查电脑显示的前3个有效分区是否有重要数据。
+                      <br>mz 的电脑还内置另一个 1TB 的机械硬盘，建议将镜像放置在此硬盘的分区里。
+                      <br>另外，Ghost若出现闪退现象，建议还原镜像是不要修改各目标分区容量。实在不行，请使用官方提供的CGI_Plus备份还原（见下）。
+                    </p>
+                    <p>3. <b>若完成还原后开机蓝屏提示“未连接或无法访问所需设备”，请看！非常重要！</b>
+                      <br>目前发现是UEFI引导的问题。请进入自己的PE系统，打开Dism++，打开电脑硬盘系统（而非PE系统）的对话，在工具里选择“引导修复”；
+                      <br>修复完成后系统可以启动，但开机会出现2个“Windows 11”，请进入第一个，然后在 Windows 搜索里搜索“系统配置”(msconfig)然后删去第二个引导项。
+                    </p>
+                    <p>4. <b>已知 WPS 内测结束以后会强制要求手动安装最新版，请看！</b>
+                      <br>直接按提示安装即可。之前远志楼涉及此问题的几台已安装本镜像的设备目前已经修复此问题。
+                    </p>
+                    <p mdui-tooltip="{content: '正在尝试破解绵中的管理员密码，很快了！'}">5. 若你班的电脑重启后C盘文件自动重置，那么就是打开了希沃管家里的“冰点还原”，请不要安装本系统，否则相当于关闭了冰点还原，会招来电教老师和技术人员！！</p>
+       <!--v1-->           </div>
+                </div>
+              </div>
+              <p></p>
+              <div class="mdui-divider"></div>
+            </div>
+  
+          <div class="mdui-typo">
             <h3>系统截图</h3>
             <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-grid-list">
               <div class="mdui-col">
@@ -148,33 +251,59 @@
                 </div>
               </div>
             </div>
-            <p></p>
+            <p id="download"></p>
             <div class="mdui-divider"></div>
             <h3>下载</h3>
             <p></p>
           </div>
         </div>
       </div>
+      
       <div class="mdui-row">
         <div class="mdui-col-sm-10"> 
+          <div class="mdui-card" style="border: 2px solid #FF4081;">
+            <div class="mdui-card-primary">
+              <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">error_outline</i> 注意</div>
+              <div class="mdui-card-content">请认真阅读上面的注意事项，否则镜像会用出问题的。</div>
+            </div>
+          </div>
+          <p></p>
           <div class="mdui-card mdui-hoverable">
             <div class="mdui-card-media">
               <img src="./media/seewo.jpg"/>
               <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
                   <div class="mdui-card-primary-title">希沃Win11镜像</div>
-                  <div mdui-tooltip="{content: '真的会有人想下载吗'}" class="mdui-card-primary-subtitle">鉴于阿里云盘对分享文件格式的限制，现在暂时只能提供 AList for NDW 的下载方式。但是，不要过多地访问 AList，否则我的阿里云盘的 API 调用次数多了会被封禁的……</div>
+                  <div mdui-tooltip="{content: '真的会有人想下载吗'}" class="mdui-card-primary-subtitle"></div>
                 </div>
               </div>
             </div>
+            <div class="mdui-card-content">
+              <p>V2 版本提供阿里云盘和 123 云盘的下载方式。</p>
+              <p>若需要从阿里云盘下载，可以通过 AList 网盘下载或者找我发特异性的快传链接。但前者可能不太稳定，后者的链接无法公开使用。</p>
+              <p>所以，推荐通过 123 云盘下载。</p>
+              <p>补充说明：对于 V2 的镜像，请先解压分卷压缩包后校验使用，“Disk”指的是⌈整个硬盘打包⌋版本，而“Partition”指⌈各分区分开打包⌋版本，“Partition D”指 D 盘的文件</p>
+            </div>
             <div class="mdui-card-actions">
-              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for Seewo.GHO" class="mdui-btn mdui-ripple">前往 ALIST FOR NDW 下载</a>
+              <a href="https://www.123pan.com/s/he7rVv-22YO.html" class="mdui-btn mdui-ripple mdui-color-blue-600">V2 (123 云盘)</a>
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for SEEWO v2/" class="mdui-color-blue-100 mdui-btn mdui-ripple">V2 (AList)</a>
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for Seewo.GHO" class="mdui-btn mdui-ripple mdui-color-blue-50">V1 (AList)</a>
+
             </div>
           </div>
           <p></p>
           <div class="mdui-panel" mdui-panel="{accordion: true}">
             <div class="mdui-panel-item">
-              <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">附：镜像校验信息</div>
+              <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">附：V2 镜像校验信息</div>
+              <div class="mdui-panel-item-body">
+                <div class="mdui-typo"><p>文件: Windows 11 for Seewo v2 single partition C.GHO<br>大小: 14809917596 字节<br>修改时间: 2024年3月30日, 14:56:43<br>MD5: <code>1DB4234C087DC290DC36D92C8CE3342B</code><br>SHA1: <code>DA3AD96F569D66291988D00DFC90B7A2A7D24EEC</code><br>CRC32: <code>D8EAD7C7</code></p>
+                  <p>文件: Partition D.7z<br>大小: 1230850799 字节<br>修改时间: 2024年3月30日, 14:51:05<br>MD5: <code>86374172D514526A294BDA31C1F56E04</code><br>SHA1: <code>22C5037D299FFB7D4F585C5A144E0E45E152C69E</code><br>CRC32: <code>A3754E85</code></p>
+                  <p>文件: Windows 11 for Seewo v2.GHO<br>大小: 16715067640 字节<br>修改时间: 2024年3月30日, 14:42:30<br>MD5: <code>A1C65B007922A577259976B3795FC644</code><br>SHA1: <code>69205514310B86E852966536B35A6AF6439D7C7E</code><br>CRC32: <code>606A3DC2</code></p>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-panel-item">
+              <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">附：V1 镜像校验信息</div>
               <div class="mdui-panel-item-body">
                 <div class="mdui-typo">文件: Windows 11 for Seewo.GHO
                   <br>大小: 15875321163 字节
@@ -185,9 +314,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <p></p>
-          <div class="mdui-panel" mdui-panel="{accordion: true}">
             <div class="mdui-panel-item">
               <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">附：希沃官方 Windows 10 镜像及官方教程</div>
               <div class="mdui-panel-item-body">
@@ -201,6 +327,18 @@
               </div>
             </div>
           </div>
+          <p></p>
+          <div class="mdui-card mdui-hoverable">
+            <ul class="mdui-list">
+              <a href="/works/mzseewohelper">
+                <li class="mdui-list-item mdui-ripple">
+                  <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">lightbulb_outline</i>
+                  <div class="mdui-list-item-content">玩转绵中希沃（进阶指南）</div>
+                  <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                </li>
+              </a>
+            </ul>
+        </div>
         </div>
       </div>
     </div>
@@ -234,7 +372,7 @@
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
-              <p>编辑于 2023/7/16。</p>
+              <p>编辑于 2024/3/31。</p>
               <p/><b>©</b>Copyright by Nick_DL 2022-2024. All rights reserved.
             </div>
           </div>
