@@ -26,9 +26,8 @@ My Personal Website
 > 
 > 
 > <small><p>近来，网站有两件非常重要的大事，望大家悉知：</p>
-> <p>一、大概从 2024 年开始，本站将迁移至新站 <a href="https://www.nickdl.cn/"><b>nickdl.cn</b></a>。现在的 nickdl.site 将在大约 2025 年初废止。请大家牢记新网址！</p>
-> <p>二、2023年10月17日，Material You 风格的 MDUI 2.0 版正式发布，会成为网站未来采用的组件。</p></small>
-
+            <p>一、本站暂时不着急迁移。</p>
+            <p>二、2023年10月17日，Material You 风格的 MDUI 2.0 版正式发布，但考虑到学习成本、迁移成本等，不一定会成为网站未来采用的首要组件。</p>
 
 考虑到在不同网络环境下不同 CDN 的访问速度其实是不一样的，所以下表列出了不同网址对应的平台，大家可以试一下自己访问哪个平台更快一些。
 
@@ -54,5 +53,5 @@ My Personal Website
 
 <p align="center"> 
      <img height="60"src="https://user-images.githubusercontent.com/106737278/213456453-bdcd0029-2b4e-491a-b5e9-d74426922977.svg"/><br>
-    ©Copyright by Nick_DL 2022-2024. All rights reserved.
+    ©Copyright by Nick_DL 2022-2025. All rights reserved.
 </p>
