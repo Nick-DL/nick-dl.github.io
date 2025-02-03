@@ -102,6 +102,18 @@
             </div>
             <div class="mdui-card mdui-hoverable">
               <ul class="mdui-list">
+                <a mdui-dialog="{target: '#NextChat'}">
+                  <li class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-color-white">
+                      <img src="./media/NEXTCHAT.svg"/>
+                    </div>
+                    <div class="mdui-list-item-content">
+                      <div class="mdui-list-item-title">NextChat for NDW (仅供体验)</div>
+                      <div class="mdui-list-item-text mdui-list-item-one-line">与 DeepSeek、Qwen、Meta Llama 等对话。</div>
+                    </div>
+                  </li>
+                </a>
+                <li class="mdui-subheader">维护中，暂不可用</li>
                 <a mdui-dialog="{target: '#Alist'}">
                   <li class="mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-avatar mdui-icon material-icons" style="background-color: #0A59F7;">cloud</i>
@@ -111,7 +123,7 @@
                     </div>
                   </li>
                 </a>
-                <li class="mdui-subheader">维护中，暂不可用</li>
+                <li class="mdui-divider-inset mdui-m-y-0"></li>
                 <a mdui-dialog="{target: '#Bing'}">
                   <li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-avatar mdui-color-white">
@@ -137,12 +149,32 @@
             </div>
             <div class="mdui-divider"></div>
           </div>
+          <div class="mdui-dialog" id="NextChat">
+            <div class="mdui-dialog-title">
+              <i class="mdui-list-item-avatar mdui-icon material-icons">                    
+                <img src="./media/NEXTCHAT.svg"/>
+              </i>&nbsp;
+              NextChat for NDW (仅供体验)
+            </div>
+            <div class="mdui-dialog-content mdui-typo">这里没有使用各家大模型官方的 API，用的是一个叫<a href="https://cloud.siliconflow.cn/">硅基流动</a>的平台的 API。
+              <br><br>目前它有注册送余额活动，如果你刚刚知道这个平台的话，可以先<a href="https://cloud.siliconflow.cn/i/lNPIDKhZ">注册一个账号</a>，这个时候填我的邀请码：<code>lNPIDKhZ</code>，我们都能获赠 14 元余额哦（在 DeepSeek 上用就是将近 100 万 tokens）。
+              <br><br>想再多说点。以前我一直用 Microsoft Copilot 写各种东西，虽然没怎么试试千问、Kimi、豆包、智谱清言这些容易上手的国产 AI 软件，也对 CloseAI 家的 4o、o1 这些没多少了解，
+              但从上手 DeepSeek 的第一天起，我便被它深深折服，无论是因为非同小可的实力，低廉的运行成本，还是真正的“OpenAI”实践。
+              <br><br>总有人说，国外的月亮更圆。其实，在繁星的映衬下，我们的月亮正在织起一片更美丽的夜空。
+              <br><br><b>目前连续对话还没调试好。访问密码暂时不公开，想体验的话可以找我或者自己搭建。</b>
+              <br><br>但说实话，就拿 DeepSeek 来说，官方（网页端、App）那里运行的效果是最好的。我现在还不能确定这里的 DeepSeek-R1 是不是满血版。
+            </div>
+            <div class="mdui-dialog-actions">
+              <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+              <button  onclick="u5()" class="mdui-btn mdui-ripple mdui-color-pink-a200 mdui-btn-raised">进入</button>
+            </div>
+          </div>
           <div class="mdui-dialog" id="Alist">
             <div class="mdui-dialog-title"><a href="https://alist.nickdl.site/"><i class="mdui-list-item-avatar mdui-icon material-icons" style="background-color: #0A59F7; ">cloud</i></a>&nbsp;&nbsp;Alist For ND's Website</div>
             <div class="mdui-dialog-content">这里挂载了我的阿里云盘，里面的资料大家尽情品阅。
               有需要的话，可以在天翼网盘目录里可以上传文件，具体方式详见里面的公告。
               注意不要滥用，尤其是阿里云盘，其API 的调用，同一 IP 在 60 分钟内仅能请求 10 次。所以不要滥用！
-              <br><br><b>提示：服务端现在全新升级。</b>
+              <br><br><b>提示：后端服务器没了。谁有轻量的能跑 Docker 容器的服务器资源给我推荐一个呗。</b>
             </div>
             <div class="mdui-dialog-actions">
               <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
@@ -151,9 +183,14 @@
             </div>
           </div>
           <div class="mdui-dialog" id="Bing">
-            <div class="mdui-dialog-title">Copilot (BingAI 聊天)</div>
+            <div class="mdui-dialog-title">
+              <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-white">                    
+                <img src="./media/copilot.svg"/>
+              </i>&nbsp;
+              Copilot (BingAI 聊天)
+            </div>
             <div class="mdui-dialog-content mdui-typo">这里可以无需登录与 BingAI 聊天，这是全球几乎唯一能免费使用的 GPT-4 模型。
-              <br><br><b>近期短暂故障，建议弃用或去往 Skype 创建群聊并 @Bing 与之聊天。此方法很有效！</b>
+              <br><br><b>停止维护，建议弃用或去往 Skype 创建群聊并 @Bing 与之聊天。此方法很有效！</b>
             </div>
             <div class="mdui-dialog-actions">
               <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
@@ -187,6 +224,9 @@
               function u4() {
               var link4 = "https://onlytest.nickdl.site/";
               window.location.href = link4;}
+              function u5() {
+              var link5 = "https://nextchat.nickdl.site/";
+              window.location.href = link5;}
               </script>
           </div>
           <div id="clouddrive" class="intro mdui-typo">
@@ -643,7 +683,7 @@
         <div class="mdui-row">
           <div class="mdui-col-sm-12">
             <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
-              <p>编辑于 2023/11/04。</p>
+              <p>编辑于 2025/02/04。</p>
               <p>
                 <b>©</b>Copyright by Nick_DL 2022-2025. All rights reserved.
               </p>
