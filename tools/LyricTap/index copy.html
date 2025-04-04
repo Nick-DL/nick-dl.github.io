@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png"
+    <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png"
     type="image/x-icon" />
     <title>逐字歌词生成器</title>
     <style>
@@ -258,15 +258,11 @@
             }
         }
 
-        .translation-line {
+        .lyric-line.translation {
             color: #666;
             font-style: italic;
             margin-top: -5px;
             margin-bottom: 15px;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
         }
     </style>
 </head>
@@ -319,7 +315,7 @@
             <pre id="output"><p>&nbsp;</p></pre>
             
             <button onclick="exportLyrics()"><b>导出歌词</b></button>
-            <div class="hotkey-hint">程序完全由 <b>DeepSeek</b> 驱动（版本号 <a href="./updatelog.html">1.0.025</a>）</div>
+            <div class="hotkey-hint">程序完全由 <b>DeepSeek</b> 驱动（版本号 1.0.020）</div>
         </div>
     </div>
 
@@ -335,7 +331,6 @@
         let scrollTimeout = null;
         const lyricsContainer = document.getElementById('lyricsContainer');
         const lineHeight = 50;
-        let lastBaseTime = '';
 
         // 新增开关状态
         let ignoreOriginalTimestamps = false;
@@ -349,7 +344,7 @@
             scrollTimeout = setTimeout(() => {
                 autoScrollEnabled = true;
                 updateCurrentLine(true);
-            }, 2500);
+            }, 3000);
         });
 
         function tokenizeText(text) {
@@ -408,36 +403,48 @@
             }
         }
 
-        // ... 其他变量保持不变 ...
-        let isTranslationLine = false;
-
         function parseLyrics(text) {
             const lines = text.split('\n');
-            let lastTime = '';
+            const timeMap = new Map();
             
-            lyricsData = lines.map((line, i) => {
+            // 预处理：合并相同时间戳的歌词
+            lines.forEach(line => {
                 const match = line.match(/\[(\d{2}:\d{2}\.\d{2})\](.*)/);
                 if (match) {
-                    const time = match[1];
-                    const content = match[2].trim();
-                    const isTranslation = (time === lastTime && i > 0);
-                    lastTime = time;
-
-                    return {
-                        time: convertTimeToSeconds(time),
-                        text: content ? tokenizeText(content) : [],
-                        isEmpty: !content,
-                        originalTime: time,
-                        isTranslation: isTranslation,
-                        rawContent: content // 新增原始内容存储
-                    };
+                    const timeKey = match[1];
+                    if (!timeMap.has(timeKey)) {
+                        timeMap.set(timeKey, []);
+                    }
+                    timeMap.get(timeKey).push(match[2].trim());
                 }
-                return null;
-            }).filter(Boolean);
-            
+            });
+
+            // 构建歌词数据
+            lyricsData = [];
+            timeMap.forEach((contents, timeKey) => {
+                // 主歌词行
+                lyricsData.push({
+                    time: convertTimeToSeconds(timeKey),
+                    text: tokenizeText(contents[0]),
+                    originalTime: timeKey,
+                    isTranslation: false
+                });
+
+                // 翻译行（如果有）
+                for (let i = 1; i < contents.length; i++) {
+                    lyricsData.push({
+                        time: convertTimeToSeconds(timeKey),
+                        text: contents[i], // 保持原文不拆分
+                        originalTime: timeKey,
+                        isTranslation: true
+                    });
+                }
+            });
+
+            // 按原始时间排序
+            lyricsData.sort((a, b) => a.time - b.time);
             renderLyrics();
         }
-
 
 
         function initSystem() {
@@ -466,96 +473,78 @@
             return parseFloat(minutes) * 60 + parseFloat(seconds);
         }
 
-        // 改进的渲染函数
+        // 改进的歌词渲染函数
         function renderLyrics() {
             const container = document.getElementById('lyricsContainer');
             container.innerHTML = lyricsData.map((line, index) => {
-                if (line.isTranslation) {
-                    return `<div class="lyric-line translation-line" data-index="${index}" data-translation="true">
-                        ${line.text.join('')}
-                    </div>`;
-                } else {
-                    return `<div class="lyric-line ${index === 0 ? 'current-line' : ''}" data-index="${index}">
-                        ${line.text.map((char, i) => 
-                            `<span class="lyric-char" data-line="${index}" data-char="${i}">${char}</span>`
-                        ).join('')}
-                    </div>`;
-                }
+                const isTranslation = line.isTranslation ? 'translation' : '';
+                const content = line.isTranslation ? 
+                    line.text : // 翻译行直接显示
+                    line.text.map((char, i) => 
+                        `<span class="lyric-char" data-line="${index}" data-char="${i}">${char}</span>`
+                    ).join('');
+                
+                return `
+                    <div class="lyric-line ${isTranslation} ${index === 0 ? 'current-line' : ''}" 
+                         data-index="${index}"
+                         data-is-translation="${line.isTranslation}">
+                        ${content}
+                    </div>
+                `;
             }).join('');
         }
 
-        // 修改记录时间戳函数
+        // 改进的记录时间戳函数
         function recordTimestamp() {
             if (!audio.paused && currentLineIndex < lyricsData.length) {
                 const currentLine = lyricsData[currentLineIndex];
                 
-                // 处理翻译行/空行
-                if (currentLine.isTranslation || currentLine.isEmpty) {
-                    // 核心修改：使用上一行的baseTime
-                    const baseTime = ignoreOriginalTimestamps ? 
-                        formatTimeForOutput(lastBaseTime) : 
-                        currentLine.originalTime;
-
-                    if (currentLine.isTranslation) {
-                        results.push(`[${baseTime}]${currentLine.rawContent}`);
-                    } else {
-                        results.push(`[${baseTime}]`);
-                    }
-                    
+                // 自动处理翻译行
+                if (currentLine.isTranslation) {
+                    results.push(`[${currentLine.originalTime}]${currentLine.text}`);
                     document.getElementById('output').textContent = results.join('\n');
                     currentLineIndex++;
                     updateCurrentLine();
                     return;
                 }
 
-                // 正常歌词行处理
+                // 原有处理逻辑保持不变...
+                // 处理空行
+                if (currentLine.isEmpty) {
+                    results.push(`[${currentLine.originalTime}]`);
+                    document.getElementById('output').textContent = results.join('\n');
+                    currentLineIndex++;
+                    updateCurrentLine();
+                    return;
+                }
+
                 const currentTime = audio.currentTime;
                 
                 if (timestamps.length === 0) {
                     currentChars = currentLine.text;
-                    // 记录基准时间（第一个词的时间）
-                    lastBaseTime = currentTime;
+                    if (ignoreOriginalTimestamps) {
+                        currentLine.time = currentTime;
+                    }
                 }
 
-                        const currentCharIndex = timestamps.length;
-                        if (currentCharIndex < currentChars.length) {
-                            document.querySelector(`[data-line="${currentLineIndex}"][data-char="${currentCharIndex}"]`)
-                                .classList.add('active');
-                        }
+                const currentCharIndex = timestamps.length;
+                if (currentCharIndex < currentChars.length) {
+                    document.querySelector(`[data-line="${currentLineIndex}"][data-char="${currentCharIndex}"]`)
+                        .classList.add('active');
+                }
 
-                        timestamps.push(currentTime);
-                        
-                        if (timestamps.length === currentChars.length) {
+                timestamps.push(currentTime);
+                
+                if (timestamps.length === currentChars.length) {
                     const formattedLine = formatTimestamps(currentLine);
                     results.push(formattedLine);
-                    
-                    // 立即处理后续连续翻译行
-                    let nextIndex = currentLineIndex + 1;
-                    while (nextIndex < lyricsData.length && 
-                        (lyricsData[nextIndex].isTranslation || 
-                        lyricsData[nextIndex].isEmpty)) {
-                        const line = lyricsData[nextIndex];
-                        const baseTime = ignoreOriginalTimestamps ? 
-                            formatTimeForOutput(lastBaseTime) : 
-                            line.originalTime;
-
-                        if (line.isTranslation) {
-                            results.push(`[${baseTime}]${line.rawContent}`);
-                        } else {
-                            results.push(`[${baseTime}]`);
-                        }
-                        nextIndex++;
-                    }
-                    
                     document.getElementById('output').textContent = results.join('\n');
-                    currentLineIndex = nextIndex;
+                    currentLineIndex++;
                     timestamps = [];
                     updateCurrentLine();
                 }
             }
         }
-
- 
 
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
@@ -564,25 +553,21 @@
             return `${String(mins).padStart(2, '0')}:${String(secs).padStart(6, '0').replace('.', '')}`;
         }
 
-        // 修改时间戳格式化函数
         function formatTimestamps(lineData) {
+            // 修正忽略原时间戳时的格式处理
             const baseTime = ignoreOriginalTimestamps ? 
-                formatTimeForOutput(lastBaseTime) : 
+                formatTimeForOutput(lineData.time) : 
                 lineData.originalTime;
-
+            
             let output = `[${baseTime}]`;
             
             if (lineData.text.length > 0) {
-                // 修正：遍历所有时间戳
-                output += lineData.text.map((char, i) => {
-                    const timestamp = formatTimeForOutput(timestamps[i]);
-                    return `<${timestamp}>${char}`;
-                }).join('');
+                output += `<${formatTimeForOutput(timestamps[0])}>` + 
+                    lineData.text.map((char, i) => `${char}<${formatTimeForOutput(timestamps[i])}>`).join('');
             }
             
             return output;
         }
-
 
         // 新增专用函数处理输出格式
         function formatTimeForOutput(seconds) {
@@ -592,22 +577,13 @@
             return `${String(mins).padStart(2, '0')}:${String(secs).padStart(6, '0').replace(/(\d{2})\.(\d{3})/, '$1.$2')}`;
         }
 
-                // 改进的更新当前行函数（跳过翻译行）
-                function updateCurrentLine(forceScroll = false) {
-            // 跳过所有连续的翻译行和空行
-            while (currentLineIndex < lyricsData.length && 
-                  (lyricsData[currentLineIndex].isTranslation || 
-                   lyricsData[currentLineIndex].isEmpty)) {
-                currentLineIndex++;
-            }
-            
-            // 高亮处理...
+        function updateCurrentLine(forceScroll = false) {
             document.querySelectorAll('.lyric-line').forEach(line => {
                 line.classList.remove('current-line');
             });
             
             if (currentLineIndex < lyricsData.length) {
-                const currentLine = document.querySelector(`.lyric-line[data-index="${currentLineIndex}"]:not([data-translation="true"])`);
+                const currentLine = document.querySelector(`.lyric-line[data-index="${currentLineIndex}"]`);
                 if(currentLine) {
                     currentLine.classList.add('current-line');
                     if (autoScrollEnabled || forceScroll) {
@@ -622,9 +598,11 @@
             }
         }
 
+        // 改进的导出函数
         function exportLyrics() {
             const content = results.join('\r\n');
             const blob = new Blob([content], { type: 'text/plain' });
+            // 后续下载逻辑保持不变...
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
