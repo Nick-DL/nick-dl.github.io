@@ -6,6 +6,8 @@
     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png"
     type="image/x-icon" />
     <title>逐字歌词生成器 迭代日志</title>
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -57,169 +59,6 @@
             gap: 10px;
         }
 
-        .switch-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 24px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 20px;
-            width: 20px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: #3498db;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .file-upload {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .file-upload input[type="file"] {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .upload-btn {
-            display: block;
-            padding: 10px 20px;
-            background: #ecf0f1;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #000;
-        }
-
-        .file-info {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9em;
-            color: #27ae60;
-        }
-
-        .checkmark {
-            color: #27ae60;
-            font-weight: bold;
-        }
-
-        audio {
-            width: 100%;
-            margin: 10px 0;
-        }
-
-        .lyrics-container {
-            height: 60vh;
-            overflow-y: auto;
-            margin: 20px 0;
-            font-size: 1.2rem;
-            line-height: 2;
-            scroll-behavior: smooth;
-        }
-
-        .lyric-line {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2px;
-            scroll-margin-top: 20px;
-        }
-
-        .lyric-char {
-            padding: 2px;
-            transition: color 0.3s ease;
-            white-space: pre-wrap;
-        }
-
-        .lyric-char.active {
-            color: #3498db;
-        }
-
-        .current-line {
-            background: #f0f8ff;
-            transform: scale(1.02);
-        }
-
-        button {
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .tap-area {
-            display: none;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .tap-button {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            font-size: 18px;
-            background: var(--secondary-color);
-        }
-
         .hotkey-hint {
             color: #7f8c8d;
             font-size: 0.9rem;
@@ -257,38 +96,91 @@
                 height: 80px;
             }
         }
-
-        .translation-line {
-            color: #666;
-            font-style: italic;
-            margin-top: -5px;
-            margin-bottom: 15px;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
     </style>
+    
 </head>
 <body>
     <div class="container">
         <div class="main-content">
+            
             <h2>逐字歌词生成器</h2>
             <h3>迭代日志</h3>
-            <p>&nbsp;</p>
-            <h3>版本 1.0.025</h3>
-            <p>明天写</p>
-            <p>&nbsp;</p>
-            <h3>版本 1.0.020</h3>
-            <p>明天写</p>
+            <div class=" mdui-typo">
+                <hr>
+                <h4><strong>版本 1.0.025</strong></h4>
+                <p><strong>主要改进与修复</strong>： </p>
+                <ol>
+                    <li>
+                        <p><strong>翻译行处理优化</strong> </p>
+                        <ul>
+                            <li>支持带中文翻译的歌词行（相同时间戳），打歌时自动跳过翻译行，但最终输出保留原翻译内容。 </li>
+                            <li>修复忽略原时间戳时翻译行时间戳不匹配的问题，确保翻译行与歌词行起始时间一致。 </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>逐字歌词生成修正</strong> </p>
+                        <ul>
+                            <li>修复同一行歌词内词组与时间戳对应错误问题。 </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>交互与界面微调</strong> </p>
+                        <ul>
+                            <li>自动滚动逻辑优化：切换歌词行时滑动至中间位置，用户手动滑动后暂停自动定位 2.5 秒。 </li>
+                        </ul>
+                    </li>
+                    <li><strong>空行与翻译行跳过逻辑</strong>
+                        <ul>
+                            <li>用户完成当前行后自动高亮下一有效歌词行，再次敲击则处理下一行第一个词组，跳过空行/翻译行，确保敲击连贯性。 </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4><strong>版本 1.0.020</strong></h4>
+                <p><strong>主要改进与修复</strong>： </p>
+                <ol>
+                    <li>
+                        <p><strong>核心功能优化</strong> </p>
+                        <ul>
+                            <li>新增快捷键支持：<kbd>Enter</kbd> 暂停/播放音频，<kbd>空格键</kbd> 记录敲击时间。 </li>
+                            <li>修复英文单词划分问题，确保逐字歌词生成时保留单词后的空格。 </li>
+                            <li>重新设计中英文分词模块，中文逐字拆分，英文按单词拆分，并保留所有标点符号的原始位置。 </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>界面与交互改进</strong> </p>
+                        <ul>
+                            <li>上传按钮添加文字提示区分（音频/歌词），支持 <code>.txt</code>、<code>.lrc</code> 文件及剪贴板粘贴歌词。 </li>
+                            <li>限制歌词输出栏宽度，防止页面异常拉伸，优化自动滚动逻辑（切换行时定位至可视区第二行）。 </li>
+                            <li>已打歌词显示为蓝色（卡拉OK样式），新增上传成功标识及文件名展示。 </li>
+                            <li>上传按钮文字颜色改为黑色，提升可读性。 </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>逻辑与兼容性修复</strong> </p>
+                        <ul>
+                            <li>处理空行歌词卡顿问题，生成逐字歌词时自动跳过空行但保留原始空行结构。 </li>
+                            <li>修正保存 <code>.lrc</code> 文件时的换行问题，生成两种规范格式版本。 </li>
+                            <li>时间戳格式标准化（如 <code>[00:01.941]</code>），修复旧版数值错误。 </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>新增功能开关</strong> </p>
+                        <ul>
+                            <li>支持“忽略原时间戳”开关，开启后以用户敲击首个词组的时间为行起始时间。 </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
             <p></p>
         </div>
         
         <div class="sidebar">
             <h3>LyricTap</h3>
-        
-            
-            <div class="hotkey-hint">Powered by DeepSeek<br>©Copyright by Nick_DL 2022-2025. All rights reserved.</div>
+            <div class="hotkey-hint">Powered by <span style="color: #4D6BFE;"><b>DeepSeek</b></span><br>©Copyright by Nick_DL 2022-2025. All rights reserved.</div>
+            <p>&nbsp;</p><a href="./" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
+                <i class="mdui-icon material-icons">arrow_back</i> 
+            </a> 
         </div>
     </div>
 
