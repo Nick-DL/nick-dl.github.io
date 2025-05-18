@@ -13,31 +13,50 @@
   <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png"
         type="image/x-icon" />
   <style>
-          .mdui-card1 {
-          background-image: url(/media/2025sfbg.png); 
-          background-size: cover; 
-          background-position: center; 
-          background-repeat: no-repeat; 
-          }
+    .mdui-card1 {
+      background-image: url(/media/2025sfbg.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   </style>
   <style>
-              @font-face {
-          font-family: FZCWRYT;
-          font-weight: 900;
-          font-display: swap;
-          src: url("https://lc-RAZGOrF5.cn-n1.lcfile.com/3Ne2knJf4fI1w8QpCNmKKxAePjvpsYoO/FC36664.woff2") format("woff2");          }
-
+    @font-face {
+      font-family: FZCWRYT;
+      font-weight: 900;
+      font-display: swap;
+      src: url("https://lc-RAZGOrF5.cn-n1.lcfile.com/3Ne2knJf4fI1w8QpCNmKKxAePjvpsYoO/FC36664.woff2") format("woff2");
+    }
   </style>
-      <style>
-        .sdt {
-            font-size: 1em;
-            text-shadow: 1.5px 1.5px 3px #000000;
-        }
+  <style>
+    .sdt {
+      font-size: 1em;
+      text-shadow: 1.5px 1.5px 3px #000000;
+    }
+  </style>
+   <style>
+    .ndw-card-bg-hill {
+      background-image: url(/media/hill.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+    <style type="text/css">
+      @font-face {
+        font-family: NDWDIN1145;
+        src: url('/tools/Countdown/DIN1451e.woff') format('woff');
+      }
+  
+      @font-face {
+        font-family: zihunchuangcuhei;
+        src: url('/tools/Countdown/ZHCCHe.woff') format('woff');
+      }
     </style>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed">
-    <div class="mdui-toolbar mdui-color-deep-orange-a200">
+    <div class="mdui-toolbar mdui-color-grey-100">
       <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '导航'}"
               mdui-drawer="{target: '#left-drawer'}">
         <i class="mdui-icon material-icons">menu</i>
@@ -105,29 +124,96 @@
   </div>
   <div class="mdui-container">
     <div class="mdui-row">
+      <div class="mdui-col-sm-7">
+        <p>&nbsp;</p>
+      <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
+        <div class="mdui-card-content">
+          
+          <a href="/tools/Countdown/Countdown.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+              overflow="hidden">
+              <defs>
+                <clipPath id="clip0">
+                  <rect x="0" y="0" width="1280" height="720"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#clip0)">
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
+                <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
+                  x="249.6" y="192">385</text>
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
+                <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
+                  y="182">[6月7日]</text>
+                <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
+                  y="120">2025
+                  年</text>
+                <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
+                  EXAMINATION</text>
+                <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
+                  DAYS</text>
+                <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
+                  fill-rule="evenodd"></path>
+              </g>
+              <script>
+                (function () {
 
-      <div class="mdui-col-sm-12 " style="font-family: FZCWRYT; "> 
-        <p></p>
-        <div class="mdui-card mdui-card1 mdui-hoverable mdui-color-pink-50">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title mdui-text-color-white">
-              <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-orange-a400">filter_vintage</i>&nbsp;<b>2025 乙巳年新春快乐！</b>
-            </div>
-          </div>
-          <div class="sdt mdui-card-content mdui-text-color-white"><p style="font-size: 24px;line-height: 32px;">
-            佳节至，瑞气扬<br>
-            旧岁已绽千般景，蛇年再拓万里途<br>
-            愿你万事胜意，顺遂无忧<br>
-            梦想成真，一路福运常伴！<br>
-          </p>
-          </div>
+                  const CHAR_WIDTH = 110;
+                  const BASE_DIGITS = 2;
+                  const BASE_SVG_WIDTH = 900;
+
+                  const svg = document.querySelector('svg');
+                  const countdown1El = document.getElementById("countdown1");
+                  const [tianEl, dateEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 5);
+
+                  const initialPositions = {
+                    tianX: parseFloat(tianEl.getAttribute('x')),
+                    dateX: parseFloat(dateEl.getAttribute('x'))
+                  };
+
+                  function calculateLayout(days) {
+                    days = Math.max(days, 0);
+                    const digits = days === 0 ? 1 : String(days).length;
+                    const digitDiff = digits - BASE_DIGITS;
+
+                    return {
+                      svgWidth: BASE_SVG_WIDTH + (digitDiff * CHAR_WIDTH),
+                      offsetX: digitDiff * CHAR_WIDTH
+                    };
+                  }
+
+                  function updateCountdown() {
+                    const examDate = new Date("2025-06-07");
+                    const now = new Date();
+                    let daysDiff = Math.ceil((examDate - now) / 86400000);
+                    daysDiff = daysDiff < 0 ? 0 : daysDiff;
+
+                    countdown1El.textContent = daysDiff;
+
+                    const { svgWidth, offsetX } = calculateLayout(daysDiff);
+
+                    svg.setAttribute('viewBox', `-30 0 ${svgWidth} 360`);
+
+                    tianEl.setAttribute('x', initialPositions.tianX + offsetX);
+                    dateEl.setAttribute('x', initialPositions.dateX + offsetX);
+
+                    countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
+                      `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
+                  }
+
+                  updateCountdown();
+                  setInterval(updateCountdown, 60000);
+                })();
+              </script>
+            </svg></a>
         </div>
       </div>
+    </div>
     </div>
     <div class="mdui-row">
       <div class="mdui-col-sm-12">
         <p></p>
-        <h1 class="title mdui-text-color-deep-orange-700" style="font-weight: 700">草木萌发，春山可望</h1>
+        <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">草木萌发，春山可望</h1>
         <div class="intro mdui-typo">
           <p>欢迎来到我的新网站。本站托管于 GitHub，采用不太规范的 Material Design 设计。</p>
           <p>目前的几行代码，只是一座大厦的基石。对于那样一座大厦，我们满怀期待。</p>
@@ -278,7 +364,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-nav mdui-color-deep-orange-100">
+  <div class="footer-nav mdui-color-blue-grey-100">
     <div class="mdui-container">
       <div class="mdui-row">
         <p></p>
@@ -327,5 +413,5 @@
   </div>
   <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
 </body>
-<style>body {background-color: #ffe4c4;}</style>
+
 </html>
