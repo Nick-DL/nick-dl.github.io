@@ -8,6 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
     <title>ND's Website - 关于</title>
+    <style type="text/css">
+      .mdui-card { border-radius: 12px; }
+      .mdui-dialog { border-radius: 12px; }
+      .mdui-btn-block { border-radius: 6px; }
+      .mdui-btn { border-radius: 6px; }
+      .mdui-btn-icon { border-radius: 48px; }
+      .mdui-menu { border-radius: 6px; }
+      .mdui-menu-closing { border-radius: 6px;}
+      .mdui-list-item { border-radius: 8px; }
+      .badge { border-radius: 4px; }
+      .mdui-table { border-radius: 8px; }
+      .mdui-tooltip { border-radius: 6px; }
+      .mdui-overlay { 
+          backdrop-filter: blur(2px); 
+      }
+      @media (prefers-color-scheme: dark) {
+      .mdui-color-blue-grey-100 {
+        background-color: #37474F !important;
+      }
+
+      .text-color-changing {
+        color: #ffffff !important;
+      }
+    }
+    </style>
     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/>
   </head>
   <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
@@ -85,12 +110,12 @@
         <tbody>
         <tr>
           <td>最近更新</td>
-          <td><img class="mdui-img-fluid" src="https://img.shields.io/github/last-commit/nick-dl/nick-dl.github.io?color=%231e88e5&logo=GitHub&style=for-the-badge"/></td>
+          <td><img class="mdui-img-fluid badge" src="https://img.shields.io/github/last-commit/nick-dl/nick-dl.github.io?color=%231e88e5&logo=GitHub&style=for-the-badge"/></td>
         </tr>
         <tr>
           <td>源代码仓库</td>
           <td><a href="https://github.com/Nick-DL/nick-dl.github.io">
-            <img class="mdui-img-fluid" src="https://img.shields.io/badge/Repository-nick--dl.github.io-%231e88e5?logo=GitHub&style=for-the-badge">
+            <img class="mdui-img-fluid badge" src="https://img.shields.io/badge/Repository-nick--dl.github.io-%231e88e5?logo=GitHub&style=for-the-badge">
           </a></td>
         </tr>
         <tr>
@@ -285,7 +310,7 @@
 
       </div>
     </div>
-    <div class="footer-nav mdui-color-blue-grey-100">
+    <div class="footer-nav mdui-color-blue-grey-100 ">
       <div class="mdui-container">
         <div class="mdui-row">
             <p></p>
@@ -312,7 +337,7 @@
             </div>
           <p></p>
           <div class="mdui-col-sm-12"> 
-            <div class="intro mdui-typo">
+            <div class="intro mdui-typo text-color-changing">
               <p></p>
               <p mdui-tooltip="{content: '加油'}">编辑于 2023/10/29。</p>
               <p mdui-tooltip="{content: '（但是呢，这些都是静态网页，还有 75% 的行都滥竽充数）', position: 'top'}">2023
