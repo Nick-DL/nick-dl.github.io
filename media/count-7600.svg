@@ -11,37 +11,37 @@
         
         
         <rect id="Rectangle" fill="#404040" x="0" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="7" y="22">0</tspan>
         </text>
 
         <rect id="Rectangle" fill="#404040" x="32" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="39" y="22">0</tspan>
         </text>
 
         <rect id="Rectangle" fill="#404040" x="64" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="71" y="22">0</tspan>
         </text>
 
         <rect id="Rectangle" fill="#404040" x="96" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="103" y="22">7</tspan>
         </text>
 
         <rect id="Rectangle" fill="#404040" x="128" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="135" y="22">6</tspan>
         </text>
 
         <rect id="Rectangle" fill="#404040" x="160" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="167" y="22">0</tspan>
         </text>
 
         <rect id="Rectangle" fill="#404040" x="192" y="0.5" width="29" height="29"></rect>
-        <text id="0" font-family="Courier" font-size="24" font-weight="normal" fill="#1E88E5">
+        <text id="0" font-family="Courier" font-size="24" font-weight="bold" fill="#1E88E5">
             <tspan x="199" y="22">0</tspan>
         </text>
 

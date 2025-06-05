@@ -18,10 +18,35 @@
       .mdui-dialog { border-radius: 12px; }
       .mdui-btn-block { border-radius: 6px; }
       .mdui-btn { border-radius: 6px; }
-      .mdui-btn-icon { border-radius: 48px; }
-      .mdui-menu { border-radius: 6px; }
+      .mdui-btn-icon { border-radius: 24px; }
+      .mdui-menu { 
+        border-radius: 12px;
+        width: 180px; }
       .mdui-menu-closing { border-radius: 6px;}
-      .mdui-list-item { border-radius: 8px; }
+      .mdui-list-item { 
+        border-radius: 8px; 
+        margin: 0 8px;
+        padding: 0 12px;
+       }
+      .mdui-menu-item>.mdui-menu>a>.mdui-list-item { 
+        border-radius: 8px; 
+        margin: 0 8px;
+        padding: 0 13.5px;
+       }
+      .mdui-drawer>.mdui-list>a>.mdui-list-item { 
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        margin-left: 0px;
+        margin-right: 6px;
+      }
+      .mdui-menu-item { 
+        border-radius: 8px; 
+        margin: 0 6px; 
+      }
+      .mdui-subheader { padding: 0 12px; }
+      .mdui-menu-item>.mdui-menu>.mdui-subheader { padding: 0 22px; }
       .badge { border-radius: 4px; }
       .mdui-table { border-radius: 8px; }
       .mdui-tooltip { border-radius: 6px; }
@@ -39,6 +64,9 @@
 
       .text-color-changing {
         color: #ffffff !important;
+      }
+      .glur-toolbar {
+        background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5));
       }
     }
     
@@ -68,6 +96,27 @@
         font-family: zihunchuangcuhei;
         src: url('/tools/Countdown/ZHCCHe.woff') format('woff');
       }
+      .mdui-menu-cascade {
+        width: 180px;
+        padding: 8px 0;
+        overflow: visible;
+        font-size: 16px;
+    }
+      .mdui-menu-cascade>.mdui-menu-item>a {
+        height: 48px;
+        padding: 0 12px;
+        line-height: 48px;
+      }
+      .mdui-menu-item-more {
+        float: right;
+        width: 24px;
+        height: 24px;
+        margin: 12px 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M9.5 17.5l5-5-5-5z' opacity='.54'/%3E%3C/svg%3E");
+    }
+    .mdui-divider-inset, .mdui-divider-inset-dark, .mdui-divider-inset-light {
+        margin-right: 8px;
+    }
     </style>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
@@ -77,23 +126,78 @@
               mdui-drawer="{target: '#left-drawer'}">
         <i class="mdui-icon material-icons">menu</i>
       </button>
-      <a href="/" class="mdui-typo-headline">蓝星拾光站 <small><small></small>| NDW</small></a>
+      <a href="/" class="mdui-typo-headline"><b>蓝星拾光站</b> <small><small></small>| NDW</small></a>
       <a href="/" class="mdui-typo-title mdui-hidden-xs">主页</a>
       <div class="mdui-toolbar-spacer"></div>
       <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}"
               mdui-tooltip="{content: '锦坷垃'}">
         <i class="mdui-icon material-icons">more_vert</i>
       </button>
-      <ul class="mdui-menu" id="more">
+      <ul class="mdui-menu mdui-menu-cascade" id="more">
         <li class="mdui-menu-item" disabled>
-          <a href="javascript:;" class="mdui-ripple">感谢有你</a>
+          <a href="javascript:;" class="mdui-ripple">
+            <i class="mdui-menu-item-icon mdui-icon material-icons">star</i>
+            收藏本站</a>
         </li>
         <li class="mdui-menu-item" disabled>
-          <a href="javascript:;" class="mdui-ripple">大家一起加油鸭</a>
+          <a href="javascript:;" class="mdui-ripple">
+            <i class="mdui-menu-item-icon mdui-icon material-icons">apps</i>
+            PWA 应用</a>
+        </li>
+        <li class="mdui-menu-item" mdui-tooltip="{content: '哈哈哈😄'}">
+          <a href="javascript:;" class="mdui-ripple">
+            <i class="mdui-menu-item-icon mdui-icon material-icons">build</i>
+            网站工具<span class="mdui-menu-item-more"></span>
+          </a>
+          <ul class="mdui-menu mdui-list" id="showthanks">
+            <li class="mdui-subheader">操作</li>
+            <a onclick="redirectToGitHub()"><li class="mdui-list-item mdui-menu-item mdui-ripple">
+              <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title">查看本页源代码</div>
+                <div class="mdui-list-item-text">前往 GitHub</div>
+              </div>
+            </li></a>
+            <a onclick="EditToGitHub()" ><li class="mdui-list-item mdui-menu-item mdui-ripple">
+              <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title">编辑本页</div>
+                <div class="mdui-list-item-text">前往 GitHub</div>
+              </div>
+            </li></a>
+            <li class="mdui-subheader ">反馈</li>
+            <a href="https://forms.office.com/r/xtQHCBPqsR" ><li class="mdui-list-item mdui-menu-item mdui-ripple">
+              <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title">反馈问题</div>
+                <div class="mdui-list-item-text">文字/链接/图片异常</div>
+              </div>
+            </li></a>
+            <a href="https://forms.office.com/r/vN3TM1ge4t"><li class="mdui-list-item mdui-menu-item mdui-ripple">
+              <div class="mdui-list-item-content">
+                Translation Request
+              </div>
+            </li></a>
+          </ul>
         </li>
         <li class="mdui-menu-item">
-          <a href="/about" class="mdui-ripple">关于本站</a>
+          <a href="javascript:;" class="mdui-ripple">
+            <i class="mdui-menu-item-icon mdui-icon material-icons">more_horiz</i>
+            更多<span class="mdui-menu-item-more"></span>
+          </a>
+          <ul class="mdui-menu mdui-list" id="showthanks">
+            <li class="mdui-menu-item" disabled>
+              <a href="javascript:;" class="mdui-ripple">感谢有你</a>
+            </li>
+            <li class="mdui-menu-item" disabled>
+              <a href="javascript:;" class="mdui-ripple">大家一起加油鸭</a>
+            </li>
+            <a href="/about"><li class="mdui-list-item mdui-menu-item mdui-ripple">
+              <div class="mdui-list-item-content">
+                关于本站
+              </div>
+            </li></a>
+          </ul>
+
         </li>
+
       </ul>
     </div>
   </div>
@@ -229,14 +333,14 @@
     <div class="mdui-row">
       <div class="mdui-col-sm-12">
         <p></p>
-        <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">草木萌发，春山可望</h1>
+        <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">凡是过往，皆为序章</h1>
         <div class="intro mdui-typo">
-          <p>欢迎来到我的网站。本站托管于 GitHub，采用不太规范的 Material Design 设计。</p>
-          <p>目前的几行代码，只是一座大厦的基石。对于那样一座大厦，我们满怀期待。</p>
+          <p>欢迎来到蓝星拾光站（原名 ND's Website）。本站托管于 GitHub，主要基于 MDUI 搭建，融入了 Material, Fluent, HarmonyOS, SwiftUI 等主流的设计风格。</p>
+          <p>在这里，热爱与灵感并存，过往与未来交织，近三年来，Nick_DL 怀揣着许多新奇的想法，一点一点，从头开始，又历经数次改版，逐渐织就了本站全新的面貌。</p>
           <div class="mdui-divider"></div>
           <p></p>
-          <p />我是一个普通的高中生，接触网络大概有九年了，但没弄出什么大的成果。
-          <p />大部分能拿的出来的都在这里了。<br>　
+          <p />作为一个即将进入高三闭关苦修的高中生，我今后一年可能很少有机会再对网站进行细致的维护。但这里，仍然是学习生活之余，我的另一个丰富的数字世界。<br>
+          <p /><br>　
         </div>
       </div>
     </div>
@@ -335,6 +439,13 @@
                 <div class="mdui-list-item-content">唠点废话</div>
               </li>
             </a>
+            <li class="mdui-divider-inset mdui-m-y-0"></li>
+            <a href="/notice-board/">
+              <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-700">history</i>
+                <div class="mdui-list-item-content">历史公告栏</div>
+              </li>
+            </a>
           </ul>
         </div>
       </div>
@@ -362,20 +473,28 @@
                 </div>
               </li>
             </a>
+            <li class="mdui-divider-inset mdui-m-y-0"></li>
+            <a href="https://mail.nickdl.site/">
+              <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-700">language</i>
+                <div class="mdui-list-item-content">
+                  <div class="mdui-list-item-title">网站地图</div>
+                  <div class="mdui-list-item-text mdui-list-item-one-line">Sitemap 以及镜像站列表</div>
+                </div>
+              </li>
+            </a>
           </ul>
         </div>
       </div>
       <div class="mdui-col-sm-12">
         <p></p>
-        <div class="mdui-card mdui-color-blue-grey-100 mdui-hoverable">
+        <div class="mdui-card mdui-color-blue-grey-100 mdui-hoverable text-color-changing">
           <div class="mdui-container">
             <div class="mdui-row">
-              <p></p>
               <div class="mdui-col-sm-12">
                 <div class="mdui-typo">
-                  <h4
-                    mdui-tooltip="{content: '此数据从 2023 年 1 月 20 日 14:30 起计；只统计主页浏览量；从 2022 年底到此刻大概有 500 次访问；当然大部分都是我自己在访问。2024年下半年链接失效，直到2025年春节，此间访问未统计。'}">
-                    　<br>网站浏览量统计：
+                  <h4 mdui-tooltip="{content: '此数据从 2023 年 1 月 20 日 14:30 起计；只统计主页浏览量；从 2022 年底到此刻大概有 500 次访问；当然大部分都是我自己在访问。2024年下半年链接失效，直到2025年春节，此间访问未统计。'}">
+                    网站浏览量统计：
                     <img src="./media/count-7600.svg">
                     </img> 人次
                   </h4>
@@ -383,25 +502,6 @@
                 <p></p>
                 <div class="mdui-divider"></div>
                 <p></p>
-                <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}"
-                  mdui-menu="{target: '#showthanks'}">网页工具</button>
-                <a href="/notice-board/" class="mdui-btn mdui-ripple mdui-color-blue-600">历史公告栏</a>
-                <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
-                  <li class="mdui-subheader">操作</li>
-                  <li class="mdui-menu-item">
-                    <a onclick="redirectToGitHub()" class="mdui-ripple">在 GitHub 上查看本页源代码</a>
-                  </li>
-                  <li class="mdui-menu-item">
-                    <a onclick="EditToGitHub()" class="mdui-ripple">在 GitHub 上编辑本页</a>
-                  </li>
-                  <li class="mdui-subheader">更多</li>
-                  <li class="mdui-menu-item">
-                    <a href="https://forms.office.com/r/xtQHCBPqsR" class="mdui-ripple">反馈问题 (错别字、错链、图片异常等)</a>
-                  </li>
-                  <li class="mdui-menu-item">
-                    <a href="https://forms.office.com/r/vN3TM1ge4t" class="mdui-ripple">Translate Needed</a>
-                  </li>
-                </ul>
                 <script src="/media/RedirectToGitHub.js"></script>
               </div>
             </div>
@@ -410,7 +510,8 @@
               <div class="mdui-col-sm-12">
                 <div class="intro mdui-typo">
                 </div>
-                <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">编辑于 2025/5/18。</p>
+                <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">
+                  DEMO | 编辑于 2025/6/6。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2025. All rights reserved.
               </div>
@@ -418,7 +519,7 @@
           </div>
         </div>
       </div>
-      <p><br></p>
+      <p style="user-select: none;">　</p>
     </div>
     <div class="mdui-dialog" id="QQ">
       <div class="mdui-dialog-title">请选择你用的设备，将自动跳转至我的 QQ 主页</div>
