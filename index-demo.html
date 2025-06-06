@@ -20,7 +20,13 @@
       .mdui-btn-icon { border-radius: 24px; }
       .mdui-toolbar>.mdui-btn-icon { 
         background-color : #00000010; 
-        margin: 0 6px !important;
+        margin: 0 15px !important;
+        width: 42px;
+        min-width: 42px;
+        height: 42px;
+      }
+      .mdui-toolbar>.mdui-typo-headline { 
+        margin-left: 6px; 
       }
       .mdui-menu { 
         border-radius: 12px;
@@ -154,13 +160,10 @@
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
     <div class="mdui-toolbar mdui-color-transparent glur-toolbar">
-      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-xs-up" mdui-tooltip="{content: '导航'}"
+      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" mdui-tooltip="{content: '导航'}"
               mdui-drawer="{target: '#left-drawer'}">
         <i class="mdui-icon material-icons">menu</i>
       </button>
-      <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon mdui-hidden-xs-up">
-        <i class="mdui-icon" mdui-tooltip="{content: '为了避免某些 BUG 出现而隐藏的按钮'}"><svg></svg></i>
-      </a>
       <button mdui-drawer="{target: '#left-drawer'}" class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
         <i class="mdui-icon" mdui-tooltip="{content: '导航'}">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -343,82 +346,86 @@
         <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
           <div class="mdui-card-content">
             <a href="/tools/Countdown/Countdown.html">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
-                overflow="hidden">
-                <defs>
-                  <clipPath id="clip0">
-                    <rect x="0" y="0" width="1280" height="720"></rect>
-                  </clipPath>
-                </defs>
-                <g clip-path="url(#clip0)">
-                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
-                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
-                  <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
-                    x="249.6" y="192">385</text>
-                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
-                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
-                    y="182">[6月7日]</text>
-                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
-                    y="120">2025
-                    年</text>
-                  <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
-                    EXAMINATION</text>
-                  <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
-                    DAYS</text>
-                  <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
-                    fill-rule="evenodd"></path>
-                </g>
-                <script>
-                  (function () {
+              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+              overflow="hidden">
+              <defs>
+                <clipPath id="clip0">
+                  <rect x="0" y="0" width="1280" height="720"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#clip0)">
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
+                <text id="countdown3" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
+                  x="249.6" y="192">385</text>
+                <text id="tianText1" fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
+                <text id="dateText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
+                  y="182">[6月7日]</text>
+                <text id="yearText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
+                  y="120">2026
+                  年</text>
+                <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
+                  EXAMINATION</text>
+                <text fill="#FFFFFF" id="countdown4" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
+                  DAYS</text>
+                <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
+                  fill-rule="evenodd"></path>
+              </g>
+              <script>
+                (function () {
 
-                    const CHAR_WIDTH = 110;
-                    const BASE_DIGITS = 2;
-                    const BASE_SVG_WIDTH = 900;
+                  const CHAR_WIDTH = 110;
+                  const BASE_DIGITS = 2;
+                  const BASE_SVG_WIDTH = 900;
 
-                    const svg = document.querySelector('svg');
-                    const countdown1El = document.getElementById("countdown1");
-                    const [tianEl, dateEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 5);
+                  const svg1 = document.getElementById("countdown26");
+                  const countdown3El = document.getElementById("countdown3");
+                  const tianEl1 = document.getElementById("tianText1");
+                  const dateEl1 = document.getElementById("dateText1");
+                   const yearEl1 = document.getElementById("yearText1");
 
-                    const initialPositions = {
-                      tianX: parseFloat(tianEl.getAttribute('x')),
-                      dateX: parseFloat(dateEl.getAttribute('x'))
+                  const initialPositions1 = {
+                    tianX1: parseFloat(tianEl1.getAttribute('x')),
+                    dateX1: parseFloat(dateEl1.getAttribute('x')),
+                    yearX1: parseFloat(yearEl1.getAttribute('x'))
+                  };
+
+                  function calculateLayout(days1) {
+                    days1 = Math.max(days1, 0);
+                    const digits1 = days1 === 0 ? 1 : String(days1).length;
+                    const digitDiff1 = digits1 - BASE_DIGITS;
+
+                    return {
+                      svgWidth1: BASE_SVG_WIDTH + (digitDiff1 * CHAR_WIDTH),
+                      offsetX1: digitDiff1 * CHAR_WIDTH
                     };
+                  }
 
-                    function calculateLayout(days) {
-                      days = Math.max(days, 0);
-                      const digits = days === 0 ? 1 : String(days).length;
-                      const digitDiff = digits - BASE_DIGITS;
+                  function updateCountdown1() {
+                    const examDate1 = new Date("2026-06-07");
+                    const now = new Date();
+                    let daysDiff1 = Math.ceil((examDate1 - now) / 86400000);
+                    daysDiff1 = daysDiff1 < 0 ? 0 : daysDiff1;
 
-                      return {
-                        svgWidth: BASE_SVG_WIDTH + (digitDiff * CHAR_WIDTH),
-                        offsetX: digitDiff * CHAR_WIDTH
-                      };
-                    }
+                    countdown3El.textContent = daysDiff1;
 
-                    function updateCountdown() {
-                      const examDate = new Date("2025-06-07");
-                      const now = new Date();
-                      let daysDiff = Math.ceil((examDate - now) / 86400000);
-                      daysDiff = daysDiff < 0 ? 0 : daysDiff;
+                    const { svgWidth1, offsetX1 } = calculateLayout(daysDiff1);
 
-                      countdown1El.textContent = daysDiff;
+                    svg1.setAttribute('viewBox', `-30 0 ${svgWidth1} 360`);
 
-                      const { svgWidth, offsetX } = calculateLayout(daysDiff);
+                    tianEl1.setAttribute('x', initialPositions1.tianX1 + offsetX1);
+                    dateEl1.setAttribute('x', initialPositions1.dateX1 + offsetX1);
+                    yearEl1.setAttribute('x', initialPositions1.yearX1 + offsetX1);
 
-                      svg.setAttribute('viewBox', `-30 0 ${svgWidth} 360`);
+                    countdown4.textContent = daysDiff1 === 0 ? "IN 0 DAY" :
+                      `IN ${daysDiff1} DAY${daysDiff1 === 1 ? "" : "S"}`;
+                  }
 
-                      tianEl.setAttribute('x', initialPositions.tianX + offsetX);
-                      dateEl.setAttribute('x', initialPositions.dateX + offsetX);
-
-                      countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
-                        `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
-                    }
-
-                    updateCountdown();
-                    setInterval(updateCountdown, 60000);
-                  })();
-                </script>
-              </svg></a>
+                  updateCountdown1();
+                  setInterval(updateCountdown1, 60000);
+                })();
+              </script>
+            </svg></a>
           </div>
         </div>
         <p></p>
@@ -429,7 +436,7 @@
           <div class="mdui-card-content">
             <div class="intro mdui-typo">
               <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">凡是过往，皆为序章</h1>
-              <p>欢迎来到蓝星拾光站（原名 ND's Website）。本站托管于 GitHub，主要基于 MDUI 搭建，融合了 Material, Fluent, HarmonyOS, SwiftUI 等主流的设计风格。</p>
+              <p>欢迎来到蓝星拾光站（原名 ND's Website）！</p>
               <p>在这里，热爱与灵感并存，过往与未来交织，近三年来，Nick_DL 在无数次构想中，从零起步，又历经数次改版，一点一点，织就了本站全新的面貌。</p>
               <div class="mdui-divider"></div>
               <p></p>
@@ -603,7 +610,7 @@
                 <div class="intro mdui-typo">
                 </div>
                 <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">
-                  DEMO | 编辑于 2025/6/6。</p>
+                  DEMO | 编辑于 2025/6/7。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2025. All rights reserved.
               </div>

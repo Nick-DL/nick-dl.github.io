@@ -124,13 +124,14 @@
   </div>
   <div class="mdui-container">
     <div class="mdui-row">
-      <div class="mdui-col-sm-7">
-        <p>&nbsp;</p>
+      <p></p>
+      <div class="mdui-col-sm-6">
+        <p></p>
       <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
         <div class="mdui-card-content">
           
           <a href="/tools/Countdown/Countdown.html">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+            <svg id="countdown25" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
               overflow="hidden">
               <defs>
                 <clipPath id="clip0">
@@ -162,13 +163,14 @@
                   const BASE_DIGITS = 2;
                   const BASE_SVG_WIDTH = 900;
 
-                  const svg = document.querySelector('svg');
+                  const svg = document.getElementById("countdown25");
                   const countdown1El = document.getElementById("countdown1");
-                  const [tianEl, dateEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 5);
+                  const [tianEl, dateEl, yearEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 6);
 
                   const initialPositions = {
                     tianX: parseFloat(tianEl.getAttribute('x')),
-                    dateX: parseFloat(dateEl.getAttribute('x'))
+                    dateX: parseFloat(dateEl.getAttribute('x')),
+                    yearX: parseFloat(yearEl.getAttribute('x'))
                   };
 
                   function calculateLayout(days) {
@@ -196,6 +198,7 @@
 
                     tianEl.setAttribute('x', initialPositions.tianX + offsetX);
                     dateEl.setAttribute('x', initialPositions.dateX + offsetX);
+                    yearEl.setAttribute('x', initialPositions.yearX + offsetX);
 
                     countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
                       `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
@@ -203,6 +206,95 @@
 
                   updateCountdown();
                   setInterval(updateCountdown, 60000);
+                })();
+              </script>
+            </svg></a>
+        </div>
+      </div>
+      </div>
+      <div class="mdui-col-sm-6">
+        <p></p>
+      <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
+        <div class="mdui-card-content">
+          <a href="/tools/Countdown/Countdown.html">
+            
+            <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+              overflow="hidden">
+              <defs>
+                <clipPath id="clip0">
+                  <rect x="0" y="0" width="1280" height="720"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#clip0)">
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
+                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
+                <text id="countdown3" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
+                  x="249.6" y="192">385</text>
+                <text id="tianText1" fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
+                <text id="dateText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
+                  y="182">[6月7日]</text>
+                <text id="yearText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
+                  y="120">2026
+                  年</text>
+                <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
+                  EXAMINATION</text>
+                <text fill="#FFFFFF" id="countdown4" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
+                  DAYS</text>
+                <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
+                  fill-rule="evenodd"></path>
+              </g>
+              <script>
+                (function () {
+
+                  const CHAR_WIDTH = 110;
+                  const BASE_DIGITS = 2;
+                  const BASE_SVG_WIDTH = 900;
+
+                  const svg1 = document.getElementById("countdown26");
+                  const countdown3El = document.getElementById("countdown3");
+                  const tianEl1 = document.getElementById("tianText1");
+                  const dateEl1 = document.getElementById("dateText1");
+                   const yearEl1 = document.getElementById("yearText1");
+
+                  const initialPositions1 = {
+                    tianX1: parseFloat(tianEl1.getAttribute('x')),
+                    dateX1: parseFloat(dateEl1.getAttribute('x')),
+                    yearX1: parseFloat(yearEl1.getAttribute('x'))
+                  };
+
+                  function calculateLayout(days1) {
+                    days1 = Math.max(days1, 0);
+                    const digits1 = days1 === 0 ? 1 : String(days1).length;
+                    const digitDiff1 = digits1 - BASE_DIGITS;
+
+                    return {
+                      svgWidth1: BASE_SVG_WIDTH + (digitDiff1 * CHAR_WIDTH),
+                      offsetX1: digitDiff1 * CHAR_WIDTH
+                    };
+                  }
+
+                  function updateCountdown1() {
+                    const examDate1 = new Date("2026-06-07");
+                    const now = new Date();
+                    let daysDiff1 = Math.ceil((examDate1 - now) / 86400000);
+                    daysDiff1 = daysDiff1 < 0 ? 0 : daysDiff1;
+
+                    countdown3El.textContent = daysDiff1;
+
+                    const { svgWidth1, offsetX1 } = calculateLayout(daysDiff1);
+
+                    svg1.setAttribute('viewBox', `-30 0 ${svgWidth1} 360`);
+
+                    tianEl1.setAttribute('x', initialPositions1.tianX1 + offsetX1);
+                    dateEl1.setAttribute('x', initialPositions1.dateX1 + offsetX1);
+                    yearEl1.setAttribute('x', initialPositions1.yearX1 + offsetX1);
+
+                    countdown4.textContent = daysDiff1 === 0 ? "IN 0 DAY" :
+                      `IN ${daysDiff1} DAY${daysDiff1 === 1 ? "" : "S"}`;
+                  }
+
+                  updateCountdown1();
+                  setInterval(updateCountdown1, 60000);
                 })();
               </script>
             </svg></a>
@@ -404,7 +496,7 @@
         <div class="mdui-col-sm-12">
           <div class="intro mdui-typo">
           </div>
-                  <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">编辑于 2025/5/18。</p>
+                  <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">编辑于 2025/6/7。</p>
             <p />
             <b>©</b>Copyright by Nick_DL 2022-2025. All rights reserved.
         </div>
