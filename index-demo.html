@@ -8,7 +8,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
   <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=Source_Han_Serif:400,600:Source_Han_Serif" rel="external nofollow"  />
-  
   <title>蓝星拾光站 - 主页</title>
   <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png"
         type="image/x-icon" />
@@ -19,10 +18,17 @@
       .mdui-btn-block { border-radius: 6px; }
       .mdui-btn { border-radius: 6px; }
       .mdui-btn-icon { border-radius: 24px; }
+      .mdui-toolbar>.mdui-btn-icon { 
+        background-color : #00000010; 
+        margin: 0 6px !important;
+      }
       .mdui-menu { 
         border-radius: 12px;
-        width: 180px; }
-      .mdui-menu-closing { border-radius: 6px;}
+        width: 180px;
+        box-shadow: 0 10px 20px 0 rgba(0,0,0,.22); }
+      .mdui-menu-closing { 
+        border-radius: 12px;
+        box-shadow: 0 10px 20px 0 rgba(0,0,0,.22);}
       .mdui-list-item { 
         border-radius: 8px; 
         margin: 0 8px;
@@ -61,13 +67,17 @@
       .mdui-color-blue-grey-100 {
         background-color: #37474F !important;
       }
-
+      .mdui-btn-icon svg use {
+        fill: white !important;
+      }
       .text-color-changing {
         color: #ffffff !important;
       }
       .glur-toolbar {
-        background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5));
+        background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5)) !important;
       }
+      .mdui-toolbar>.mdui-btn-icon { background-color : #ffffff26 !important; }
+
     }
     
     .mdui-card1 {
@@ -86,6 +96,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      max-height: 290px;
     }
       @font-face {
         font-family: NDWDIN1145;
@@ -101,7 +112,25 @@
         padding: 8px 0;
         overflow: visible;
         font-size: 16px;
-    }
+      }
+      @media (max-width: 370px) {
+        .mdui-menu-cascade,
+        .mdui-menu {
+          width: 160px !important; 
+        }
+      }
+      @media (max-width: 330px) {
+        .mdui-menu-cascade,
+        .mdui-menu {
+          width: 140px !important; 
+        }
+      }
+      @media (max-width: 290px) {
+        .mdui-menu-cascade,
+        .mdui-menu {
+          width: 120px !important; 
+        }
+      }
       .mdui-menu-cascade>.mdui-menu-item>a {
         height: 48px;
         padding: 0 12px;
@@ -113,25 +142,58 @@
         height: 24px;
         margin: 12px 0;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M9.5 17.5l5-5-5-5z' opacity='.54'/%3E%3C/svg%3E");
-    }
-    .mdui-divider-inset, .mdui-divider-inset-dark, .mdui-divider-inset-light {
+      }
+      .mdui-divider-inset, .mdui-divider-inset-dark, .mdui-divider-inset-light {
         margin-right: 8px;
-    }
+      }
+      .mdui-card-content>.mdui-typo>h1 {
+        margin-top: .2em;
+      }
     </style>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
     <div class="mdui-toolbar mdui-color-transparent glur-toolbar">
-      <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '导航'}"
+      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-xs-up" mdui-tooltip="{content: '导航'}"
               mdui-drawer="{target: '#left-drawer'}">
         <i class="mdui-icon material-icons">menu</i>
+      </button>
+      <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon mdui-hidden-xs-up">
+        <i class="mdui-icon" mdui-tooltip="{content: '为了避免某些 BUG 出现而隐藏的按钮'}"><svg></svg></i>
+      </a>
+      <button mdui-drawer="{target: '#left-drawer'}" class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
+        <i class="mdui-icon" mdui-tooltip="{content: '导航'}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <defs>
+              <path
+                d="M21.6 12.17Q21.86 11.98 21.86 11.66Q21.86 11.35 21.6 11.16L18.58 8.86Q18.38 8.71 18.14 8.74Q17.9 8.76 17.74 8.93Q17.57 9.1 17.57 9.36L17.57 13.97Q17.57 14.23 17.74 14.4Q17.9 14.57 18.14 14.59Q18.38 14.62 18.58 14.47L21.6 12.17Z"
+                id="_path-6"></path>
+              <path
+                d="M21.24 6.02Q21.55 6.02 21.77 5.81Q21.98 5.59 21.98 5.28Q21.98 4.97 21.77 4.75Q21.55 4.54 21.24 4.54L2.76 4.54Q2.45 4.54 2.23 4.75Q2.02 4.97 2.02 5.28Q2.02 5.59 2.23 5.81Q2.45 6.02 2.76 6.02L21.24 6.02ZM14.26 12.72Q14.57 12.72 14.78 12.49Q15 12.26 15 11.95Q15 11.64 14.78 11.42Q14.57 11.21 14.26 11.21L2.76 11.21Q2.45 11.21 2.23 11.42Q2.02 11.64 2.02 11.95Q2.02 12.26 2.23 12.49Q2.45 12.72 2.76 12.72L14.26 12.72ZM21.24 19.46Q21.55 19.46 21.77 19.25Q21.98 19.03 21.98 18.72Q21.98 18.41 21.77 18.18Q21.55 17.95 21.24 17.95L2.76 17.95Q2.45 17.95 2.23 18.18Q2.02 18.41 2.02 18.72Q2.02 19.03 2.23 19.25Q2.45 19.46 2.76 19.46L21.24 19.46Z"
+                id="_path-7"></path>
+            </defs>
+            <g id="_Public/ic_public_more" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <use fill="#000000" xlink:href="#_path-6"></use>
+                <use fill="#000000" xlink:href="#_path-7"></use>
+            </g>
+          </svg>
+        </i>
       </button>
       <a href="/" class="mdui-typo-headline"><b>蓝星拾光站</b> <small><small></small>| NDW</small></a>
       <a href="/" class="mdui-typo-title mdui-hidden-xs">主页</a>
       <div class="mdui-toolbar-spacer"></div>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}"
-              mdui-tooltip="{content: '锦坷垃'}">
-        <i class="mdui-icon material-icons">more_vert</i>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon" mdui-menu="{target: '#more'}"
+        mdui-tooltip="{content: '锦坷垃'}">
+        <i class="mdui-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" version="1.1">
+            <defs>
+              <path d="M6.25,15.5 C7.21649831,15.5 8,16.2835017 8,17.25 C8,18.2164983 7.21649831,19 6.25,19 C5.28350169,19 4.5,18.2164983 4.5,17.25 C4.5,16.2835017 5.28350169,15.5 6.25,15.5 Z M17.75,15.5 C18.7164983,15.5 19.5,16.2835017 19.5,17.25 C19.5,18.2164983 18.7164983,19 17.75,19 C16.7835017,19 16,18.2164983 16,17.25 C16,16.2835017 16.7835017,15.5 17.75,15.5 Z M6.25,4.5 C7.21649831,4.5 8,5.28350169 8,6.25 C8,7.21649831 7.21649831,8 6.25,8 C5.28350169,8 4.5,7.21649831 4.5,6.25 C4.5,5.28350169 5.28350169,4.5 6.25,4.5 Z M17.75,4.5 C18.7164983,4.5 19.5,5.28350169 19.5,6.25 C19.5,7.21649831 18.7164983,8 17.75,8 C16.7835017,8 16,7.21649831 16,6.25 C16,5.28350169 16.7835017,4.5 17.75,4.5 Z" id="_path-3"></path>
+            </defs>
+            <g id="_Public/ic_public_more" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <use id="_形状结合" fill="#000000" xlink:href="#_path-3"></use>
+            </g>
+          </svg>
+        </i>
       </button>
       <ul class="mdui-menu mdui-menu-cascade" id="more">
         <li class="mdui-menu-item" disabled>
@@ -144,12 +206,12 @@
             <i class="mdui-menu-item-icon mdui-icon material-icons">apps</i>
             PWA 应用</a>
         </li>
-        <li class="mdui-menu-item" mdui-tooltip="{content: '哈哈哈😄'}">
-          <a href="javascript:;" class="mdui-ripple">
+        <li class="mdui-menu-item">
+          <a href="javascript:;" class="mdui-ripple" mdui-tooltip="{content: '哈哈哈😄'}">
             <i class="mdui-menu-item-icon mdui-icon material-icons">build</i>
             网站工具<span class="mdui-menu-item-more"></span>
           </a>
-          <ul class="mdui-menu mdui-list" id="showthanks">
+          <ul class="mdui-menu mdui-list">
             <li class="mdui-subheader">操作</li>
             <a onclick="redirectToGitHub()"><li class="mdui-list-item mdui-menu-item mdui-ripple">
               <div class="mdui-list-item-content">
@@ -182,7 +244,7 @@
             <i class="mdui-menu-item-icon mdui-icon material-icons">more_horiz</i>
             更多<span class="mdui-menu-item-more"></span>
           </a>
-          <ul class="mdui-menu mdui-list" id="showthanks">
+          <ul class="mdui-menu mdui-list">
             <li class="mdui-menu-item" disabled>
               <a href="javascript:;" class="mdui-ripple">感谢有你</a>
             </li>
@@ -195,13 +257,43 @@
               </div>
             </li></a>
           </ul>
-
         </li>
-
       </ul>
     </div>
   </div>
   <div class="mdui-drawer" id="left-drawer">
+    <div class="mdui-toolbar mdui-color-transparent glur-toolbar mdui-hidden-md-up">
+      <button mdui-drawer-close class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
+        <i class="mdui-icon" mdui-tooltip="{content: '收起导航'}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <defs>
+              <path
+                d="M20.86 14.47Q21.05 14.62 21.29 14.59Q21.53 14.57 21.68 14.4Q21.84 14.23 21.84 13.97L21.84 9.36Q21.84 9.1 21.68 8.93Q21.53 8.76 21.29 8.74Q21.05 8.71 20.86 8.86L17.81 11.16Q17.57 11.35 17.57 11.66Q17.57 11.98 17.81 12.17L20.86 14.47Z"
+                id="_path-8"></path>
+              <path
+                d="M21.24 6.02Q21.55 6.02 21.77 5.81Q21.98 5.59 21.98 5.28Q21.98 4.97 21.77 4.75Q21.55 4.54 21.24 4.54L2.76 4.54Q2.45 4.54 2.23 4.75Q2.02 4.97 2.02 5.28Q2.02 5.59 2.23 5.81Q2.45 6.02 2.76 6.02L21.24 6.02ZM14.26 12.72Q14.57 12.72 14.78 12.49Q15 12.26 15 11.95Q15 11.64 14.78 11.42Q14.57 11.21 14.26 11.21L2.76 11.21Q2.45 11.21 2.23 11.42Q2.02 11.64 2.02 11.95Q2.02 12.26 2.23 12.49Q2.45 12.72 2.76 12.72L14.26 12.72ZM21.24 19.46Q21.55 19.46 21.77 19.25Q21.98 19.03 21.98 18.72Q21.98 18.41 21.77 18.18Q21.55 17.95 21.24 17.95L2.76 17.95Q2.45 17.95 2.23 18.18Q2.02 18.41 2.02 18.72Q2.02 19.03 2.23 19.25Q2.45 19.46 2.76 19.46L21.24 19.46Z"
+                id="_path-9"></path>
+            </defs>
+            <g id="_Public/ic_public_more" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <use fill="#000000" xlink:href="#_path-8"></use>
+                <use fill="#000000" xlink:href="#_path-9"></use>
+            </g>
+          </svg>
+        </i>
+      </button>
+      <a href="javascript:;" class="mdui-typo-title"><b>导航</b></a>
+      <div class="mdui-toolbar-spacer"></div>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon mdui-hidden" mdui-menu="{target: '#more'}"
+        mdui-tooltip="{content: '备用按钮'}">
+        <i class="mdui-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" version="1.1">
+            <g id="_Public/ic_public_more" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <use id="_形状结合" fill="#000000" xlink:href="#_path-3"></use>
+            </g>
+          </svg>
+        </i>
+      </button>
+    </div>
     <ul class="mdui-list">
       <a href="/">
         <li class="mdui-list-item mdui-ripple">
@@ -244,107 +336,109 @@
   </div>
   <div class="mdui-container">
     <div class="mdui-row">
-      <div class="mdui-col-sm-7">
-        <p>&nbsp;</p>
-      <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
-        <div class="mdui-card-content">
-          
-          <a href="/tools/Countdown/Countdown.html">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
-              overflow="hidden">
-              <defs>
-                <clipPath id="clip0">
-                  <rect x="0" y="0" width="1280" height="720"></rect>
-                </clipPath>
-              </defs>
-              <g clip-path="url(#clip0)">
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
-                <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
-                  x="249.6" y="192">385</text>
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
-                <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
-                  y="182">[6月7日]</text>
-                <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
-                  y="120">2025
-                  年</text>
-                <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
-                  EXAMINATION</text>
-                <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
-                  DAYS</text>
-                <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
-                  fill-rule="evenodd"></path>
-              </g>
-              <script>
-                (function () {
-
-                  const CHAR_WIDTH = 110;
-                  const BASE_DIGITS = 2;
-                  const BASE_SVG_WIDTH = 900;
-
-                  const svg = document.querySelector('svg');
-                  const countdown1El = document.getElementById("countdown1");
-                  const [tianEl, dateEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 5);
-
-                  const initialPositions = {
-                    tianX: parseFloat(tianEl.getAttribute('x')),
-                    dateX: parseFloat(dateEl.getAttribute('x'))
-                  };
-
-                  function calculateLayout(days) {
-                    days = Math.max(days, 0);
-                    const digits = days === 0 ? 1 : String(days).length;
-                    const digitDiff = digits - BASE_DIGITS;
-
-                    return {
-                      svgWidth: BASE_SVG_WIDTH + (digitDiff * CHAR_WIDTH),
-                      offsetX: digitDiff * CHAR_WIDTH
-                    };
-                  }
-
-                  function updateCountdown() {
-                    const examDate = new Date("2025-06-07");
-                    const now = new Date();
-                    let daysDiff = Math.ceil((examDate - now) / 86400000);
-                    daysDiff = daysDiff < 0 ? 0 : daysDiff;
-
-                    countdown1El.textContent = daysDiff;
-
-                    const { svgWidth, offsetX } = calculateLayout(daysDiff);
-
-                    svg.setAttribute('viewBox', `-30 0 ${svgWidth} 360`);
-
-                    tianEl.setAttribute('x', initialPositions.tianX + offsetX);
-                    dateEl.setAttribute('x', initialPositions.dateX + offsetX);
-
-                    countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
-                      `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
-                  }
-
-                  updateCountdown();
-                  setInterval(updateCountdown, 60000);
-                })();
-              </script>
-            </svg></a>
-        </div>
-      </div>
-    </div>
     </div>
     <div class="mdui-row">
-      <div class="mdui-col-sm-12">
+      <div class="mdui-col-sm-8 mdui-col-md-6">
         <p></p>
-        <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">凡是过往，皆为序章</h1>
-        <div class="intro mdui-typo">
-          <p>欢迎来到蓝星拾光站（原名 ND's Website）。本站托管于 GitHub，主要基于 MDUI 搭建，融入了 Material, Fluent, HarmonyOS, SwiftUI 等主流的设计风格。</p>
-          <p>在这里，热爱与灵感并存，过往与未来交织，近三年来，Nick_DL 怀揣着许多新奇的想法，一点一点，从头开始，又历经数次改版，逐渐织就了本站全新的面貌。</p>
-          <div class="mdui-divider"></div>
-          <p></p>
-          <p />作为一个即将进入高三闭关苦修的高中生，我今后一年可能很少有机会再对网站进行细致的维护。但这里，仍然是学习生活之余，我的另一个丰富的数字世界。<br>
-          <p /><br>　
+        <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
+          <div class="mdui-card-content">
+            <a href="/tools/Countdown/Countdown.html">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+                overflow="hidden">
+                <defs>
+                  <clipPath id="clip0">
+                    <rect x="0" y="0" width="1280" height="720"></rect>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#clip0)">
+                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
+                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
+                  <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
+                    x="249.6" y="192">385</text>
+                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
+                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
+                    y="182">[6月7日]</text>
+                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
+                    y="120">2025
+                    年</text>
+                  <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
+                    EXAMINATION</text>
+                  <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
+                    DAYS</text>
+                  <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
+                    fill-rule="evenodd"></path>
+                </g>
+                <script>
+                  (function () {
+
+                    const CHAR_WIDTH = 110;
+                    const BASE_DIGITS = 2;
+                    const BASE_SVG_WIDTH = 900;
+
+                    const svg = document.querySelector('svg');
+                    const countdown1El = document.getElementById("countdown1");
+                    const [tianEl, dateEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 5);
+
+                    const initialPositions = {
+                      tianX: parseFloat(tianEl.getAttribute('x')),
+                      dateX: parseFloat(dateEl.getAttribute('x'))
+                    };
+
+                    function calculateLayout(days) {
+                      days = Math.max(days, 0);
+                      const digits = days === 0 ? 1 : String(days).length;
+                      const digitDiff = digits - BASE_DIGITS;
+
+                      return {
+                        svgWidth: BASE_SVG_WIDTH + (digitDiff * CHAR_WIDTH),
+                        offsetX: digitDiff * CHAR_WIDTH
+                      };
+                    }
+
+                    function updateCountdown() {
+                      const examDate = new Date("2025-06-07");
+                      const now = new Date();
+                      let daysDiff = Math.ceil((examDate - now) / 86400000);
+                      daysDiff = daysDiff < 0 ? 0 : daysDiff;
+
+                      countdown1El.textContent = daysDiff;
+
+                      const { svgWidth, offsetX } = calculateLayout(daysDiff);
+
+                      svg.setAttribute('viewBox', `-30 0 ${svgWidth} 360`);
+
+                      tianEl.setAttribute('x', initialPositions.tianX + offsetX);
+                      dateEl.setAttribute('x', initialPositions.dateX + offsetX);
+
+                      countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
+                        `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
+                    }
+
+                    updateCountdown();
+                    setInterval(updateCountdown, 60000);
+                  })();
+                </script>
+              </svg></a>
+          </div>
         </div>
+        <p></p>
       </div>
-    </div>
-    <div class="mdui-row">
+      <div class="mdui-col-sm-12 mdui-col-md-6">
+        <p></p>
+        <div class="mdui-card mdui-hoverable">
+          <div class="mdui-card-content">
+            <div class="intro mdui-typo">
+              <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">凡是过往，皆为序章</h1>
+              <p>欢迎来到蓝星拾光站（原名 ND's Website）。本站托管于 GitHub，主要基于 MDUI 搭建，融合了 Material, Fluent, HarmonyOS, SwiftUI 等主流的设计风格。</p>
+              <p>在这里，热爱与灵感并存，过往与未来交织，近三年来，Nick_DL 在无数次构想中，从零起步，又历经数次改版，一点一点，织就了本站全新的面貌。</p>
+              <div class="mdui-divider"></div>
+              <p></p>
+              <p />作为一名即将进入高三闭关苦修的高中生，我今后一年里可能很少有机会再对网站进行细致的维护。但这里，始终是我学习生活之外，一片丰盈的数字天地。<br>
+            </div>
+          </div>
+        </div>
+        <p></p>
+      </div>
       <div class="mdui-col-sm-6">
         <div class="mdui-card mdui-hoverable">
           <div class="mdui-card-primary">
@@ -353,7 +447,7 @@
             <div class="mdui-list-item-content">Works</div>
             <a href="/works">
               <div class="mdui-color-blue-accent mdui-btn mdui-ripple mdui-float-right">
-                <i class="mdui-icon mdui-icon-right material-icons">arrow_forward</i>查看更多
+                <i class="mdui-icon mdui-icon-right material-icons">arrow_forward</i>更多
               </div>
             </a>
             </li>
@@ -409,8 +503,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="mdui-row">
       <div class="mdui-col-sm-12">
         <p></p>
         <div class="mdui-divider"></div>
@@ -474,7 +566,7 @@
               </li>
             </a>
             <li class="mdui-divider-inset mdui-m-y-0"></li>
-            <a href="https://mail.nickdl.site/">
+            <a href="/sitemap/">
               <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-700">language</i>
                 <div class="mdui-list-item-content">
