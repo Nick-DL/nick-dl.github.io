@@ -90,17 +90,6 @@
 
     }
     
-    .mdui-card1 {
-      background-image: url(/media/2025sfbg.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .sdt {
-      font-size: 1em;
-      text-shadow: 1.5px 1.5px 3px #000000;
-    }
     .ndw-card-bg-hill {
       background-image: url(/media/hill.jpg);
       background-size: cover;
@@ -135,12 +124,13 @@
       @media (max-width: 350px) {
         .mdui-menu-cascade,
         .mdui-menu {width: 150px !important; }
-        
+        .hs {display: none; }
       }
       @media (max-width: 330px) {
         .mdui-menu-cascade,
         .mdui-menu {width: 140px !important; }
         .mdui-menu-item-icon{display: none;}
+        .hs {display:inline; }
       }
       @media (max-width: 310px) {
         .mdui-menu-cascade,
@@ -199,7 +189,7 @@
           </svg>
         </i>
       </button>
-      <a href="/" class="mdui-typo-headline"><b>蓝星拾光站</b> <small><small></small>| NDW</small></a>
+      <a href="/" class="mdui-typo-headline" mdui-tooltip="{content: 'NDW'}"><b>蓝星拾光站</b></a>
       <a href="/" class="mdui-typo-title mdui-hidden-xs">主页</a>
       <div class="mdui-toolbar-spacer"></div>
       <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon" mdui-menu="{target: '#more'}"
@@ -224,7 +214,7 @@
         <li class="mdui-menu-item" disabled>
           <a href="javascript:;" class="mdui-ripple">
             <i class="mdui-menu-item-icon mdui-icon material-icons">apps</i>
-            PWA 应用</a>
+            PWA<span class="hs"> </span>应用</a>
         </li>
         <li class="mdui-menu-item">
           <a href="javascript:;" class="mdui-ripple" mdui-tooltip="{content: '哈哈哈😄'}">
