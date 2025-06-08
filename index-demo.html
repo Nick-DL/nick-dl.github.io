@@ -57,6 +57,10 @@
         border-radius: 8px; 
         margin: 0 6px; 
       }
+      .mdui-menu-item-active { 
+        border-radius: 8px; 
+        margin: 0 6px; 
+      }
       .mdui-subheader { padding: 0 12px; }
       .mdui-menu-item>.mdui-menu>.mdui-subheader { padding: 0 22px; }
       .badge { border-radius: 4px; }
@@ -119,23 +123,37 @@
         overflow: visible;
         font-size: 16px;
       }
+      @media (max-width: 390px) {
+        .mdui-menu-cascade,
+        .mdui-menu {width: 170px !important; }
+        .wz{display:none}
+      }
       @media (max-width: 370px) {
         .mdui-menu-cascade,
-        .mdui-menu {
-          width: 160px !important; 
-        }
+        .mdui-menu {width: 160px !important; }
+      }
+      @media (max-width: 350px) {
+        .mdui-menu-cascade,
+        .mdui-menu {width: 150px !important; }
+        
       }
       @media (max-width: 330px) {
         .mdui-menu-cascade,
-        .mdui-menu {
-          width: 140px !important; 
-        }
+        .mdui-menu {width: 140px !important; }
+        .mdui-menu-item-icon{display: none;}
+      }
+      @media (max-width: 310px) {
+        .mdui-menu-cascade,
+        .mdui-menu {width: 130px !important; }
+        
       }
       @media (max-width: 290px) {
         .mdui-menu-cascade,
-        .mdui-menu {
-          width: 120px !important; 
-        }
+        .mdui-menu {width: 120px !important; }
+      }
+      @media (max-width: 270px) {
+        .mdui-menu-cascade,
+        .mdui-menu {width: 110px !important; }
       }
       .mdui-menu-cascade>.mdui-menu-item>a {
         height: 48px;
@@ -147,7 +165,6 @@
         width: 24px;
         height: 24px;
         margin: 12px 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M9.5 17.5l5-5-5-5z' opacity='.54'/%3E%3C/svg%3E");
       }
       .mdui-divider-inset, .mdui-divider-inset-dark, .mdui-divider-inset-light {
         margin-right: 8px;
@@ -212,7 +229,7 @@
         <li class="mdui-menu-item">
           <a href="javascript:;" class="mdui-ripple" mdui-tooltip="{content: '哈哈哈😄'}">
             <i class="mdui-menu-item-icon mdui-icon material-icons">build</i>
-            网站工具<span class="mdui-menu-item-more"></span>
+            <span class="wz">网站</span>工具<span class="mdui-menu-item-more"></span>
           </a>
           <ul class="mdui-menu mdui-list">
             <li class="mdui-subheader">操作</li>
