@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="zh-cmn-Hans">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
@@ -11,63 +10,48 @@
   <title>ND's Website - 公告栏</title>
   <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon" />
   <style>
-    .mdui-card1 {
-      background-image: url(/media/2024sfbg.jpg);
+    body { background-color: #f1f3f5; }
+    .mdui-card1,.mdui-card2,.ndw-card-bg-atpsynthase,.ndw-card-bg-hill,.ndw-card-bg-26gk {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
-  </style>
-  <style>
+    .ndw-card-bg-26gk {
+      background-image: url(/media/hill-26.jpg);
+    }
+    .mdui-card1 {
+      background-image: url(/media/2024sfbg.jpg);
+    }
     .ndw-card-bg-atpsynthase {
       background-image: url(/media/CF0-CF1-masked.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
     .ndw-card-bg-hill {
       background-image: url(/media/hill.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
-  </style>
-  <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=Source_Han_Serif:400,600:Source_Han_Serif"
-    rel="external nofollow" />
-
-  <style type="text/css">
+    .mdui-card2 {
+      background-image: url(/media/2025sfbg.png);
+    }
     @font-face {
       font-family: NDWDIN1145;
       src: url('/tools/Countdown/DIN1451e.woff') format('woff');
     }
-
     @font-face {
       font-family: zihunchuangcuhei;
       src: url('/tools/Countdown/ZHCCHe.woff') format('woff');
     }
-  </style>
-  <style>
-    .mdui-card2 {
-      background-image: url(/media/2025sfbg.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  </style>
-  <style>
     @font-face {
       font-family: FZCWRYT;
       font-weight: 900;
       font-display: swap;
       src: url("https://lc-RAZGOrF5.cn-n1.lcfile.com/3Ne2knJf4fI1w8QpCNmKKxAePjvpsYoO/FC36664.woff2") format("woff2");
     }
-  </style>
-  <style>
     .sdt {
       font-size: 1em;
       text-shadow: 1.5px 1.5px 3px #000000;
     }
   </style>
+  <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=Source_Han_Serif:400,600:Source_Han_Serif"
+  rel="external nofollow" />
 </head>
 
 <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto">
@@ -83,6 +67,13 @@
         <i class="mdui-icon material-icons">more_vert</i>
       </button>
       <ul class="mdui-menu" id="more">
+        <li class="mdui-list-item">
+          <div class="mdui-list-item-content">商业内容</div>
+          <label class="mdui-switch">
+            <input type="checkbox"/>
+            <i class="mdui-switch-icon"></i>
+          </label>
+        </li>
         <li class="mdui-menu-item">
           <a href="/about" class="mdui-ripple">关于本站</a>
         </li>
@@ -94,16 +85,15 @@
       <div class="mdui-col-sm-12">
         <h1 class="mdui-text-color-blue-600">历史公告栏</h1>
         <p></p>
-
       </div>
-
-      <div class="mdui-col-sm-7">
-        <h3>2025年5月18日</h3>
+      <div class="mdui-col-sm-6">
+        <h3>2025年6月7日</h3>
         <p></p>
-        <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
+        <div class="mdui-card ndw-card-bg-26gk mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '执着于理想，<br>纯粹于当下。'}">
           <div class="mdui-card-content">
-            <a href="/tools/Countdown/Countdown.html">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+            
+            <a href="javascript:;">
+              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
                 overflow="hidden">
                 <defs>
                   <clipPath id="clip0">
@@ -119,7 +109,7 @@
                   <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
                     y="182">[6月7日]</text>
                   <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
-                    y="120">2025
+                    y="120">2026
                     年</text>
                   <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
                     EXAMINATION</text>
@@ -135,13 +125,14 @@
                     const BASE_DIGITS = 2;
                     const BASE_SVG_WIDTH = 900;
 
-                    const svg = document.querySelector('svg');
+                    const svg = document.getElementById("countdown26");
                     const countdown1El = document.getElementById("countdown1");
-                    const [tianEl, dateEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 5);
+                    const [tianEl, dateEl, yearEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 6);
 
                     const initialPositions = {
                       tianX: parseFloat(tianEl.getAttribute('x')),
-                      dateX: parseFloat(dateEl.getAttribute('x'))
+                      dateX: parseFloat(dateEl.getAttribute('x')),
+                      yearX: parseFloat(yearEl.getAttribute('x'))
                     };
 
                     function calculateLayout(days) {
@@ -156,7 +147,7 @@
                     }
 
                     function updateCountdown() {
-                      const examDate = new Date("2025-06-07");
+                      const examDate = new Date("2026-06-07");
                       const now = new Date();
                       let daysDiff = Math.ceil((examDate - now) / 86400000);
                       daysDiff = daysDiff < 0 ? 0 : daysDiff;
@@ -169,6 +160,7 @@
 
                       tianEl.setAttribute('x', initialPositions.tianX + offsetX);
                       dateEl.setAttribute('x', initialPositions.dateX + offsetX);
+                      yearEl.setAttribute('x', initialPositions.yearX + offsetX);
 
                       countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
                         `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
@@ -182,6 +174,98 @@
           </div>
         </div>
       </div>
+      <div class="mdui-col-sm-6">
+        <h3>2025年1月28日</h3>
+        <p></p>
+        <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
+          <div class="mdui-card-content">
+            <a href="/tools/Countdown/Countdown.html">
+              
+              <svg id="countdown25" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+                overflow="hidden">
+                <defs>
+                  <clipPath id="clip0">
+                    <rect x="0" y="0" width="1280" height="720"></rect>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#clip0)">
+                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
+                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
+                  <text id="countdown3" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
+                    x="249.6" y="192">20</text>
+                  <text id="tianText1" fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
+                  <text id="dateText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
+                    y="182">[6月7日]</text>
+                  <text id="yearText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
+                    y="120">2025
+                    年</text>
+                  <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
+                    EXAMINATION</text>
+                  <text fill="#FFFFFF" id="countdown4" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 20
+                    DAYS</text>
+                  <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
+                    fill-rule="evenodd"></path>
+                </g>
+                <!--<script>
+                  (function () {
+
+                    const CHAR_WIDTH = 110;
+                    const BASE_DIGITS = 2;
+                    const BASE_SVG_WIDTH = 900;
+
+                    const svg1 = document.getElementById("countdown25");
+                    const countdown3El = document.getElementById("countdown3");
+                    const tianEl1 = document.getElementById("tianText1");
+                    const dateEl1 = document.getElementById("dateText1");
+                    const yearEl1 = document.getElementById("yearText1");
+
+                    const initialPositions1 = {
+                      tianX1: parseFloat(tianEl1.getAttribute('x')),
+                      dateX1: parseFloat(dateEl1.getAttribute('x')),
+                      yearX1: parseFloat(yearEl1.getAttribute('x'))
+                    };
+
+                    function calculateLayout(days1) {
+                      days1 = Math.max(days1, 0);
+                      const digits1 = days1 === 0 ? 1 : String(days1).length;
+                      const digitDiff1 = digits1 - BASE_DIGITS;
+
+                      return {
+                        svgWidth1: BASE_SVG_WIDTH + (digitDiff1 * CHAR_WIDTH),
+                        offsetX1: digitDiff1 * CHAR_WIDTH
+                      };
+                    }
+
+                    function updateCountdown1() {
+                      const examDate1 = new Date("2025-06-07");
+                      const now = new Date();
+                      let daysDiff1 = Math.ceil((examDate1 - now) / 86400000);
+                      daysDiff1 = daysDiff1 < 0 ? 0 : daysDiff1;
+
+                      countdown3El.textContent = daysDiff1;
+
+                      const { svgWidth1, offsetX1 } = calculateLayout(daysDiff1);
+
+                      svg1.setAttribute('viewBox', `-30 0 ${svgWidth1} 360`);
+
+                      tianEl1.setAttribute('x', initialPositions1.tianX1 + offsetX1);
+                      dateEl1.setAttribute('x', initialPositions1.dateX1 + offsetX1);
+                      yearEl1.setAttribute('x', initialPositions1.yearX1 + offsetX1);
+
+                      countdown4.textContent = daysDiff1 === 0 ? "IN 0 DAY" :
+                        `IN ${daysDiff1} DAY${daysDiff1 === 1 ? "" : "S"}`;
+                    }
+
+                    updateCountdown1();
+                    setInterval(updateCountdown1, 60000);
+                  })();
+                </script>-->
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
       <div class="mdui-col-sm-12 " style="font-family: FZCWRYT; ">
         <h3>2025年1月28日</h3>
         <p></p>
@@ -309,7 +393,7 @@
         </div>
       </div>
 
-      <div class="mdui-col-sm-10">
+      <div id="ad-info" class="mdui-col-sm-10 mdui-hidden">
         <h3><br>2023年9月25日</h3>
         <a mdui-tooltip="{content:'广告; ©华为', position: 'auto'}" href="https://consumer.huawei.com/cn/?ic_medium=hwdc">
           <p></p>
@@ -504,7 +588,7 @@
         <div class="mdui-col-sm-12">
           <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
             <p></p>
-            <p>Edited at 2023/05/26</p>
+            <p>Edited at 2023/06/09</p>
             <p>©Copyright by Nick_DL 2022-2025. All rights reserved.</p>
             <p></p>
           </div>
@@ -514,11 +598,19 @@
   </div>
   <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js">
   </script>
-</body>
+  <script>
+    const toggleSwitch = document.querySelector('input[type="checkbox"]');
+    const adInfo = document.getElementById('ad-info');
 
+    toggleSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        adInfo.classList.remove('mdui-hidden');
+      } else {
+        adInfo.classList.add('mdui-hidden');
+      }
+    });
+
+    adInfo.classList.add('mdui-hidden');
+  </script>
+</body>
 </html>
-<style>
-  body {
-    background-color: #f1f3f5;
-  }
-</style>

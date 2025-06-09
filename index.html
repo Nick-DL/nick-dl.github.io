@@ -19,24 +19,18 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-  </style>
-  <style>
     @font-face {
       font-family: FZCWRYT;
       font-weight: 900;
       font-display: swap;
       src: url("https://lc-RAZGOrF5.cn-n1.lcfile.com/3Ne2knJf4fI1w8QpCNmKKxAePjvpsYoO/FC36664.woff2") format("woff2");
     }
-  </style>
-  <style>
     .sdt {
       font-size: 1em;
       text-shadow: 1.5px 1.5px 3px #000000;
     }
-  </style>
-   <style>
-    .ndw-card-bg-hill {
-      background-image: url(/media/hill.jpg);
+    .ndw-card-bg-26gk {
+      background-image: url(/media/hill-26.jpg);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -127,97 +121,9 @@
       <p></p>
       <div class="mdui-col-sm-6">
         <p></p>
-      <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
+      <div class="mdui-card ndw-card-bg-26gk mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '执着于理想，<br>纯粹于当下。'}">
         <div class="mdui-card-content">
-          
-          <a href="/tools/Countdown/Countdown.html">
-            <svg id="countdown25" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
-              overflow="hidden">
-              <defs>
-                <clipPath id="clip0">
-                  <rect x="0" y="0" width="1280" height="720"></rect>
-                </clipPath>
-              </defs>
-              <g clip-path="url(#clip0)">
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
-                <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
-                  x="249.6" y="192">385</text>
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
-                <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
-                  y="182">[6月7日]</text>
-                <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
-                  y="120">2025
-                  年</text>
-                <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
-                  EXAMINATION</text>
-                <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
-                  DAYS</text>
-                <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
-                  fill-rule="evenodd"></path>
-              </g>
-              <script>
-                (function () {
-
-                  const CHAR_WIDTH = 110;
-                  const BASE_DIGITS = 2;
-                  const BASE_SVG_WIDTH = 900;
-
-                  const svg = document.getElementById("countdown25");
-                  const countdown1El = document.getElementById("countdown1");
-                  const [tianEl, dateEl, yearEl] = Array.from(document.querySelectorAll('g > text')).slice(3, 6);
-
-                  const initialPositions = {
-                    tianX: parseFloat(tianEl.getAttribute('x')),
-                    dateX: parseFloat(dateEl.getAttribute('x')),
-                    yearX: parseFloat(yearEl.getAttribute('x'))
-                  };
-
-                  function calculateLayout(days) {
-                    days = Math.max(days, 0);
-                    const digits = days === 0 ? 1 : String(days).length;
-                    const digitDiff = digits - BASE_DIGITS;
-
-                    return {
-                      svgWidth: BASE_SVG_WIDTH + (digitDiff * CHAR_WIDTH),
-                      offsetX: digitDiff * CHAR_WIDTH
-                    };
-                  }
-
-                  function updateCountdown() {
-                    const examDate = new Date("2025-06-07");
-                    const now = new Date();
-                    let daysDiff = Math.ceil((examDate - now) / 86400000);
-                    daysDiff = daysDiff < 0 ? 0 : daysDiff;
-
-                    countdown1El.textContent = daysDiff;
-
-                    const { svgWidth, offsetX } = calculateLayout(daysDiff);
-
-                    svg.setAttribute('viewBox', `-30 0 ${svgWidth} 360`);
-
-                    tianEl.setAttribute('x', initialPositions.tianX + offsetX);
-                    dateEl.setAttribute('x', initialPositions.dateX + offsetX);
-                    yearEl.setAttribute('x', initialPositions.yearX + offsetX);
-
-                    countdown2.textContent = daysDiff === 0 ? "IN 0 DAY" :
-                      `IN ${daysDiff} DAY${daysDiff === 1 ? "" : "S"}`;
-                  }
-
-                  updateCountdown();
-                  setInterval(updateCountdown, 60000);
-                })();
-              </script>
-            </svg></a>
-        </div>
-      </div>
-      </div>
-      <div class="mdui-col-sm-6">
-        <p></p>
-      <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '学长们加油啊！'}">
-        <div class="mdui-card-content">
-          <a href="/tools/Countdown/Countdown.html">
-            
+          <a href="javascript:;"> 
             <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
               overflow="hidden">
               <defs>
@@ -311,8 +217,8 @@
           <p>目前的几行代码，只是一座大厦的基石。对于那样一座大厦，我们满怀期待。</p>
           <div class="mdui-divider"></div>
           <p></p>
-          <p />我是一个普通的高中生，接触网络大概有九年了，但没弄出什么大的成果。
-          <p />大部分能拿的出来的都在这里了。<br>　
+          <p />作为一名即将进入高三闭关苦修的高中生，我今后一年里可能很少有机会再对网站进行细致的维护。
+          但这里，始终是我学习生活之外，一片丰盈的数字天地。<br>　
         </div>
       </div>
     </div>
@@ -472,6 +378,7 @@
           <button class="mdui-btn mdui-ripple mdui-color-blue-600"
                   mdui-tooltip="{content: '哈哈哈😄'}" mdui-menu="{target: '#showthanks'}">网页工具</button>
           <a href="/notice-board/" class="mdui-btn mdui-ripple mdui-color-blue-600">历史公告栏</a>
+          <a href="/index-demo.html" class="mdui-btn mdui-ripple mdui-color-blue-600">DEMO 主页</a>
           <ul class="mdui-list mdui-menu mdui-menu-cascade" id="showthanks">
             <li class="mdui-subheader">操作</li>
             <li class="mdui-menu-item">
