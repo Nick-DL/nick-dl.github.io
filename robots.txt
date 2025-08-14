@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://www.nickdl.site/sitemap.xml
+Favicon: https://www.nickdl.site/media/ic_gallery_discover_filled.png
