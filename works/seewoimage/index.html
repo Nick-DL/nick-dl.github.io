@@ -36,7 +36,7 @@
           <div class="intro mdui-typo">
             <h3>简介</h3>
             <p>此镜像基于 Windows 11 22H2 (10.0.22621.1702) 官方版本改装，适配 mz 的希沃一体机（主板型号 MT51），安装了MS Office、WPS、PotPlayer、微信、网易云音乐、酷狗音乐、火绒、QQ、几何画板等常用软件。</p>
-            <p>鄙人自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，应该还存在些许需要还原镜像前后进行的额外操作，具体见下。</p>
+            <p>驻波自认为积攒了比较丰厚的电教经验。自2019年起便尝试为dc的电脑安装Windows 10，故保证此镜像不会存在运行上的问题。但是，此镜像由于封装仓促，应该还存在些许需要还原镜像前后进行的额外操作，具体见下。</p>
             <p></p>
           </div>
           <div class="mdui-card mdui-hoverable">
@@ -44,7 +44,7 @@
                 <a href="#download">
                   <li class="mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">file_download</i>
-                    <div class="mdui-list-item-content">下载</div>
+                    <div class="mdui-list-item-content">下载（见文末）</div>
                     <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
                   </li>
                 </a>
@@ -79,40 +79,44 @@
                     <table class="mdui-table">
                       <tbody>
                         <tr>
-       <!--v2-->                   <td>QQ</td>
+                          <!--v2-->
+                          <td>QQ</td>
                           <td>v9.9.0.14569</td>
                         </tr>
-                          
+                    
                         <tr mdui-tooltip="{content:'KMS自动延期激活，若不喜欢可以重装零售版'}">
-                          <!--v2-->                     <td>Microsoft Office</td>
-                                               <td>2016 Mondo Volume (2403)</td>
-                                             </tr>
-                                             <tr>
-                                               <td>酷狗音乐</td>
-                                               <td>v10.2.50</td>
-                                             </tr>
-                                             <tr>
-                                               <td>网易云音乐</td>
-                                               <td>v3.0.0.Beta.03.12.202664.64</td>
-                          <!--v2-->                   </tr>
-                                             <tr>
-                                               <td>PotPlayer</td>
-                                               <td>v240305</td>
-                                             </tr>
-                                             <tr>
-                                               <td>火绒安全软件</td>
-                                               <td>v5.0.1.1</td>
-                                             </tr>
-                                             <tr>
-                                               <td>微信</td>
-                                               <td>v3.9.9</td>
-                                             </tr>
-                                             <tr>
-                                               <td>WPS Office</td>
-                                               <td>16412</td>
-                   
-        <!--v2-->                </tr>
-
+                          <!--v2-->
+                          <td>Microsoft Office</td>
+                          <td>2016 Mondo Volume (2403)</td>
+                        </tr>
+                        <tr>
+                          <td>酷狗音乐</td>
+                          <td>v10.2.50</td>
+                        </tr>
+                        <tr>
+                          <td>网易云音乐</td>
+                          <td>v3.0.0.Beta.03.12.202664.64</td>
+                          <!--v2-->
+                        </tr>
+                        <tr>
+                          <td>PotPlayer</td>
+                          <td>v240305</td>
+                        </tr>
+                        <tr>
+                          <td>火绒安全软件</td>
+                          <td>v5.0.1.1</td>
+                        </tr>
+                        <tr>
+                          <td>微信</td>
+                          <td>v3.9.9</td>
+                        </tr>
+                        <tr>
+                          <td>WPS Office</td>
+                          <td>16412</td>
+                    
+                          <!--v2-->
+                        </tr>
+                    
                       </tbody>
                     </table>
                   </div>
@@ -128,7 +132,7 @@
                   <p>1. 在没有实体键盘的情况下，建议的进入PE盘的方法：
                     <br>进入设置，找到高级启动并点击重启，在WinRE里会有从媒体介质启动的选项；
                   </p>
-                  <p>2. V2 镜像提供了<b>⌈各分区分开打包⌋</b>和<b>⌈整个硬盘打包⌋</b>两种方式。若为了深度还原系统，可选择后者，此时<b>请检查电脑显示的前3个有效分区是否有重要数据</b>。但如果 D、E 盘有重要数据，可以使用第一种方法：覆写 C 盘数据后，将 D 盘文件的压缩包直接解压到 D 盘根目录，再<b>通过 Dism++ 修复引导</b>。
+                  <p>2. V2 镜像提供了<b> ⌈各分区分开打包⌋ </b>和<b> ⌈整个硬盘打包⌋ </b>两种方式。若为了深度还原系统，可选择后者，此时<b>请检查电脑显示的前3个有效分区是否有重要数据</b>。但如果 D、E 盘有重要数据，可以使用第一种方法：覆写 C 盘数据后，将 D 盘文件的压缩包直接解压到 D 盘根目录，再<b>通过 Dism++ 修复引导</b>。
                     <br>mz 的电脑还内置另一个 1TB 的机械硬盘，建议将镜像放置在此硬盘的分区里。
                     <br>另外，若采用后者，Ghost出现闪退现象，建议还原镜像时不要修改各目标分区容量。实在不行，请使用官方提供的CGI_Plus备份还原（见下）。
                   </p>
@@ -280,14 +284,14 @@
             </div>
             <div class="mdui-card-content">
               <p>V2 版本提供阿里云盘和 123 云盘的下载方式。</p>
-              <p>若需要从阿里云盘下载，可以通过 AList 网盘下载或者找我发特异性的快传链接。但前者可能不太稳定，后者的链接无法公开使用。</p>
+              <p>若需要从阿里云盘下载，可以通过 AList 网盘下载（维护中）或者找我发有效期仅一天的快传链接。但前者可能不太稳定，后者的链接无法公开使用。</p>
               <p>所以，推荐通过 123 云盘下载。</p>
-              <p>补充说明：对于 V2 的镜像，请先解压分卷压缩包后校验使用，“Disk”指的是⌈整个硬盘打包⌋版本，而“Partition”指⌈各分区分开打包⌋版本，“Partition D”指 D 盘的文件；AList 目前到蛇年也没打算恢复，所以非 123 盘会员的可能要支付 1.5r 以下载镜像。</p>
+              <p>补充说明：对于 V2 的镜像，请先解压分卷压缩包后校验使用，“Disk”指的是 ⌈整个硬盘打包⌋ 版本，而“Partition”指 ⌈各分区分开打包⌋ 版本，“Partition D”指 D 盘的文件；AList 目前也没打算恢复，123 云盘按需收取一点流量费，大概一块五，感觉比阿里夸克都划算。</p>
             </div>
             <div class="mdui-card-actions">
               <a href="https://www.123pan.com/s/he7rVv-22YO.html" class="mdui-btn mdui-ripple mdui-color-blue-600">V2 (123 云盘)</a>
-              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for SEEWO v2/" class="mdui-color-blue-100 mdui-btn mdui-ripple">V2 (AList)</a>
-              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for Seewo.GHO" class="mdui-btn mdui-ripple mdui-color-blue-50">V1 (AList)</a>
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for SEEWO v2/" class="mdui-color-blue-100 mdui-btn mdui-ripple">V2 (AList 维护中)</a>
+              <a href="https://alist.nickdl.site/阿里云盘/Software/PC/Windows 11 for Seewo.GHO" class="mdui-btn mdui-ripple mdui-color-blue-50">V1 (AList 维护中)</a>
 
             </div>
           </div>

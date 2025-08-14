@@ -90,8 +90,16 @@
 
     }
     
+    .avatar-card {
+      background-image: url(./media/nick_dl_logo.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      max-height: 290px;
+    }
+
     .ndw-card-bg-hill {
-      background-image: url(/media/hill.jpg);
+      background-image: url(/media/hill-26.jpg);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -162,7 +170,7 @@
       .mdui-card-content>.mdui-typo>h1 {
         margin-top: .2em;
       }
-    </style>
+  </style>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
@@ -171,8 +179,8 @@
               mdui-drawer="{target: '#left-drawer'}">
         <i class="mdui-icon material-icons">menu</i>
       </button>
-      <button mdui-drawer="{target: '#left-drawer'}" class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
-        <i class="mdui-icon" mdui-tooltip="{content: '导航'}">
+      <button mdui-tooltip="{content: '导航'}" mdui-drawer="{target: '#left-drawer'}" class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
+        <i class="mdui-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <defs>
               <path
@@ -222,29 +230,26 @@
             <span class="wz">网站</span>工具<span class="mdui-menu-item-more"></span>
           </a>
           <ul class="mdui-menu mdui-list">
-            <li class="mdui-subheader">操作</li>
+            <li class="mdui-subheader">操作 <small>(需跳转至 GitHub)</small></li>
             <a onclick="redirectToGitHub()"><li class="mdui-list-item mdui-menu-item mdui-ripple">
               <div class="mdui-list-item-content">
                 <div class="mdui-list-item-title">查看本页源代码</div>
-                <div class="mdui-list-item-text">前往 GitHub</div>
               </div>
             </li></a>
             <a onclick="EditToGitHub()" ><li class="mdui-list-item mdui-menu-item mdui-ripple">
               <div class="mdui-list-item-content">
                 <div class="mdui-list-item-title">编辑本页</div>
-                <div class="mdui-list-item-text">前往 GitHub</div>
               </div>
             </li></a>
             <li class="mdui-subheader ">反馈</li>
-            <a href="https://forms.office.com/r/xtQHCBPqsR" ><li class="mdui-list-item mdui-menu-item mdui-ripple">
+            <a  mdui-tooltip="{content: '文字/链接/图片异常等'}" href="https://forms.office.com/r/xtQHCBPqsR" ><li class="mdui-list-item mdui-menu-item mdui-ripple">
               <div class="mdui-list-item-content">
-                <div class="mdui-list-item-title">反馈问题</div>
-                <div class="mdui-list-item-text">文字/链接/图片异常</div>
+                <div class="mdui-list-item-title">反馈网站异常</div>
               </div>
             </li></a>
-            <a href="https://forms.office.com/r/vN3TM1ge4t"><li class="mdui-list-item mdui-menu-item mdui-ripple">
+            <a  mdui-tooltip="{content: 'Want NDW to specifically support your language?'}" href="https://forms.office.com/r/vN3TM1ge4t"><li class="mdui-list-item mdui-menu-item mdui-ripple">
               <div class="mdui-list-item-content">
-                Translation Request
+                Translated page
               </div>
             </li></a>
           </ul>
@@ -266,6 +271,25 @@
                 关于本站
               </div>
             </li></a>
+            <li class="mdui-subheader ">标题栏模糊半径 <span id="slider-value">20</span></li>
+            <li class="mdui-menu-item">
+              <label style="" class="mdui-slider">
+                <input type="range" step="0.1" min="0" max="60" value="50" id="blur-slider" />  
+              </label>
+            </li>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                  const slider = document.querySelector('.mdui-slider input[type="range"]');
+                  const toolbar = document.querySelector('.glur-toolbar');
+                  const sliderValueDisplay = document.getElementById('slider-value');
+                  slider.value = 20;
+                  toolbar.style.backdropFilter = 'blur(20px)';
+                  slider.addEventListener('input', function () {
+                    toolbar.style.backdropFilter = `blur(${this.value}px)`;
+                    sliderValueDisplay.textContent = `${this.value}`;
+                  });
+                });
+            </script>
           </ul>
         </li>
       </ul>
@@ -273,8 +297,8 @@
   </div>
   <div class="mdui-drawer" id="left-drawer">
     <div class="mdui-toolbar mdui-color-transparent glur-toolbar mdui-hidden-md-up">
-      <button mdui-drawer-close class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
-        <i class="mdui-icon" mdui-tooltip="{content: '收起导航'}">
+      <button mdui-tooltip="{content: '收起导航'}" mdui-drawer-close class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
+        <i class="mdui-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <defs>
               <path
@@ -408,10 +432,12 @@
                     };
                   }
 
+                  
                   function updateCountdown1() {
                     const examDate1 = new Date("2026-06-07");
                     const now = new Date();
-                    let daysDiff1 = Math.ceil((examDate1 - now) / 86400000);
+                    const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                    let daysDiff1 = Math.max(0, Math.floor((examDate1 - todayMidnight) / 86400000));
                     daysDiff1 = daysDiff1 < 0 ? 0 : daysDiff1;
 
                     countdown3El.textContent = daysDiff1;
@@ -499,7 +525,7 @@
       <p></p>
       <p></p>
       <div class="mdui-col-sm-6">
-        <div class="mdui-card mdui-hoverable">
+        <!--<div class="mdui-card mdui-hoverable">
           <div class="mdui-card-media">
             <img src="./media/nick_dl_logo.svg" />
             <div class="mdui-card-media-covered">
@@ -514,6 +540,37 @@
             <a class="mdui-btn mdui-ripple" mdui-dialog="{target: '#QQ'}">QQ: 3196225386</a>
             <a href="mailto:nick_dl@outlook.com" class="mdui-btn mdui-ripple">邮箱:
               nick_dl@outlook.com</a>
+          </div>
+        </div>
+        <p></p>-->
+        <div class="mdui-card mdui-hoverable avatar-card">
+          <div class="">
+            <div class="mdui-row">
+              <div class="mdui-col-xs-6 mdui-col-offset-xs-6">
+                <ul class="mdui-list">
+                  <a href="/resource-share/">
+                    <li class="mdui-list-item mdui-ripple">
+                      <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-purple-accent">share</i>
+                      <div class="mdui-list-item-content">介绍 & 联系</div>
+                    </li>
+                  </a>
+                  <li class="mdui-divider-inset mdui-m-y-0"></li>
+                  <a href="/leave-comments/">
+                    <li class="mdui-list-item mdui-ripple">
+                      <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-indigo-accent">message</i>
+                      <div class="mdui-list-item-content">BLOG</div>
+                    </li>
+                  </a>
+                  <li class="mdui-divider-inset mdui-m-y-0"></li>
+                  <a href="/free-talk/">
+                    <li class="mdui-list-item mdui-ripple">
+                      <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-accent">lightbulb_outline</i>
+                      <div class="mdui-list-item-content">公众号</div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -617,7 +674,7 @@
                 <div class="intro mdui-typo">
                 </div>
                 <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">
-                  DEMO | 编辑于 2025/6/7。</p>
+                  DEMO | 编辑于 2025/8/14。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2025. All rights reserved.
               </div>
