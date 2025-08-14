@@ -44,6 +44,7 @@
 		<loc>https://www.nickdl.site/sitemap</loc>
 		<priority>0.50</priority>
 		<lastmod>2023-08-14</lastmod>
+	</url>
 	<url>
 		<loc>https://www.nickdl.site/timetraveller</loc>
 		<priority>0.50</priority>
@@ -59,7 +60,7 @@
 		<priority>0.50</priority>
 		<lastmod>2024-03-31</lastmod>
 	</url>
-		<url>
+	<url>
 		<loc>https://www.nickdl.site/works/dcbrxyimage</loc>
 		<priority>0.50</priority>
 		<lastmod>2023-07-09</lastmod>
