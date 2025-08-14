@@ -127,7 +127,12 @@
           <td>
             <button class="mdui-btn mdui-ripple mdui-color-blue-600" mdui-tooltip="{content: '哈哈哈😄'}" mdui-dialog="{target: '#showthanks'}"><i class="mdui-icon mdui-icon-left material-icons">card_giftcard</i>感谢</button>
           </td>
-          <td><a href="https://www.netlify.com/"><img class="mdui-img-fluid" src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg"/></a></td>
+          <td><a href="https://www.netlify.com/">
+            <picture>
+              <source srcset="https://docusaurus.io/img/footer/badge-netlify.svg" media="(prefers-color-scheme: dark)">
+              <img class="mdui-img-fluid" src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" />
+              </picture>
+          </a></td>
         </tr>
         </tbody>
       </table>
