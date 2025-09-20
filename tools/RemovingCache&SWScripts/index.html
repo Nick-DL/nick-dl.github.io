@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Worker缓存清理工具</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --success: #06d6a0;
+            --warning: #ffd166;
+            --danger: #ef476f;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: #333;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+        }
+
+        .status {
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+
+        .status.error {
+            background: #fee2e2;
+            color: #b91c1c;
+            display: block;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Service Worker缓存清理工具</h1>
+            <p class="subtitle">解决VS Code实时预览中的缓存问题</p>
+        </header>
+
+        <div class="content">
+            <div class="card">
+                <h2>问题描述</h2>
+                <p>在使用VS Code实时预览插件调试网页时，Service Worker可能会缓存资源，导致其他项目无法及时更新。这个工具帮助您清理各种缓存。</p>
+            </div>
+
+            <div class="card">
+                <h2>缓存清理操作</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>清除Service Worker</h3>
+                        <p>注销并移除所有已注册的Service Worker</p>
+                        <button class="btn btn-danger" id="clearSW">清除Service Worker</button>
+                        <div id="swStatus" class="status"></div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>清除缓存存储</h3>
+                        <p>删除所有Cache API存储的缓存</p>
+                        <button class="btn btn-danger" id="clearCache">清除缓存存储</button>
+                        <div id="cacheStatus" class="status"></div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>清除浏览器数据</h3>
+                        <p>清除本地存储、会话存储和Cookie</p>
+                        <button class="btn btn-warning" id="clearStorage">清除浏览器数据</button>
+                        <div id="storageStatus" class="status"></div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>一键清除所有缓存</h3>
+                        <p>执行上述所有清理操作</p>
+                        <button class="btn btn-danger" id="clearAll">一键清除所有缓存</button>
+                        <div id="allStatus" class="status"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>预防措施与代码示例</h2>
+                <p>在开发阶段，可以在代码中添加以下片段防止缓存问题：</p>
+
+                <h3>Service Worker注销代码</h3>
+                <div class="code-block">
+                    // 注销所有已注册的Service Worker
+                    if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                    registration.unregister();
+                    }
+                    });
+                    }
+                </div>
+
+                <h3>清除缓存代码</h3>
+                <div class="code-block">
+                    // 清除所有缓存
+                    caches.keys().then(function(cacheNames) {
+                    cacheNames.forEach(function(cacheName) {
+                    caches.delete(cacheName);
+                    });
+                    });
+                </div>
+
+                <h3>开发最佳实践</h3>
+                <ul>
+                    <li>在开发时禁用Service Worker</li>
+                    <li>使用浏览器无痕模式进行调试</li>
+                    <li>在VS Code中配置实时预览插件禁用缓存</li>
+                    <li>使用Ctrl+Shift+R强制刷新页面</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2023 VS Code缓存清理工具 | 用于开发调试目的</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('clearSW').addEventListener('click', function () {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                    if (registrations.length === 0) {
+                        document.getElementById('swStatus').textContent = '没有找到已注册的Service Worker';
+                        document.getElementById('swStatus').className = 'status success';
+                    } else {
+                        for (let registration of registrations) {
+                            registration.unregister();
+                        }
+                        document.getElementById('swStatus').textContent = '已成功注销 ' + registrations.length + ' 个Service Worker';
+                        document.getElementById('swStatus').className = 'status success';
+                    }
+                }).catch(function (error) {
+                    document.getElementById('swStatus').textContent = '错误: ' + error.message;
+                    document.getElementById('swStatus').className = 'status error';
+                });
+            } else {
+                document.getElementById('swStatus').textContent = '此浏览器不支持Service Worker';
+                document.getElementById('swStatus').className = 'status error';
+            }
+        });
+
+        document.getElementById('clearCache').addEventListener('click', function () {
+            if ('caches' in window) {
+                caches.keys().then(function (cacheNames) {
+                    if (cacheNames.length === 0) {
+                        document.getElementById('cacheStatus').textContent = '没有找到缓存';
+                        document.getElementById('cacheStatus').className = 'status success';
+                    } else {
+                        cacheNames.forEach(function (cacheName) {
+                            caches.delete(cacheName);
+                        });
+                        document.getElementById('cacheStatus').textContent = '已成功清除 ' + cacheNames.length + ' 个缓存';
+                        document.getElementById('cacheStatus').className = 'status success';
+                    }
+                }).catch(function (error) {
+                    document.getElementById('cacheStatus').textContent = '错误: ' + error.message;
+                    document.getElementById('cacheStatus').className = 'status error';
+                });
+            } else {
+                document.getElementById('cacheStatus').textContent = '此浏览器不支持Cache API';
+                document.getElementById('cacheStatus').className = 'status error';
+            }
+        });
+
+        document.getElementById('clearStorage').addEventListener('click', function () {
+            let count = 0;
+
+            // 清除localStorage
+            if (window.localStorage) {
+                count += Object.keys(localStorage).length;
+                localStorage.clear();
+            }
+
+            // 清除sessionStorage
+            if (window.sessionStorage) {
+                count += Object.keys(sessionStorage).length;
+                sessionStorage.clear();
+            }
+
+            // 清除cookies
+            document.cookie.split(";").forEach(function (cookie) {
+                let eqPos = cookie.indexOf("=");
+                let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+                count++;
+            });
+
+            document.getElementById('storageStatus').textContent = '已清除浏览器存储数据，共清理 ' + count + ' 项';
+            document.getElementById('storageStatus').className = 'status success';
+        });
+
+        document.getElementById('clearAll').addEventListener('click', function () {
+            // 执行所有清理操作
+            document.getElementById('clearSW').click();
+            document.getElementById('clearCache').click();
+            document.getElementById('clearStorage').click();
+
+            document.getElementById('allStatus').textContent = '已执行所有清理操作，请查看各项状态';
+            document.getElementById('allStatus').className = 'status success';
+        });
+    </script>
+</body>
+
+</html>
