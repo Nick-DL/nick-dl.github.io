@@ -53,5 +53,5 @@ My Personal Website
 
 <p align="center"> 
      <img height="60"src="https://user-images.githubusercontent.com/106737278/213456453-bdcd0029-2b4e-491a-b5e9-d74426922977.svg"/><br>
-    ©Copyright by Nick_DL 2022-2025. All rights reserved.
+    ©Copyright by Nick_DL 2022-2026. All rights reserved.
 </p>
