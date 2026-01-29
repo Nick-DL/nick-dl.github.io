@@ -1,5 +1,5 @@
 const birthday = new Date('2026-02-08T00:00:00+08:00');
-const birthDate = new Date('2008-02-08T00:00:00+08:00');
+const birthDate = new Date('2008-02-08T12:00:00+08:00');
 
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
