@@ -13,12 +13,7 @@
         type="image/x-icon" />
   <link rel="stylesheet" href="/media/NDWstyle-v2p.css" />
   <style type="text/css">
-    .mdui-card-3rdAnn {
-      background-image: url(free-talk/media/background.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+
 
     .avatar-card {
       background-image: url(./media/nick_dl_logo.svg);
@@ -48,6 +43,9 @@
         margin-top: .2em;
       }
   </style>
+
+  <link rel="stylesheet" href="/media/birthday.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue:wght@700&family=Baloo+2:wght@600&display=swap" rel="stylesheet">
 </head>
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
@@ -248,30 +246,45 @@
   <div class="mdui-container">
     <div class="mdui-row">
       <div class="mdui-col-sm-12">
-        <p></p>
-        <div style="font-family: Source Han Serif; " class="mdui-card mdui-card-3rdAnn mdui-hoverable mdui-color-pink-50" mdui-tooltip="{content: '图片摄于：2023 年 1 月 18 日'}">
-          <div class="mdui-row mdui-row-gapless">
-            <div class="mdui-col-xs-8" style="max-width: 300px; padding-right: 1px;">
 
-              <div class="sdt mdui-card-content mdui-text-color-white" style="padding-right: 1px;">
-                <p style="font-size: 17px;line-height: 24px;">
-                  <span style="font-size: 15px; font-family: Roboto;">2022.12.29 <b><span style="color:#cedffd">▸</span><span style="color:#0a3bf7">▸</span></b> 2025.12.29</span><br>
-                  Celebrating the 3rd Anniversary of ND's Website!<br>
-                </p>
+        <p></p>
+        <div class="mdui-card mdui-hoverable birthday-card" id="birthdayCard">
+          <div class="card-header">
+            <h1 class="card-title">🎉 ND's 18th Birthday Countdown 🎂</h1>
+          </div>
+        
+          <div class="card-content">
+            <div class="countdown-container" id="countdownContainer">
+              <div class="countdown-item countdown-days">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
               </div>
-              <div class="mdui-card-primary" style="padding-right: 1px;">
-                <div class="mdui-card-primary-title mdui-text-color-white">
-                  <b>满载热爱 · 灿烂前行</b>
-                </div>
+              <div class="countdown-item countdown-hours">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+              </div>
+              <div class="countdown-item countdown-minutes">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+              </div>
+              <div class="countdown-item countdown-seconds">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
               </div>
             </div>
-            <div class="mdui-col-xs-4 mdui-float-right" align="right" style="padding-left: 1px;">
-              <img src="/media/3rdAnnv.png" style="max-width: 220px; width: 100%; padding: 0px;" />
+            <div class="age-display" id="ageDisplay">
+              当前年龄: 17.99999999 岁
+            </div>
+            <div class="birthday-message" id="birthdayMessage">
             </div>
           </div>
+        
+          <div class="animation-area" id="animationArea"></div>
+        
+          <button class="mdui-ripple replay-button" id="replayButton" style="display: none;">重播动画</button>
         </div>
-      </div>
-    </div>
+        <script src="/media/birthday.js"></script>
+    </div></div>
     <div class="mdui-row">
       <div class="mdui-col-sm-8 mdui-col-md-6">
         <p></p>
@@ -568,7 +581,7 @@
             <div class="mdui-row">
               <div class="mdui-col-sm-12">
                 <p mdui-tooltip="{content: '加油！！！！', position: 'top'}">
-                  编辑于 2025/12/30。</p>
+                  编辑于 2026/1/30。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2026. All rights reserved.
               </div>
