@@ -12,11 +12,10 @@
     overflow: hidden;
     position: relative;
     border: 6px solid #ffeb3b;
-    height: 300px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 1200px;
 
 }
 
@@ -62,23 +61,23 @@
     margin-bottom: 15px;
     width: 100%;
     overflow-x: auto;
-    padding: 8px 0;
-    /* 增加上下内边距 */
+    overflow-y: visible;
+    padding: 20px 10px;
+    min-height: 100px;
+    /* 确保有足够空间显示完整的卡片和阴影 */
 }
 
 .countdown-item {
     background: white;
     border-radius: 12px;
     padding: 18px 8px;
-    /* 从15px改为18px，增加3px上下内边距 */
-    min-width: 80px;
+    min-width: 70px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border: 3px solid;
     flex: 1;
-    min-width: 70px;
-    margin: 2px 0;
-    /* 增加上下外边距 */
+    margin: 0;
+    /* 移除额外margin，由container的padding控制空白 */
 }
 
 .countdown-days {
@@ -278,6 +277,14 @@
 }
 
 @media (max-width: 768px) {
+    .birthday-card {
+        height: 315px;
+    }
+
+    .countdown-container {
+        min-height: 74px;
+}
+
     .card-title {
         font-size: 1.6rem;
     }
@@ -327,10 +334,14 @@
 }
 
 @media (max-width: 480px) {
-    .countdown-container {
-        gap: 5px;
+    .birthday-card {
+        height: 315px;
     }
 
+    .countdown-container {
+        gap: 5px;
+        min-height: 63px;
+}
     .countdown-item {
         min-width: 55px;
         padding: 8px 4px;
