@@ -30,6 +30,17 @@ body {
     height: 42px;
 }
 
+.mdui-list-item>.mdui-fab {
+    background-color: #00000010;
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+}
+
+.mdui-chip {
+    background-color: #00000010;
+}
+
 .mdui-toolbar>.mdui-typo-headline {
     margin-left: 6px;
 }
@@ -123,6 +134,14 @@ body {
     }
 
     .mdui-toolbar>.mdui-btn-icon {
+        background-color: #ffffff26 !important;
+    }
+
+    .mdui-list-item>.mdui-fab {
+        background-color: #ffffff26 !important;
+    }
+
+    .mdui-chip {
         background-color: #ffffff26 !important;
     }
 }
