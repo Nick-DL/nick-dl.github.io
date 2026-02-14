@@ -38,11 +38,8 @@ body {
     margin-right: 15px !important;
 }
 
-.mdui-list-item>.mdui-fab {
+.mdui-list-item>.mdui-btn-icon {
     background-color: #00000010;
-    width: 42px;
-    min-width: 42px;
-    height: 42px;
 }
 
 .mdui-chip {
@@ -86,9 +83,12 @@ body {
     margin: 0 6px;
 }
 
-.mdui-menu-item-active {
+.mdui-menu-item>a {
     border-radius: 8px;
-    margin: 0 6px;
+}
+
+.mdui-menu-item-active>a {
+    border-radius: 8px;
 }
 
 .mdui-subheader {
@@ -116,8 +116,8 @@ body {
 }
 
 .glur-toolbar {
-    background: linear-gradient(45deg, rgba(241, 243, 245, 0.8), rgba(241, 243, 245, 0.5));
-    backdrop-filter: blur(10px);
+    background: rgba(241, 243, 245, 0.65) !important;
+    backdrop-filter: blur(20px);
 }
 
 /* 系统偏好深色模式样式适配 */
@@ -139,14 +139,14 @@ body {
     }
 
     .mdui-theme-layout-auto .glur-toolbar {
-        background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5)) !important;
+        background: rgba(48, 48, 48, 0.65) !important;
     }
 
     .mdui-theme-layout-auto .mdui-toolbar>.mdui-btn-icon {
         background-color: #ffffff26 !important;
     }
 
-    .mdui-theme-layout-auto .mdui-list-item>.mdui-fab {
+    .mdui-theme-layout-auto .mdui-list-item>.mdui-btn-icon {
         background-color: #ffffff26 !important;
     }
 
@@ -173,14 +173,14 @@ body {
 }
 
 .mdui-theme-layout-dark .glur-toolbar {
-    background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5)) !important;
+    background: rgba(48, 48, 48, 0.65) !important;
 }
 
 .mdui-theme-layout-dark .mdui-toolbar>.mdui-btn-icon {
     background-color: #ffffff26 !important;
 }
 
-.mdui-theme-layout-dark .mdui-list-item>.mdui-fab {
+.mdui-theme-layout-dark .mdui-list-item>.mdui-btn-icon {
     background-color: #ffffff26 !important;
 }
 
@@ -287,9 +287,39 @@ body {
     margin-right: 8px;
 }
 
-    /* 响应式显示主题切换按钮 */
-    @media (max-width: 1023px) {
-      .theme-toggle-desktop {
-        display: none !important;
-      }
+/* 响应式显示主题切换按钮 */
+@media (max-width: 1023px) {
+    .theme-toggle-desktop {
+    display: none !important;
     }
+}
+
+.mdui-theme-layout-dark .mdui-snackbar {
+    background-color: rgba(115, 115, 115, 0.65) !important;
+    backdrop-filter: blur(20px);
+}
+
+.mdui-snackbar {
+    background-color: rgba(1, 1, 1, 0.65) !important;
+    backdrop-filter: blur(20px);
+}
+
+.mdui-snackbar-left-top,
+.mdui-snackbar-right-top,
+.mdui-snackbar-top {
+    top: 56px;
+}
+
+@media (min-width: 600px) {
+    .mdui-snackbar-right-top {
+        top: 72px;
+        right: 24px;
+    }
+    .mdui-snackbar {
+        border-radius: 12px;
+    }
+}
+
+.mdui-tooltip {
+    backdrop-filter: blur(20px);
+}

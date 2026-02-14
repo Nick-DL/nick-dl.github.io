@@ -16,10 +16,16 @@
   <style type="text/css">
     .ndw-card-bg-hill {
       background-image: url(/media/hill-26.jpg);
+      max-height: 290px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      max-height: 290px;
+    }
+
+    .mdui-card-2026 {
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
     }
     
     @font-face {
@@ -34,6 +40,35 @@
     
     .mdui-card-content>.mdui-typo>h1 {
       margin-top: .2em;
+    }
+
+    .mdui-chip-icon>.mdui-icon {
+      font-size: 20px;
+      top: 6px;
+      left: 6px;
+    }
+
+    @font-face {
+      font-family: FZCWLMJST;
+      font-weight: 900;
+      font-display: swap;
+      src: url("http://lc-RAZGOrF5.cn-n1.lcfile.com/haTT4WbzqVXBkD5X3QuIjlbeqtJuWXSv/FZCWLMJSTJ-H.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: FZCWLMJST;
+      font-weight: 700;
+      font-display: swap;
+      src: url("http://lc-RAZGOrF5.cn-n1.lcfile.com/IR4W5JvxrC3uQeq26xtavdhkiDpfcmqR/FZCWLMJSTJ-B.woff2") format("woff2");
+    }
+
+        .sdt {
+      font-size: 1em;
+      text-shadow: 1.5px 1.5px 3px #88888870;
+    }
+
+    .mdui-card-2026 {
+      background-image: url(/media/2026sfbg.png);
     }
   </style>
 
@@ -67,7 +102,7 @@
       <button id="themeToggleDesktop" class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon theme-toggle-desktop"
         mdui-tooltip="{content: '切换深浅色模式', delay: 500}">
         <i class="mdui-icon" id="themeIconDesktop">
-          <!-- 图标将由脚本动态设置 -->
+          !<!-- 图标将由脚本动态设置 -->
         </i>
       </button>
       <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon" mdui-menu="{target: '#more'}"
@@ -84,8 +119,8 @@
         </i>
       </button>
       <ul class="mdui-menu mdui-menu-cascade" id="more">
-        <li class="mdui-menu-item" disabled>
-          <a href="javascript:;" class="mdui-ripple">
+        <li class="mdui-menu-item">
+          <a href="javascript:;" class="mdui-ripple" id="AddStar">
             <i class="mdui-menu-item-icon mdui-icon material-icons">star</i>
             收藏本站</a>
         </li>
@@ -190,7 +225,7 @@
       <button id="themeToggleMobile" class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon"
         mdui-tooltip="{content: '切换深浅色模式', delay: 500}">
         <i class="mdui-icon" id="themeIconMobile">
-          <!-- 图标将由脚本动态设置 -->
+          !<!-- 图标将由脚本动态设置 -->
         </i>
       </button>
     </div>
@@ -237,7 +272,18 @@
   <div class="mdui-container">
     <div class="mdui-row">
       <div class="mdui-col-sm-12">
-
+        <p></p>
+        <div class="mdui-card mdui-card-2026 mdui-hoverable mdui-color-orange-50" style="font-family: 'FZCWLMJST';">
+          <div class="sdt mdui-card-content mdui-text-color-orange-a400">
+            <h1 align="left" style="font-size: 36px; line-height: 40px; " class=" mdui-text-color-red-a400">驹驭长风<span class="mdui-hidden-xs-down">，</span><span class="mdui-hidden-sm-up"><br></span>骁腾新程</h1>
+            <p align="left" style="font-size: 30px;line-height: 36px; font-weight: 900;">
+              骐骥开道迎春至<span class="mdui-hidden-xs-down">，</span><span class="mdui-hidden-sm-up"><br></span>骅骝试路踏云来
+            </p>
+            <p style="font-size: 15px;line-height: 24px; font-weight: 700;" align="left"  class=" mdui-text-color-grey-800">
+              新的一年将至，<span class="mdui-hidden-sm-up"><br></span>愿我们每一步都是光芒蜿蜒处，<span class="mdui-hidden-sm-up"><br></span>每一程皆有长风万里随！
+            </p>
+          </div>
+        </div>
         <p></p>
         <div class="mdui-card mdui-hoverable birthday-card" id="birthdayCard">
           <div class="card-header">
@@ -272,7 +318,7 @@
         
           <div class="animation-area" id="animationArea"></div>
         
-          <button class="mdui-ripple replay-button" id="replayButton" style="display: none;">重播动画</button>
+          <button class="mdui-ripple-purple mdui-ripple replay-button" id="replayButton" style="display: none;">重播动画</button>
         </div>
         <script src="/media/birthday.js"></script>
     </div></div>
@@ -394,7 +440,7 @@
                   <div class="mdui-list-item-title">Works</div>
                   <div class="mdui-list-item-text mdui-list-item-one-line">期待真正的杰作</div>
                 </div>
-                <button class="mdui-fab mdui-fab-mini mdui-shadow-0 mdui-ripple">
+                <button class="mdui-btn mdui-btn-icon mdui-shadow-0 mdui-ripple">
                   <i class="mdui-icon material-icons">chevron_right</i>
                 </button>
               </li>
@@ -407,7 +453,7 @@
                   <div class="mdui-list-item-title">Blog</div>
                   <div class="mdui-list-item-text mdui-list-item-one-line">博客（在建）</div>
                 </div>
-                <button class="mdui-fab mdui-fab-mini  mdui-shadow-0 mdui-ripple">
+                <button class="mdui-btn mdui-btn-icon mdui-shadow-0 mdui-ripple">
                   <i class="mdui-icon material-icons">chevron_right</i>
                 </button>
               </li>
@@ -583,9 +629,13 @@
       <div class="mdui-dialog-content">
         <p>将自动跳转至我的 QQ 主页。</p>
         <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3196225386"
-           class="mdui-color-blue-600 mdui-btn mdui-btn-raised mdui-ripple">电脑端</a>
+           class="mdui-color-blue-600 mdui-btn mdui-btn-raised mdui-ripple">
+           <i class="mdui-icon mdui-icon-left material-icons">computer</i>
+           电脑端</a>
         <a href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=3196225386&card_type=person&source=sharecard"
-           class="mdui-color-blue-600 mdui-btn mdui-btn-raised mdui-ripple">手机端</a>
+           class="mdui-color-blue-600 mdui-btn mdui-btn-raised mdui-ripple">
+           <i class="mdui-icon mdui-icon-left material-icons">smartphone</i>
+           手机端</a>
       </div>
       <div class="mdui-dialog-actions">
         <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>

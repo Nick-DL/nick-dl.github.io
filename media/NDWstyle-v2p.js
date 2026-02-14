@@ -1,3 +1,12 @@
+var $ = mdui.$;
+
+$('#AddStar').on('click', function () {
+    mdui.snackbar({
+        message: '在电脑端可按 Ctrl(⌘) + D 收藏本站！',
+        position: 'right-top'
+    });
+});
+
 // 深浅色模式切换功能
 (function () {
     const STORAGE_KEY = 'ndw-theme-mode';
