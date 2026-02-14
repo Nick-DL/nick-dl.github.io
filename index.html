@@ -12,15 +12,8 @@
   <link rel="shortcut icon" href="./media/ic_gallery_discover_filled.png"
         type="image/x-icon" />
   <link rel="stylesheet" href="/media/NDWstyle-v2p.css" />
+  <link rel="stylesheet" href="/media/avatarcard.css" />
   <style type="text/css">
-    .avatar-card {
-      background-image: url(./media/nick_dl_logo.svg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      max-height: 290px;
-    }
-
     .ndw-card-bg-hill {
       background-image: url(/media/hill-26.jpg);
       background-size: cover;
@@ -42,190 +35,6 @@
     .mdui-card-content>.mdui-typo>h1 {
       margin-top: .2em;
     }
-
-    /* Nick_DL 卡片样式 */
-    .nick-dl-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nick-dl-card .mdui-card-content {
-      display: flex;
-      flex-direction: column;
-      container-type: inline-size;
-      container-name: nick-card;
-    }
-
-    .nick-dl-main-content {
-      display: grid;
-      grid-template-columns: 38% 1fr;
-      grid-template-rows: auto auto;
-      gap: 0;
-    }
-
-    .nick-dl-logo-wrapper {
-      grid-row: 1 / 2;
-      grid-column: 1 / 2;
-      width: 100%;
-      height: 100%; 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    .nick-dl-logo-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      height: auto; 
-      border-radius: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    .nick-dl-logo-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle 80px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.6) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .nick-dl-logo-container:hover::before {
-      opacity: 1;
-    }
-
-    .nick-dl-logo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-      display: block;
-      position: relative;
-      z-index: 0;
-    }
-
-    .nick-dl-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 16px;
-      grid-row: 1 / 2;
-      grid-column: 2 / 3;
-      min-width: 0;
-    }
-
-    .nick-dl-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .nick-dl-title {
-      margin: 8px 0 16px 0;
-      font-weight: 800;
-      font-size: clamp(24px, 4vw, 32px);
-      font-family: FZCWRYT;
-      line-height: 1.2;
-    }
-
-    .nick-dl-subtitle {
-      margin: 0;
-      color: #757575;
-      font-size: clamp(14px, 3vw, 16px);
-      line-height: 1.5;
-    }
-
-    .nick-dl-links {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 8px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 4px 0;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0,0,0,0.2) transparent;
-      grid-row: 2 / 3;
-      grid-column: 1 / 3;
-      margin-top: 16px;
-    }
-
-    .nick-dl-links::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .nick-dl-links::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .nick-dl-links::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.2);
-      border-radius: 3px;
-    }
-
-    .nick-dl-links::-webkit-scrollbar-thumb:hover {
-      background: rgba(0,0,0,0.3);
-    }
-
-    .nick-dl-links .mdui-chip {
-      flex-shrink: 0;
-    }
-
-    @container nick-card (min-width: 413px) {
-      .nick-dl-main-content {
-        grid-template-columns: 160px 1fr;
-        grid-template-rows: 1fr auto;
-        gap: 0 16px;
-      }
-
-      .nick-dl-logo-wrapper {
-        grid-row: 1 / 3;
-        grid-column: 1 / 2;
-        width: 100%; 
-      }
-
-      .nick-dl-info {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        padding-left: 0;
-      }
-
-      .nick-dl-links {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-        margin-top: 8px;
-      }
-    }
-
-    @container nick-card (max-width: 412px) {
-      .nick-dl-info {
-        padding-left: 12px;
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .nick-dl-subtitle {
-        color: #b0b0b0;
-      }
-      
-      .nick-dl-logo-container::before {
-        background: radial-gradient(circle 80px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.4) 0%, transparent 100%);
-      }
-
-      .nick-dl-links::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,0.3);
-      }
-
-      .nick-dl-links::-webkit-scrollbar-thumb:hover {
-        background: rgba(255,255,255,0.4);
-      }
-    }
   </style>
 
   <link rel="stylesheet" href="/media/birthday.css" />
@@ -234,10 +43,6 @@
 <body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-layout-auto">
   <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
     <div class="mdui-toolbar mdui-color-transparent glur-toolbar">
-      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" mdui-tooltip="{content: '导航'}"
-              mdui-drawer="{target: '#left-drawer'}">
-        <i class="mdui-icon material-icons">menu</i>
-      </button>
       <button mdui-tooltip="{content: '导航', delay: 500}" mdui-drawer="{target: '#left-drawer'}" class="mdui-text-color-theme-icon mdui-ripple mdui-btn mdui-btn-icon">
         <i class="mdui-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -259,6 +64,12 @@
       <a href="/" class="mdui-typo-headline" mdui-tooltip="{content: '蓝星拾光站', delay: 500}"><b>ND's Website</b></a>
       <a href="/" class="mdui-typo-title mdui-hidden-xs">主页</a>
       <div class="mdui-toolbar-spacer"></div>
+      <button id="themeToggleDesktop" class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon theme-toggle-desktop"
+        mdui-tooltip="{content: '切换深浅色模式', delay: 500}">
+        <i class="mdui-icon" id="themeIconDesktop">
+          <!-- 图标将由脚本动态设置 -->
+        </i>
+      </button>
       <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon" mdui-menu="{target: '#more'}"
         mdui-tooltip="{content: '锦坷垃', delay: 500}">
         <i class="mdui-icon">
@@ -376,14 +187,10 @@
       </button>
       <a href="javascript:;" class="mdui-typo-title"><b>导航</b></a>
       <div class="mdui-toolbar-spacer"></div>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon mdui-hidden" mdui-menu="{target: '#more'}"
-        mdui-tooltip="{content: '备用按钮', delay: 500}">
-        <i class="mdui-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" version="1.1">
-            <g id="_Public/ic_public_more" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <use id="_形状结合" fill="#000000" xlink:href="#_path-3"></use>
-            </g>
-          </svg>
+      <button id="themeToggleMobile" class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme-icon"
+        mdui-tooltip="{content: '切换深浅色模式', delay: 500}">
+        <i class="mdui-icon" id="themeIconMobile">
+          <!-- 图标将由脚本动态设置 -->
         </i>
       </button>
     </div>
@@ -588,7 +395,7 @@
                   <div class="mdui-list-item-text mdui-list-item-one-line">期待真正的杰作</div>
                 </div>
                 <button class="mdui-fab mdui-fab-mini mdui-shadow-0 mdui-ripple">
-                  <i class="mdui-icon material-icons">arrow_forward</i>
+                  <i class="mdui-icon material-icons">chevron_right</i>
                 </button>
               </li>
             </a>
@@ -601,7 +408,7 @@
                   <div class="mdui-list-item-text mdui-list-item-one-line">博客（在建）</div>
                 </div>
                 <button class="mdui-fab mdui-fab-mini  mdui-shadow-0 mdui-ripple">
-                  <i class="mdui-icon material-icons">arrow_forward</i>
+                  <i class="mdui-icon material-icons">chevron_right</i>
                 </button>
               </li>
             </a>
@@ -761,7 +568,7 @@
             <div class="mdui-row">
               <div class="mdui-col-sm-12">
                 <p mdui-tooltip="{content: '加油！！！！', position: 'top', delay: 500}">
-                  编辑于 2026/2/13。</p>
+                  编辑于 2026/2/14。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2026. All rights reserved.
               </div>
@@ -786,23 +593,8 @@
     </div>
   </div>
   <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
-  <script>
-    const logoContainer = document.getElementById('nickDlLogo');
-    if (logoContainer) {
-      logoContainer.addEventListener('mousemove', (e) => {
-        const rect = logoContainer.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const xPercent = (x / rect.width) * 100;
-        const yPercent = (y / rect.height) * 100;
-        
-        logoContainer.querySelector('::before') || logoContainer.style.setProperty('--mouse-x', `${xPercent}%`);
-        logoContainer.style.setProperty('--mouse-x', `${xPercent}%`);
-        logoContainer.style.setProperty('--mouse-y', `${yPercent}%`);
-      });
-    }
-  </script>
+  <script src="/media/NDWstyle-v2p.js"></script>
+  <script src="/media/avatarcard.js"></script>
 </body>
 
 </html>

@@ -24,10 +24,18 @@ body {
 
 .mdui-toolbar>.mdui-btn-icon {
     background-color: #00000010;
-    margin: 0 15px !important;
+    margin: 0 5px !important;
     width: 42px;
     min-width: 42px;
     height: 42px;
+}
+
+.mdui-toolbar>.mdui-btn-icon:first-of-type {
+    margin-left: 15px !important;
+}
+
+.mdui-toolbar>.mdui-btn-icon:last-of-type {
+    margin-right: 15px !important;
 }
 
 .mdui-list-item>.mdui-fab {
@@ -39,10 +47,6 @@ body {
 
 .mdui-chip {
     background-color: #00000010;
-}
-
-.mdui-toolbar>.mdui-typo-headline {
-    margin-left: 6px;
 }
 
 .mdui-menu {
@@ -116,34 +120,72 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* 系统偏好深色模式样式适配 */
 @media (prefers-color-scheme: dark) {
-    .mdui-color-blue-grey-100 {
+    .mdui-theme-layout-auto .mdui-color-blue-grey-100 {
         background-color: #37474F !important;
     }
 
-    .mdui-btn-icon svg use {
+    .mdui-theme-layout-auto .mdui-btn-icon svg use {
         fill: white !important;
     }
 
-    .text-color-changing {
+    .mdui-theme-layout-auto .mdui-btn-icon svg path {
+        fill: white !important;
+    }
+
+    .mdui-theme-layout-auto .text-color-changing {
         color: #ffffff !important;
     }
 
-    .glur-toolbar {
+    .mdui-theme-layout-auto .glur-toolbar {
         background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5)) !important;
     }
 
-    .mdui-toolbar>.mdui-btn-icon {
+    .mdui-theme-layout-auto .mdui-toolbar>.mdui-btn-icon {
         background-color: #ffffff26 !important;
     }
 
-    .mdui-list-item>.mdui-fab {
+    .mdui-theme-layout-auto .mdui-list-item>.mdui-fab {
         background-color: #ffffff26 !important;
     }
 
-    .mdui-chip {
+    .mdui-theme-layout-auto .mdui-chip {
         background-color: #ffffff26 !important;
     }
+}
+
+/* 手动设置深色模式的样式适配 */
+.mdui-theme-layout-dark .mdui-color-blue-grey-100 {
+    background-color: #37474F !important;
+}
+
+.mdui-theme-layout-dark .mdui-btn-icon svg use {
+    fill: white !important;
+}
+
+.mdui-theme-layout-dark .mdui-btn-icon svg path {
+    fill: white !important;
+}
+
+.mdui-theme-layout-dark .text-color-changing {
+    color: #ffffff !important;
+}
+
+.mdui-theme-layout-dark .glur-toolbar {
+    background: linear-gradient(45deg, rgba(48, 48, 48, 0.8), rgba(48, 48, 48, 0.5)) !important;
+}
+
+.mdui-theme-layout-dark .mdui-toolbar>.mdui-btn-icon {
+    background-color: #ffffff26 !important;
+}
+
+.mdui-theme-layout-dark .mdui-list-item>.mdui-fab {
+    background-color: #ffffff26 !important;
+}
+
+.mdui-theme-layout-dark .mdui-chip {
+    background-color: #ffffff26 !important;
 }
 
 .mdui-menu-cascade {
@@ -244,3 +286,10 @@ body {
 .mdui-divider-inset-light {
     margin-right: 8px;
 }
+
+    /* 响应式显示主题切换按钮 */
+    @media (max-width: 1023px) {
+      .theme-toggle-desktop {
+        display: none !important;
+      }
+    }

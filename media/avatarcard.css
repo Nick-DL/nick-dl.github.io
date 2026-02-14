@@ -1,0 +1,207 @@
+    .avatar-card {
+        background-image: url(./media/nick_dl_logo.svg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-height: 290px;
+    }
+    
+    /* Nick_DL 卡片样式 */
+    .nick-dl-card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nick-dl-card .mdui-card-content {
+        display: flex;
+        flex-direction: column;
+        container-type: inline-size;
+        container-name: nick-card;
+    }
+
+    .nick-dl-main-content {
+        display: grid;
+        grid-template-columns: 38% 1fr;
+        grid-template-rows: auto auto;
+        gap: 0;
+    }
+
+    .nick-dl-logo-wrapper {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .nick-dl-logo-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        border-radius: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .nick-dl-logo-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 80px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .nick-dl-logo-container:hover::before {
+        opacity: 1;
+    }
+
+    .nick-dl-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+        position: relative;
+        z-index: 0;
+    }
+
+    .nick-dl-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 16px;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        min-width: 0;
+    }
+
+    .nick-dl-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nick-dl-title {
+        margin: 8px 0 16px 0;
+        font-weight: 800;
+        font-size: clamp(24px, 4vw, 32px);
+        font-family: FZCWRYT;
+        line-height: 1.2;
+    }
+
+    .nick-dl-subtitle {
+        margin: 0;
+        color: #757575;
+        font-size: clamp(14px, 3vw, 16px);
+        line-height: 1.5;
+    }
+
+    .nick-dl-links {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 4px 0;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        margin-top: 16px;
+    }
+
+    .nick-dl-links::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .nick-dl-links::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .nick-dl-links::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+
+    .nick-dl-links::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .nick-dl-links .mdui-chip {
+        flex-shrink: 0;
+    }
+
+    @container nick-card (min-width: 413px) {
+        .nick-dl-main-content {
+            grid-template-columns: 160px 1fr;
+            grid-template-rows: 1fr auto;
+            gap: 0 16px;
+        }
+
+        .nick-dl-logo-wrapper {
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+            width: 100%;
+        }
+
+        .nick-dl-info {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            padding-left: 0;
+        }
+
+        .nick-dl-links {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            margin-top: 8px;
+        }
+    }
+
+    @container nick-card (max-width: 412px) {
+        .nick-dl-info {
+            padding-left: 12px;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .mdui-theme-layout-auto .nick-dl-subtitle {
+            color: #b0b0b0;
+        }
+
+        .mdui-theme-layout-auto .nick-dl-logo-container::before {
+            background: radial-gradient(circle 80px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+        }
+
+        .mdui-theme-layout-auto .nick-dl-links::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .mdui-theme-layout-auto .nick-dl-links::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    .mdui-theme-layout-dark .nick-dl-subtitle {
+        color: #b0b0b0;
+    }
+
+    .mdui-theme-layout-dark .nick-dl-logo-container::before {
+        background: radial-gradient(circle 80px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    }
+
+    .mdui-theme-layout-dark .nick-dl-links::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .mdui-theme-layout-dark .nick-dl-links::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
