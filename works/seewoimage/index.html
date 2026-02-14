@@ -17,7 +17,7 @@
           <i class="mdui-icon material-icons">arrow_back</i> 
         </a> 
         <a href="/" class="mdui-typo-headline mdui-hidden-xs">ND's Website</a> 
-        <a href="./" class="mdui-typo-title">希沃Win11镜像</a> 
+        <a href="./" class="mdui-typo-title">希沃 Win11 镜像</a> 
         <div class="mdui-toolbar-spacer"></div> 
         <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#more'}" mdui-tooltip="{content: '更多选项'}"> 
           <i class="mdui-icon material-icons">more_vert</i> 
@@ -32,10 +32,10 @@
     <div class="mdui-container">
       <div class="mdui-row">
         <div class="mdui-col-sm-12"> 
-          <h1 class="title mdui-text-color-blue-a400">希沃Win11镜像</h1>
+          <h1 class="title mdui-text-color-blue-a400">希沃 Windows 11 镜像</h1>
           <div class="intro mdui-typo">
             <h3>简介</h3>
-            <p>这是一个基于 Windows 11 22H2 (10.0.22621.1702) 官方版本改装，适配绵阳中学的希沃一体机（第五代，主板型号 MT51），预装了部分常用软件的 GHO 镜像。</p>
+            <p>这是一个 Windows 11 22H2 (10.0.22621.1702) ，基于希沃官方镜像升级，适配绵阳中学的希沃一体机（第五代，主板型号 MT51），预装了部分常用软件的 GHO 镜像。</p>
             <p>驻波自认为积攒了比较丰厚的电教经验。自小学以来给班上电脑升级系统一直是每年保留节目，故可以保证此镜像不会存在运行上的问题。但还存在些许需要还原镜像前后进行的额外操作，具体见后文说明。</p>
             <p></p>
           </div>
@@ -61,7 +61,7 @@
           <p><b>V2 镜像：更新于 2024/03/30</b></p>
           <p></p>
             <p>1. 直接由希沃官方 Windows 10 系统升级而来，驱动全部自带，不需要额外配置<br>
-            2. 在对系统的清理优化后，C盘占用 20 GB（不包含分页文件和虚拟内存转储），D盘占用 5 GB 左右<br>
+            2. 在对系统的清理优化后，C 盘占用 20 GB（不包含分页文件和虚拟内存转储），D 盘占用 5 GB 左右<br>
             3. 全部预装软件版本如下：
               <div class="mdui-panel" mdui-panel="{accordion: true}">
                 <div class="mdui-panel-item">
@@ -115,10 +115,10 @@
             <p></p>
             <p><b>更新内容：</b></p>
             <p>• 升级了各软件的版本<br>
-              • 为 PotPlayer 和 7-zip 的关联了文件格式，但常见音视频格式默认的仍然是 UWP 媒体播放器<br>
+              • 为 PotPlayer 和 7-zip 关联了文件格式，但常见音视频格式默认的仍然是 UWP 媒体播放器<br>
               • 安装了新微软雅黑的 SemiBold 和 SemiLight 样式字体，以改善 Windows 11 一些系统界面的显示效果，同时安装了一些常用字体<br>
               • 给 Office 上了新风格<br>
-              • 主推 C、D 盘分开打包的镜像，避免整个硬盘的格式化，也不需要再处理 UEFI 引导的问题</p>
+              • 新增并主推 C、D 盘分开打包的镜像，避免整个硬盘的格式化，也不需要再处理 UEFI 引导的问题</p>
             <p>……相当多细节的修正，在此不再赘述</p>
             <p></p>
             <div class="mdui-divider"></div>
@@ -142,16 +142,21 @@
                     这种方式建议 Ghost 中不要修改各目标分区容量，可能引起闪退。之前的的引导问题已经修复。
                   </p>
                   <p><h5><b>3</b> 考虑冰点还原的影响</h5>
-                    若现在你的希沃重启后数据会被清理，那么就是打开了希沃管家里的“冰点还原”。此时重装系统，相当于强制关闭了冰点还原，在希沃集控中心可以看到记录。如果你的学校对此很在意，请不要安装本系统，否则可能会招来电教和技术人员！
+                    若现在你的希沃重启后数据会被清理，那么就是打开了希沃管家里的“冰点还原”。此时重装系统，相当于强制关闭了冰点还原，在希沃集控平台上可以看到记录。如果你的学校对此很在意，请不要安装本系统，否则可能会招来电教和技术人员！
                   </p>
-                  <p>重装系统后如果想重新打开冰点还原，参考<a href="https://dgmz.nickdl.site/guide/classroom-equipment.html#破解方法">此处教程</a>。</p>
-                  <p><h5><b>4</b> 关于 Windows 和 Office 的激活方式</h5>
-                    由于硬件上一些奇怪的问题，封装镜像时的永久数字激活在还原后会失效。2023 年底微软关闭了永久数字激活的通道，故 V2 镜像在安装时采用了 KMS38 的激活方式。
-                  </p>
-                  <p>但这已经是 2026 年了，似乎早已有了成熟的数字激活替代方案——<a title="蓝奏云链接" href="https://www.lanzoui.com/b710887">HEU KMS Activator</a>。该工具可同时数字激活 Office，不喜欢目前的 KMS38 激活方式的用户可以尝试。
                   <p>
-                  <h5><b>5</b> 建议关掉 Windows 五指上滑手势</h5>
-                  打开设置 > 蓝牙和其他设备 > 触摸 > 高级手势设置，关闭五指上滑手势。有的老师用希沃白板喜欢四五指并用地滑动，容易误触整得很尴尬。
+                  <h5><b>4</b> 可能需要重新绑定学校</h5>
+                  有朋友说重装系统后，希沃管家不会根据硬件信息自动恢复原来的学校绑定信息。那可能需要重新绑定学校，请在重装系统前记下学校的<mark>机构码</mark>（4 位数字或者字母的代码）。
+                  </p>
+                  <p>重装系统后请尽快绑定。镜像里的希沃管家版本比较旧，绑定时应该无需验证管理员密码。希沃管家自动更新后可能会要求输入管理员密码。
+                  </p>
+                  <p><h5><b>5</b> 关于 Windows 和 Office 的激活方式</h5>
+                    由于硬件上一些奇怪的问题，封装镜像时 Windows 的永久数字激活在还原后会失效。2023 年底微软关闭了永久数字激活的通道，故 V2 镜像在安装时采用了 KMS38 的激活方式。
+                  </p>
+                  <p>但这已经是 2026 年了，似乎早已有了成熟的数字激活替代方案——<a title="蓝奏云链接" href="https://www.lanzoui.com/b710887">HEU KMS Activator</a>。该工具可同时数字激活 Windows 和 Office，不喜欢目前的 KMS38 激活方式的话可以尝试。
+                  <p>
+                  <h5><b>6</b> 建议关掉 Windows 多指手势</h5>
+                  有的老师用希沃白板喜欢四五指并用地滑动，容易误触整得很尴尬。打开设置 > 蓝牙和其他设备 > 触摸 > 高级手势设置，关闭多指手势。
                   </p>
                   </div>
               </div>
@@ -290,7 +295,7 @@
               <img src="./media/seewo.jpg"/>
               <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
-                  <div class="mdui-card-primary-title">希沃Win11镜像 <span><small>V2</small></span></div>
+                  <div class="mdui-card-primary-title">希沃 Win11 镜像 <span><small>V2</small></span></div>
                   <div mdui-tooltip="{content: '真的会有人想下载吗'}" class="mdui-card-primary-subtitle"></div>
                 </div>
               </div>
@@ -299,7 +304,7 @@
               <p>V2 版本提供 123 云盘和阿里云盘的下载方式。</p>
               <p>推荐通过 123 云盘下载，速度还可以，但要收单次下载流量费，大概一块五，感觉比阿里夸克都划算。若需要从阿里云盘下载，可以联系我发有效期仅 1 天的快传链接。</p>
               <p>选分卷压缩包下载后，请先解压（用 7-zip, NanaZip, WinRAR 等），校验后再使用。</p>
-              <p>文件说明：<mark>Disk</mark>文件夹指『整个硬盘打包』版本，而<mark>Partition</mark>指『各分区分开打包』版本；这其中<mark>Partition D.7z</mark>需解压到 D 盘根目录；下载<mark>Windows 11 for Seewo v2 single partition C.GHO</mark>就不用下载另外 4 个分卷了。</p>
+              <p>文件说明：<mark>Disk</mark>文件夹指『整个硬盘打包』版本，而<mark>Partition</mark>文件夹指『各分区分开打包』版本；这其中<mark>Partition D.7z</mark>需解压到 D 盘根目录；下载<mark>Windows 11 for Seewo v2 single partition C.GHO</mark>就不用下载另外 4 个分卷了。</p>
             </div>
             <div class="mdui-card-actions">
               <a href="https://www.123pan.com/s/he7rVv-22YO.html" class="mdui-btn mdui-ripple mdui-color-blue-600">从 123 云盘下载</a>
@@ -349,7 +354,7 @@
             <ul class="mdui-list">
             <a href="https://dgmz.nickdl.site">
               <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-red-600">lightbulb_outline</i>
+                <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-red-600">wb_incandescent</i>
                 <div class="mdui-list-item-content">
                   <div class="mdui-list-item-title">玩转数字绵中 文档站</div>
                   <div class="mdui-list-item-text mdui-list-item-one-line">进阶指南</div>
