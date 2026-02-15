@@ -16,18 +16,11 @@
   <style type="text/css">
     .ndw-card-bg-hill {
       background-image: url(/media/hill-26.jpg);
-      max-height: 290px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .mdui-card-2026 {
-      background-size: cover;
-      background-position: top;
-      background-repeat: no-repeat;
-    }
-    
     @font-face {
       font-family: NDWDIN1145;
       src: url('/tools/Countdown/DIN1451e.woff') format('woff');
@@ -37,15 +30,35 @@
       font-family: zihunchuangcuhei;
       src: url('/tools/Countdown/ZHCCHe.woff') format('woff');
     }
+
+    /* 使高考倒计时卡片和序言卡片在大屏幕上高度相等 */
+    @media (min-width: 1024px) {
+      .equal-height-row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .equal-height-row > [class*="mdui-col-"] {
+        display: flex;
+        flex-direction: column;
+      }
+      .equal-height-row .mdui-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .equal-height-row .mdui-card .mdui-card-content {
+        flex: 1;
+      }
+    }
     
     .mdui-card-content>.mdui-typo>h1 {
       margin-top: .2em;
     }
 
-    .mdui-chip-icon>.mdui-icon {
-      font-size: 20px;
-      top: 6px;
-      left: 6px;
+    .mdui-card-2026 {
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
     }
 
     @font-face {
@@ -62,13 +75,55 @@
       src: url("https://lc-RAZGOrF5.cn-n1.lcfile.com/IR4W5JvxrC3uQeq26xtavdhkiDpfcmqR/FZCWLMJSTJ-B.woff2") format("woff2");
     }
 
-        .sdt {
+    .sdt {
       font-size: 1em;
-      text-shadow: 1.5px 1.5px 3px #88888870;
+      text-shadow: 1.5px 1.5px 3px #88888888;
     }
 
     .mdui-card-2026 {
       background-image: url(/media/2026sfbg.png);
+    }
+
+    @media (min-width: 450px) {
+      .mdui-card-2026 .mdui-card-content {
+        padding-left: calc(16px + (100vw - 450px) / 2);
+      }
+    }
+
+    @media (min-width: 700px) {
+      .mdui-card-2026 .mdui-card-content {
+        padding-left: calc(141px + (100vw - 700px) / 8);
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .mdui-card-2026 .mdui-card-content {
+        padding-left: 233px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .mdui-drawer-body-left .mdui-card-2026 .mdui-card-content {
+        padding-left: calc(16px + (100vw - 450px - 256px) / 2);
+      }
+    }
+
+    @media (min-width: 1024px) and (min-width: 700px) {
+      .mdui-drawer-body-left .mdui-card-2026 .mdui-card-content {
+        padding-left: calc(141px + (100vw - 700px - 256px) / 8);
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .mdui-drawer-body-left .mdui-card-2026 .mdui-card-content {
+        padding-left: calc(173px + (100vw - 1440px) * 60 / 190);
+      }
+    }
+
+    @media (min-width: 1630px) {
+      .mdui-drawer-body-left .mdui-card-2026 .mdui-card-content {
+        padding-left: calc(233px);
+      }
     }
   </style>
 
@@ -275,12 +330,14 @@
         <p></p>
         <div class="mdui-card mdui-card-2026 mdui-hoverable mdui-color-orange-50" style="font-family: 'FZCWLMJST';">
           <div class="sdt mdui-card-content mdui-text-color-orange-a400">
-            <h1 align="left" style="font-size: 36px; line-height: 40px; " class=" mdui-text-color-red-a400">驹驭长风<span class="mdui-hidden-xs-down">，</span><span class="mdui-hidden-sm-up"><br></span>骁腾新程</h1>
+            <h1 align="left" style="font-size: 36px; line-height: 40px; " class=" mdui-text-color-red-a400">
+              骏驭长风<span class="mdui-hidden-md-down">，</span><span class="mdui-hidden-lg-up"><br></span>骁腾新程
+            </h1>
             <p align="left" style="font-size: 30px;line-height: 36px; font-weight: 900;">
-              骐骥开道迎春至<span class="mdui-hidden-xs-down">，</span><span class="mdui-hidden-sm-up"><br></span>骅骝试路踏云来
+              骐骥昂首迎春至<span class="mdui-hidden-md-down">，</span><span class="mdui-hidden-lg-up"><br></span>骅骝奋蹄踏云来
             </p>
             <p style="font-size: 15px;line-height: 24px; font-weight: 700;" align="left"  class=" mdui-text-color-grey-800">
-              新的一年将至，<span class="mdui-hidden-sm-up"><br></span>愿我们每一步都是光芒蜿蜒处，<span class="mdui-hidden-sm-up"><br></span>每一程皆有长风万里随！
+              新的一年将至，祝愿大家：<br>每一步所向，皆有光芒引路；<span class="mdui-hidden-lg-up"><br></span>每一程奔赴，俱得风景相随！
             </p>
           </div>
         </div>
@@ -321,14 +378,15 @@
           <button class="mdui-ripple-purple mdui-ripple replay-button" id="replayButton" style="display: none;">重播动画</button>
         </div>
         <script src="/media/birthday.js"></script>
-    </div></div>
-    <div class="mdui-row">
-      <div class="mdui-col-sm-8 mdui-col-md-6">
         <p></p>
+      </div>
+    </div>
+    <div class="mdui-row equal-height-row">
+      <div class="mdui-col-sm-12 mdui-col-md-6">
         <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '执着于理想，<br>纯粹于当下。'}">
           <div class="mdui-card-content">
-            <a href="/tools/Countdown/Countdown.html">
-              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+            <a href="/tools/Countdown/Countdown.html" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 192px; display: block; margin: 0 auto;"
               overflow="hidden">
               <defs>
                 <clipPath id="clip0">
@@ -412,10 +470,9 @@
             </svg></a>
           </div>
         </div>
-        <p></p>
+        <p class="mdui-hidden-md-up"></p>
       </div>
       <div class="mdui-col-sm-12 mdui-col-md-6">
-        <p></p>
         <div class="mdui-card mdui-hoverable">
           <div class="mdui-card-content">
             <div class="intro mdui-typo">
@@ -428,8 +485,10 @@
             </div>
           </div>
         </div>
-        <p></p>
+        <p class="mdui-hidden-sm-up"></p>
       </div>
+    </div>
+    <div class="mdui-row">
       <div class="mdui-col-sm-6">
         <div class="mdui-card mdui-hoverable">
           <ul class="mdui-list">
@@ -614,7 +673,7 @@
             <div class="mdui-row">
               <div class="mdui-col-sm-12">
                 <p mdui-tooltip="{content: '加油！！！！', position: 'top', delay: 500}">
-                  编辑于 2026/2/14。</p>
+                  编辑于 2026/2/15。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2026. All rights reserved.
               </div>
