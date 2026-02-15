@@ -1,8 +1,18 @@
 body {
-    background-color: #f1f3f5;
+    background-color: #ffe4c4;/* 新年主题 */
 }
 
+.mdui-color-blue-grey-100 {
+    background-color: #FFCCBC !important; /* 新年主题 */
+}
 
+.mdui-text-color-blue-700 {
+    color: #FF3D00 !important; /* 新年主题 */
+}
+
+.mdui-btn.mdui-color-blue-600 {
+    background-color: #FF5722 !important; /* 新年主题 */
+}
 
 .mdui-card {
     border-radius: 12px;
@@ -118,14 +128,14 @@ body {
 }
 
 .glur-toolbar {
-    background: rgba(241, 243, 245, 0.65) !important;
+    background: #ffe4c4a6 !important;
     backdrop-filter: blur(20px);
 }
 
 /* 系统偏好深色模式样式适配 */
 @media (prefers-color-scheme: dark) {
     .mdui-theme-layout-auto .mdui-color-blue-grey-100 {
-        background-color: #37474F !important;
+        background-color: #BF360C !important;
     }
 
     .mdui-theme-layout-auto .mdui-btn-icon svg use {
@@ -159,7 +169,7 @@ body {
 
 /* 手动设置深色模式的样式适配 */
 .mdui-theme-layout-dark .mdui-color-blue-grey-100 {
-    background-color: #37474F !important;
+    background-color: #b95702 !important;
 }
 
 .mdui-theme-layout-dark .mdui-btn-icon svg use {
@@ -297,12 +307,12 @@ body {
 }
 
 .mdui-theme-layout-dark .mdui-snackbar {
-    background-color: rgba(115, 115, 115, 0.65) !important;
+    background-color: rgba(120, 85, 53, 0.65) !important;
     backdrop-filter: blur(20px);
 }
 
 .mdui-snackbar {
-    background-color: rgba(1, 1, 1, 0.65) !important;
+    background-color: rgba(201, 98, 2, 0.65) !important;
     backdrop-filter: blur(20px);
 }
 
