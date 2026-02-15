@@ -160,3 +160,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// 标题栏模糊效果 - 从 localStorage 读取并应用
+(function () {
+    const BLUR_STORAGE_KEY = 'ndw-toolbar-blur';
+    
+    function applyBlurEffect() {
+        const savedBlur = localStorage.getItem(BLUR_STORAGE_KEY) || '20';
+        const toolbars = document.querySelectorAll('.glur-toolbar');
+        
+        toolbars.forEach(toolbar => {
+            toolbar.style.backdropFilter = `blur(${savedBlur}px)`;
+        });
+    }
+    
+    // DOM加载完成后应用模糊效果
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyBlurEffect);
+    } else {
+        applyBlurEffect();
+    }
+})();

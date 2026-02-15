@@ -237,14 +237,27 @@
             </li>
             <script>
               document.addEventListener('DOMContentLoaded', function () {
+                  const BLUR_STORAGE_KEY = 'ndw-toolbar-blur';
                   const slider = document.querySelector('.mdui-slider input[type="range"]');
-                  const toolbar = document.querySelector('.glur-toolbar');
+                  const toolbars = document.querySelectorAll('.glur-toolbar');
                   const sliderValueDisplay = document.getElementById('slider-value');
-                  slider.value = 20;
-                  toolbar.style.backdropFilter = 'blur(20px)';
+                  
+                  // 从 localStorage 读取保存的模糊值，默认 20
+                  const savedBlur = localStorage.getItem(BLUR_STORAGE_KEY) || '20';
+                  slider.value = savedBlur;
+                  sliderValueDisplay.textContent = savedBlur;
+                  
+                  // 注意：初始模糊效果由 NDWstyle-v2p.js 统一应用，此处不再重复设置
+                  
+                  // 监听滑块变化
                   slider.addEventListener('input', function () {
-                    toolbar.style.backdropFilter = `blur(${this.value}px)`;
-                    sliderValueDisplay.textContent = `${this.value}`;
+                    const blurValue = this.value;
+                    toolbars.forEach(toolbar => {
+                      toolbar.style.backdropFilter = `blur(${blurValue}px)`;
+                    });
+                    sliderValueDisplay.textContent = blurValue;
+                    // 保存到 localStorage
+                    localStorage.setItem(BLUR_STORAGE_KEY, blurValue);
                   });
                 });
             </script>
