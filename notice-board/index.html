@@ -10,17 +10,25 @@
   <title>ND's Website - 公告栏</title>
   <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon" />
   <style>
-    .mdui-card-3rdAnn {
-      background-image: url(/free-talk/media/background.jpg);
+    .mdui-card-gaokao {
+    background-image: url(/media/field.jpg);
+    max-height: 200px;
+    }
+    .gaokao_slogan {
+      max-width: 100%; 
+      max-height: 120px; 
+      object-fit: contain;
+      filter: drop-shadow(0 0 3px #BF9000);
+      transition: filter 0.3s ease;
+    }
+
+    .mdui-card1,.mdui-card2,.ndw-card-bg-atpsynthase,.ndw-card-bg-hill,.ndw-card-bg-26gk,.mdui-card-3rdAnn,.mdui-card-gaokao {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
-
-    .mdui-card1,.mdui-card2,.ndw-card-bg-atpsynthase,.ndw-card-bg-hill,.ndw-card-bg-26gk {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    .mdui-card-3rdAnn {
+      background-image: url(/free-talk/media/background.jpg);
     }
     .ndw-card-bg-26gk {
       background-image: url(/media/hill-26.jpg);
@@ -169,6 +177,21 @@
         <p></p>
       </div>
       <div class="mdui-col-sm-12">
+        <h3>2026年5月29日</h3>
+        <p></p>
+        <div class="mdui-card mdui-card-gaokao mdui-hoverable mdui-color-pink-50"
+          style="display: flex; justify-content: center; align-items: center; overflow: hidden;">
+          <div class="mdui-card-content"
+            style="margin: 10% 10%; width: 100%; height: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
+            <img src="/media/gaokao_slogan.svg" alt="高考加油！" class="gaokao_slogan"
+              onmouseover="this.style.filter='drop-shadow(0 0 18px #FFD966)'"
+              onmouseout="this.style.filter='drop-shadow(0 0 3px #BF9000)'" />
+          </div>
+        </div>
+        <p></p>
+      </div>
+      <div class="mdui-col-sm-12">
+        <h3 style="font-family: FZCWLMJST;">2026年2月15日</h3>
         <p></p>
         <div class="mdui-card mdui-card-2026 mdui-hoverable mdui-color-orange-50" style="font-family: 'FZCWLMJST';">
           <div class="sdt1 mdui-card-content mdui-text-color-orange-a400">
@@ -184,6 +207,7 @@
           </div>
         </div>
         <p></p>
+        <h3>2026年1月30日</h3>
         <div class="mdui-card mdui-hoverable birthday-card" id="birthdayCard">
           <div class="card-header">
             <h1 class="card-title">🎉 ND's 18th Birthday Countdown 🎂</h1>
@@ -258,7 +282,7 @@
           <div class="mdui-card-content">
             
             <a href="javascript:;">
-              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink"
+              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-30 0 1010 360" xmlns:xlink="http://www.w3.org/1999/xlink"
                 overflow="hidden">
                 <defs>
                   <clipPath id="clip0">
@@ -269,7 +293,17 @@
                   <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
                   <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
                   <text id="countdown1" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
-                    x="249.6" y="192">385</text>
+                    x="249.6" y="192">365</text>
+                  <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="581.5" y="182">天</text>
+                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="699.6" y="182">[6月7日]</text>
+                  <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="699.6" y="120">2026 年</text>
+                  <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE EXAMINATION</text>
+                  <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 365 DAYS</text>
+                  <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
+                    fill-rule="evenodd"></path>
+                </g>
+                <!--
+                
                   <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
                   <text fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
                     y="182">[6月7日]</text>
@@ -280,9 +314,7 @@
                     EXAMINATION</text>
                   <text fill="#FFFFFF" id="countdown2" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
                     DAYS</text>
-                  <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
-                    fill-rule="evenodd"></path>
-                </g>
+                
                 <script>
                   (function () {
 
@@ -312,7 +344,7 @@
                     }
 
                     function updateCountdown() {
-                      const examDate = new Date("2026-06-07");
+                      const examDate = new Date("2027-06-07");
                       const now = new Date();
                       let daysDiff = Math.ceil((examDate - now) / 86400000);
                       daysDiff = daysDiff < 0 ? 0 : daysDiff;
@@ -334,7 +366,7 @@
                     updateCountdown();
                     setInterval(updateCountdown, 60000);
                   })();
-                </script>
+                </script>-->
               </svg></a>
           </div>
         </div>
@@ -753,7 +785,7 @@
         <div class="mdui-col-sm-12">
           <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
             <p></p>
-            <p>Edited at 2026/03/03</p>
+            <p>Edited at 2026/06/10</p>
             <p>©Copyright by Nick_DL 2022-2026. All rights reserved.</p>
             <p></p>
           </div>

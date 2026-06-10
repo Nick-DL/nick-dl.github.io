@@ -14,36 +14,14 @@
   <link rel="stylesheet" href="/media/NDWstyle-v2p.css" />
   <link rel="stylesheet" href="/media/avatarcard.css" />
   <style type="text/css">
-    .ndw-card-bg-hill {
-      background-image: url(/media/hill-26.jpg);
+    .ndw-card-bg-myzx {
+      background-image: url("/media/myzx.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-    }
-    .mdui-card-gaokao {
-      background-image: url(/media/field.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      max-height: 200px;
-    }
-    .gaokao_slogan {
-      max-width: 100%; 
-      max-height: 120px; 
-      object-fit: contain;
-      filter: drop-shadow(0 0 3px #BF9000);
-      transition: filter 0.3s ease;
-    }
-    @font-face {
-      font-family: NDWDIN1145;
-      src: url('/tools/Countdown/DIN1451e.woff') format('woff');
-    }
-
-    @font-face {
-      font-family: zihunchuangcuhei;
-      src: url('/tools/Countdown/ZHCCHe.woff') format('woff');
-    }
-
+      min-height: 200px;
+     }
+    
     @media (min-width: 1024px) {
       .equal-height-row {
         display: flex;
@@ -65,12 +43,6 @@
     
     .mdui-card-content>.mdui-typo>h1 {
       margin-top: .2em;
-    }
-
-    .mdui-card-2026 {
-      background-size: cover;
-      background-position: top;
-      background-repeat: no-repeat;
     }
 
     @font-face {
@@ -299,103 +271,13 @@
     <div class="mdui-row">
       <div class="mdui-col-sm-12">
         <p></p>
-        <div class="mdui-card mdui-card-gaokao mdui-hoverable mdui-color-pink-50" style="display: flex; justify-content: center; align-items: center; overflow: hidden;">
-          <div class="mdui-card-content" style="margin: 10% 10%; width: 100%; height: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
-            <img src="/media/gaokao_slogan.svg" alt="高考加油！" class="gaokao_slogan"
-                onmouseover="this.style.filter='drop-shadow(0 0 18px #FFD966)'" 
-                onmouseout="this.style.filter='drop-shadow(0 0 3px #BF9000)'" />
-          </div>
-        </div>
-        <p></p>
       </div>
     </div>
     <div class="mdui-row equal-height-row">
       <div class="mdui-col-sm-12 mdui-col-md-6">
-        <div class="mdui-card ndw-card-bg-hill mdui-hoverable mdui-color-indigo-50" mdui-tooltip="{content: '执着于理想，<br>纯粹于当下。'}">
+        <div class="mdui-card ndw-card-bg-myzx mdui-hoverable mdui-color-indigo-50"
+         mdui-tooltip="{content: '再见，绵中！<br>（图片摄于 2025 年 6 月 6 日。<br>图中的汉字标语：人生难得几回搏；<br>英文标语：Cherish the very few opportunities in our lives to strive for our dreams.）', delay: 500}">
           <div class="mdui-card-content">
-            <a href="#" style="display: flex; align-items: center; justify-content: center; height: 100%;">
-              <svg id="countdown26" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 960 360" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 192px; display: block; margin: 0 auto;"
-              overflow="hidden">
-              <defs>
-                <clipPath id="clip0">
-                  <rect x="0" y="0" width="1280" height="720"></rect>
-                </clipPath>
-              </defs>
-              <g clip-path="url(#clip0)">
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="9.6" y="86">距高考</text>
-                <text fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="89.6" y="182">还剩</text>
-                <text id="countdown3" fill="#FF0000" font-family="NDWDIN1145" font-weight="400" font-size="231"
-                  x="249.6" y="192">385</text>
-                <text id="tianText1" fill="#FFFFFF" font-family="zihunchuangcuhei" font-weight="400" font-size="80" x="471.5" y="182">天</text>
-                <text id="dateText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="64" x="589.6"
-                  y="182">[6月7日]</text>
-                <text id="yearText1" fill="#FF0000" font-family="zihunchuangcuhei" font-weight="400" font-size="32" x="589.6"
-                  y="120">2026
-                  年</text>
-                <text fill="#FFFFFF" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="255">COLLEGE ENTRANCE
-                  EXAMINATION</text>
-                <text fill="#FFFFFF" id="countdown4" font-family="NDWDIN1145" font-weight="400" font-size="43" x="93" y="312">IN 71
-                  DAYS</text>
-                <path d="M70 121 70 316" stroke="#FF0000" stroke-width="7" stroke-miterlimit="8" fill="none"
-                  fill-rule="evenodd"></path>
-              </g>
-              <script>
-                (function () {
-
-                  const CHAR_WIDTH = 110;
-                  const BASE_DIGITS = 2;
-                  const BASE_SVG_WIDTH = 900;
-
-                  const svg1 = document.getElementById("countdown26");
-                  const countdown3El = document.getElementById("countdown3");
-                  const tianEl1 = document.getElementById("tianText1");
-                  const dateEl1 = document.getElementById("dateText1");
-                   const yearEl1 = document.getElementById("yearText1");
-
-                  const initialPositions1 = {
-                    tianX1: parseFloat(tianEl1.getAttribute('x')),
-                    dateX1: parseFloat(dateEl1.getAttribute('x')),
-                    yearX1: parseFloat(yearEl1.getAttribute('x'))
-                  };
-
-                  function calculateLayout(days1) {
-                    days1 = Math.max(days1, 0);
-                    const digits1 = days1 === 0 ? 1 : String(days1).length;
-                    const digitDiff1 = digits1 - BASE_DIGITS;
-
-                    return {
-                      svgWidth1: BASE_SVG_WIDTH + (digitDiff1 * CHAR_WIDTH),
-                      offsetX1: digitDiff1 * CHAR_WIDTH
-                    };
-                  }
-
-                  
-                  function updateCountdown1() {
-                    const examDate1 = new Date("2026-06-07");
-                    const now = new Date();
-                    const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-                    let daysDiff1 = Math.max(0, Math.floor((examDate1 - todayMidnight) / 86400000));
-                    daysDiff1 = daysDiff1 < 0 ? 0 : daysDiff1;
-
-                    countdown3El.textContent = daysDiff1;
-
-                    const { svgWidth1, offsetX1 } = calculateLayout(daysDiff1);
-
-                    svg1.setAttribute('viewBox', `-30 0 ${svgWidth1} 360`);
-
-                    tianEl1.setAttribute('x', initialPositions1.tianX1 + offsetX1);
-                    dateEl1.setAttribute('x', initialPositions1.dateX1 + offsetX1);
-                    yearEl1.setAttribute('x', initialPositions1.yearX1 + offsetX1);
-
-                    countdown4.textContent = daysDiff1 === 0 ? "IN 0 DAY" :
-                      `IN ${daysDiff1} DAY${daysDiff1 === 1 ? "" : "S"}`;
-                  }
-
-                  updateCountdown1();
-                  setInterval(updateCountdown1, 60000);
-                })();
-              </script>
-            </svg></a>
           </div>
         </div>
         <p class="mdui-hidden-md-up"></p>
@@ -407,9 +289,9 @@
               <h1 class="title mdui-text-color-blue-700" style="font-weight: 700">凡是过往，皆为序章</h1>
               <p>欢迎来到 ND's Website！</p>
               <p>在这里，热爱与灵感并存，过往与未来交织，近三年来，Nick_DL 在无数次构想中，从零起步，又历经数次改版，一点一点，织就了本站全新的面貌。</p>
-              <div class="mdui-divider"></div>
+              <!--<div class="mdui-divider"></div>
               <p></p>
-              <p />作为一名正备战着高考的高三学生，我今后一年里可能很少有机会再对网站进行细致的维护。但这里，始终是我学习生活之外，一片丰盈的数字天地。<br>
+              <p /><br>-->
             </div>
           </div>
         </div>
@@ -599,7 +481,7 @@
             <div class="mdui-row">
               <div class="mdui-col-sm-12">
                 <p mdui-tooltip="{content: '加油！！！！', position: 'top', delay: 500}">
-                  编辑于 2026/5/29。</p>
+                  编辑于 2026/06/10。</p>
                 <p />
                 <b>©</b>Copyright by Nick_DL 2022-2026. All rights reserved.
               </div>
