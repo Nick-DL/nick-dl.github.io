@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
 
     <style>
+        .mdui-typo p{
+            margin: 0 0 0 0;
+        }
+
+        .mdui-typo li ul {
+            margin: 0 0;
+        }
+
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -107,6 +115,17 @@
             <h3>迭代日志</h3>
             <div class=" mdui-typo">
                 <hr>
+                <h4><strong>版本 1.0.026</strong></h4>
+                <p><strong>主要改进与修复</strong>： </p>
+                <ol>
+                    <li>
+                        <p><strong>解析优化</strong> </p>
+                        <ul>
+                            <li>优化了时间戳解析的正则表达式，兼容包含三位及更多位毫秒数的时间戳格式（如 <code>[00:25.781]</code>）。 </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
                 <h4><strong>版本 1.0.025</strong></h4>
                 <p><strong>主要改进与修复</strong>： </p>
                 <ol>
@@ -178,8 +197,9 @@
         <div class="sidebar">
             <h3>LyricTap</h3>
             <div class="hotkey-hint">Powered by <span style="color: #4D6BFE;"><b>DeepSeek</b></span><br>©Copyright by Nick_DL 2022-2026. All rights reserved.</div>
-            <p>&nbsp;</p><a href="./" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"> 
-                <i class="mdui-icon material-icons">arrow_back</i> 
+            <p>&nbsp;</p><a href="./" class="mdui-btn mdui-btn mdui-ripple" mdui-tooltip="{content: '返回'}"> 
+                <i class="mdui-icon mdui-icon-left material-icons">arrow_back</i>
+                返回
             </a> 
         </div>
     </div>

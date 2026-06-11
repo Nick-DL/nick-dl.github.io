@@ -319,7 +319,7 @@
             <pre id="output"><p>&nbsp;</p></pre>
             
             <button onclick="exportLyrics()"><b>导出歌词</b></button>
-            <div class="hotkey-hint">程序完全由 <b>DeepSeek</b> 驱动（版本号 <a href="./updatelog.html">1.0.025</a>）</div>
+            <div class="hotkey-hint">程序完全由 <b>DeepSeek</b> 驱动（版本号 <a href="./updatelog.html">1.0.026</a>）</div>
         </div>
     </div>
 
@@ -416,7 +416,7 @@
             let lastTime = '';
             
             lyricsData = lines.map((line, i) => {
-                const match = line.match(/\[(\d{2}:\d{2}\.\d{2})\](.*)/);
+                const match = line.match(/\[(\d{2}:\d{2}\.\d+)\](.*)/);
                 if (match) {
                     const time = match[1];
                     const content = match[2].trim();
