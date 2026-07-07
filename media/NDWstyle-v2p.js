@@ -204,6 +204,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let draggedItem = null;
         let menuOpenedByDrag = false;
         let menuAnimating = false; // 菜单展开动画过程中去涟漪
+        let cascadeOpenTimer = null;  // 级联父级悬停计时器
+        let submenuOpened = false;
 
         function getPos(e) {
             if (e.touches && e.touches.length) {
@@ -224,7 +226,16 @@ document.addEventListener('DOMContentLoaded', function () {
         function getMenuItemAt(x, y) {
             if (!menu.classList.contains('mdui-menu-open')) return null;
             const el = document.elementFromPoint(x, y);
-            return el ? el.closest('.mdui-menu-item') : null;
+            if (!el) return null;
+            var item = el.closest('.mdui-menu-item');
+            if (!item) return null;
+            // 排除子菜单 <ul> 空白区
+            var itemMenu = item.closest('.mdui-menu');
+            if (itemMenu === menu) {
+                var elMenu = el.closest('.mdui-menu');
+                if (elMenu && elMenu !== menu) return null;
+            }
+            return item;
         }
 
         /* 涟漪加速淡出 */
@@ -256,28 +267,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 300);
         }
 
-        /* 计算涟漪效果 */
-        function triggerRipple(item, clientX, clientY) {
-            const oldWaves = item.querySelectorAll('.mdui-ripple-wave');
-            oldWaves.forEach(w => startWaveFadeOut(w));
+        /* 在目标元素上创建涟漪波纹 */
+        function createWave(target, clientX, clientY) {
+            var rect = target.getBoundingClientRect();
+            var x = clientX - rect.left;
+            var y = clientY - rect.top;
+            var size = Math.max(Math.sqrt(rect.width ** 2 + rect.height ** 2), 48);
+            var translate = "translate3d(" + (-x + rect.width / 2) + "px," + (-y + rect.height / 2) + "px, 0) scale(1)";
 
-            if (!item.classList.contains('mdui-ripple')) {
-                item.classList.add('mdui-ripple');
-            }
-            item.style.overflow = 'hidden';
-
-            const rect = item.getBoundingClientRect();
-            const x = clientX - rect.left;
-            const y = clientY - rect.top;
-
-            const size = Math.max(
-                Math.sqrt(rect.width ** 2 + rect.height ** 2),
-                48
-            );
-
-            const translate = "translate3d(" + (-x + rect.width / 2) + "px," + (-y + rect.height / 2) + "px, 0) scale(1)";
-
-            const wave = document.createElement('div');
+            var wave = document.createElement('div');
             wave.className = 'mdui-ripple-wave';
             wave.style.width = size + 'px';
             wave.style.height = size + 'px';
@@ -285,18 +283,42 @@ document.addEventListener('DOMContentLoaded', function () {
             wave.style.top = y + 'px';
             wave.style.marginTop = -(size / 2) + 'px';
             wave.style.marginLeft = -(size / 2) + 'px';
-
             wave.dataset.translate = translate;
-            item.appendChild(wave);
-
+            target.appendChild(wave);
             wave.offsetHeight;
-
-            // 波纹一边扩大，一边向容器中心移动
             wave.style.transform = translate;
         }
 
+        /* 计算涟漪效果 */
+        function triggerRipple(item, clientX, clientY) {
+            var isCascadeParent = item.querySelector('.mdui-menu-item-more');
+
+            if (isCascadeParent) {
+                // 级联父级：涟漪注入 <a> 子元素
+                var anchor = item.querySelector('a.mdui-ripple');
+                if (!anchor) return;
+                createWave(anchor, clientX, clientY);
+                return;
+            }
+
+            // 普通菜单项：涟漪注入 <li> 自身
+            var oldWaves = item.querySelectorAll('.mdui-ripple-wave');
+            for (var wi = 0; wi < oldWaves.length; wi++) { startWaveFadeOut(oldWaves[wi]); }
+
+            if (!item.classList.contains('mdui-ripple')) {
+                item.classList.add('mdui-ripple');
+            }
+            item.style.overflow = 'hidden';
+            createWave(item, clientX, clientY);
+        }
+
         /* 拖拽高亮与涟漪 */
+        function clearCascadeTimer() {
+            if (cascadeOpenTimer) { clearTimeout(cascadeOpenTimer); cascadeOpenTimer = null; }
+        }
+
         function clearHighlight() {
+            clearCascadeTimer();
             if (draggedItem) {
                 const item = draggedItem;
                 draggedItem = null;
@@ -309,6 +331,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function highlightItem(item, clientX, clientY) {
             if (draggedItem === item) return;
+
+            // 手指离开, 关闭子菜单
+            var menuInst = mdui.$(trigger).data('_mdui_menu');
+            if (menuInst) {
+                var openSubs = menu.querySelectorAll('.mdui-menu.mdui-menu-open');
+                for (var si = 0; si < openSubs.length; si++) {
+                    var openSub = openSubs[si];
+                    var subRect = openSub.getBoundingClientRect();
+                    var inSub = clientX >= subRect.left && clientX <= subRect.right &&
+                        clientY >= subRect.top && clientY <= subRect.bottom;
+                    // 手指在级联父项上也视为"在子菜单区域内"
+                    var cascadeParent = openSub.parentElement;
+                    var pRect = cascadeParent ? cascadeParent.getBoundingClientRect() : null;
+                    var inParent = pRect &&
+                        clientX >= pRect.left && clientX <= pRect.right &&
+                        clientY >= pRect.top && clientY <= pRect.bottom;
+                    if (!inSub && !inParent) {
+                        menuInst.closeSubMenu(mdui.$(openSub));
+                        submenuOpened = false;
+                        clearCascadeTimer();
+                    }
+                }
+            }
+
             clearHighlight();
             if (!item) return;
 
@@ -316,8 +362,29 @@ document.addEventListener('DOMContentLoaded', function () {
             item.style.background = 'rgba(0,0,0,0.06)';
             draggedItem = item;
 
-            if (!menuAnimating && item.classList.contains('mdui-ripple')) {
+            // 级联父级涟漪注入 <a> 子元素
+            var isCascadeParent = item.querySelector('.mdui-menu-item-more');
+            if (!isCascadeParent) {
+                var hasRipple = item.classList.contains('mdui-ripple') || item.querySelector('.mdui-ripple');
+                if (!menuAnimating && hasRipple) {
+                    triggerRipple(item, clientX, clientY);
+                }
+            } else if (!menuAnimating) {
+                // 级联父级：只调 triggerRipple 让其走 <a> 分支
                 triggerRipple(item, clientX, clientY);
+                // 悬停计时：200ms 后自动展开子菜单（桌面端跳过）
+                var sub = item.querySelector('.mdui-menu');
+                if (!cascadeOpenTimer && !submenuOpened && (!sub || !sub.classList.contains('mdui-menu-open'))) {
+                    cascadeOpenTimer = setTimeout(function () {
+                        // 直接调用 MDUI API 展开子菜单
+                        var menuInst = mdui.$(trigger).data('_mdui_menu');
+                        if (menuInst && menuInst.openSubMenu && sub) {
+                            menuInst.openSubMenu(mdui.$(sub));
+                        }
+                        submenuOpened = true;
+                        cascadeOpenTimer = null;
+                    }, 200);
+                }
             }
         }
 
@@ -359,6 +426,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault(); // 阻止页面滚动
                     isDragging = true;
 
+                    // 展开菜单时关闭 tooltip
+                    var tooltipEl = trigger.querySelector('[mdui-tooltip]');
+                    if (tooltipEl) {
+                        var tooltipInst = mdui.$(tooltipEl).data('_mdui_tooltip');
+                        if (tooltipInst) { tooltipInst.close(); }
+                    }
+
                     if (!menu.classList.contains('mdui-menu-open')) {
                         menuOpenedByDrag = true;
                         menuAnimating = true;  // 即将展开，动画期间禁涟漪
@@ -391,13 +465,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 isDragging = false;
                 menuOpenedByDrag = false;
+                submenuOpened = false;
                 clearHighlight();
 
                 if (item) {
-                    executeMenuItem(item);
-                }
+                    var isCascadeParent = item.querySelector('.mdui-menu-item-more');
 
-                if (menu.classList.contains('mdui-menu-open')) {
+                    if (isCascadeParent) {
+                        var submenu = item.querySelector('.mdui-menu');
+                        if (!submenu || !submenu.classList.contains('mdui-menu-open')) {
+                            executeMenuItem(item);
+                        }
+                    } else {
+                        executeMenuItem(item);
+                    }
+
+                    if (!isCascadeParent && menu.classList.contains('mdui-menu-open')) {
+                        trigger.click();
+                    }
+                } else if (menu.classList.contains('mdui-menu-open')) {
                     trigger.click();
                 }
             }
@@ -424,3 +510,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }); // 结束遍历
 })();
+
