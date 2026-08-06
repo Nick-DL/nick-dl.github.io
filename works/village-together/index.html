@@ -9,6 +9,50 @@
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
     <title>ND's Website - 村村通</title>
     <link rel="shortcut icon" href="/media/ic_gallery_discover_filled.png" type="image/x-icon"/>
+    <style>
+      /* Webfont: Minecraft Seven V2 */
+      @font-face {
+        font-family: 'MinecraftSeven-v2';
+        src: url('./media/Minecraft-Seven_v2.woff2') format('woff2');
+        font-style: normal;
+        font-weight: normal;
+        text-rendering: optimizeLegibility;
+      }
+
+      body {
+        background-color: #f1f3f5;
+        font-family: 'MinecraftSeven-v2', Roboto, Noto, Helvetica, Arial, sans-serif!important;
+      }
+
+      .mdui-table-fluid th {
+        font-weight: bold;
+      }
+
+      .mdui-table-fluid td,
+      .mdui-table-fluid th,
+      .mdui-table-fluid {
+        padding: 4px;
+      }
+
+      .mdui-table-fluid td,
+      .mdui-table-fluid th,
+      .mdui-grid-tile img {
+        border-radius: 2px;
+      }
+
+      .mdui-table-fluid {
+        border-radius: 4px;
+      }
+
+      .mdui-panel-item-body {
+        text-align: center;
+      }
+
+      .mdui-panel-item-body img {
+        max-height: 840px;
+      }
+    </style>
+
   </head>
   <body class="mdui-appbar-with-toolbar mdui-theme-layout-auto">
     <div class="mdui-appbar mdui-appbar-fixed"> 
@@ -38,7 +82,7 @@
             <p>从 2018 年做到现在的 MC 地图。原先一直模仿希望之城的简式风格，至今未有大变化。</p>
             <p>在本地图中，目前已探明 40 余个村庄。它们由不同 MC 版本生成，由铁路或轻轨连成一体。</p>
             <p>本地图现已建成 8 条线路，分别为黄绿环线以及 1~7 号线。规划建造 10 余条线路，其中包括高铁、观光线路等。</p>
-            <p>存档版本：国际版 v1.20.12.01</p>
+            <p>存档版本：基岩版 v1.20.12.01</p>
             <div class="mdui-card" style="border: 2px solid #FF4081;">
               <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title"><i class="mdui-icon material-icons">info_outline</i>&nbsp;线路信息表</div>
@@ -108,126 +152,165 @@
                 </div>
               </div>
             </div>
-         <p></p>
-         <div class="mdui-divider"></div>
+            <p></p>
             <div class="mdui-divider"></div>
             <h3>线路图</h3>
-            <p>版本 2023/08/23</p>
-            <img src="./media/map0823.svg">
-            <p></p>
-          </div>
-            <div class="mdui-card mdui-hoverable">
-              <ul class="mdui-list">
-                <a href="https://www.alipan.com/s/L4wPEHjpcYs">
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-brown-400">map</i>
-                    <div class="mdui-list-item-content">地图合集</div>
-                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
-                  </li>
-                </a>
-                <li class="mdui-divider-inset mdui-m-y-0"></li>
-                <a href="https://ggb123.cn/m/zxaywyha">
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-purple-accent">map</i>
-                    <div class="mdui-list-item-content">GeoGebra 线路图</div>
-                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
-                  </li>
-                </a>
-              </ul>
+            <div class="mdui-panel" mdui-panel="{accordion: true}">
+              <div class="mdui-panel-item">
+                <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">线网图<div
+                    class="mdui-toolbar-spacer"></div><span class="mdui-text-color-grey"><small>版本 2023/08/23</small></span></div>
+                <div class="mdui-panel-item-body">
+                  <img src="./media/map0823.svg" loading="lazy">
+                </div>
+              </div>
+              <div class="mdui-panel-item">
+                <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">线网图（简化版）<div class="mdui-toolbar-spacer"></div>
+                  <span class="mdui-text-color-grey"><small>版本 2023/08/23</small></span></div>
+                <div class="mdui-panel-item-body">
+                  <img src="./media/map0823s.svg" loading="lazy">
+                </div>
+              </div>
+              <div class="mdui-panel-item">
+                <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">超远期规划图<div class="mdui-toolbar-spacer">
+                  </div>
+                  <span class="mdui-text-color-grey"><small>版本 2026/08/06</small></span>
+                </div>
+                <div class="mdui-panel-item-body">
+                  <img src="./media/map-further-planning-0806.svg" loading="lazy">
+                </div>
+              </div>
+              <div class="mdui-panel-item">
+                <div class="mdui-panel-item-header mdui-ripple" style="font-weight: 500; ">超远期规划图（缩小）<div class="mdui-toolbar-spacer">
+                  </div>
+                  <span class="mdui-text-color-grey"><small>版本 2026/08/06</small></span>
+                </div>
+                <div class="mdui-panel-item-body">
+                  <img src="./media/map-further-planning-0806-sm.svg" loading="lazy">
+                </div>
+              </div>
             </div>
+          </div>
+          <p></p>
+          <div class="mdui-card mdui-hoverable">
+            <ul class="mdui-list">
+              <a href="https://www.alipan.com/s/L4wPEHjpcYs">
+                <li class="mdui-list-item mdui-ripple">
+                  <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-brown-400">map</i>
+                  <div class="mdui-list-item-content">地图合集</div>
+                  <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                </li>
+              </a>
+              <li class="mdui-divider-inset mdui-m-y-0"></li>
+              <a href="https://ggb123.cn/m/zxaywyha">
+                <li class="mdui-list-item mdui-ripple">
+                  <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-deep-purple-accent">map</i>
+                  <div class="mdui-list-item-content">GeoGebra 线路图</div>
+                  <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <p></p>
+          <div class="mdui-divider"></div>
+          <div class="mdui-typo">
+            <div class="mdui-divider"></div>
+            <h3>截图</h3>
+            <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-grid-list">
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/1.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/2.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/3.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/4.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/5.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/6.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/7.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/8.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/9.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/10.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/11.png" loading="lazy"/>
+                </div>
+              </div>
+              <div class="mdui-col">
+                <div class="mdui-grid-tile">
+                  <img src="./media/12.png" loading="lazy"/>
+                </div>
+              </div>
+            </div>
+            <p></p>
             <p></p>
             <div class="mdui-divider"></div>
-            <div class="mdui-typo">
-              <div class="mdui-divider"></div>
-              <h3>截图</h3>
-              <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-grid-list">
-                <div class="mdui-col">
-                  <div class="mdui-grid-tile">
-                    <img src="./media/1.png"/>
-                  </div>
-                </div>
-                <div class="mdui-col">
-                  <div class="mdui-grid-tile">
-                    <img src="./media/2.png"/>
-                  </div>
-                </div>
-                <div class="mdui-col">
-                  <div class="mdui-grid-tile">
-                    <img src="./media/3.png"/>
-                  </div>
-                </div>
-                <div class="mdui-col">
-                  <div class="mdui-grid-tile">
-                    <img src="./media/4.png"/>
-                  </div>
-                </div>
-                <div class="mdui-col">
-                  <div class="mdui-grid-tile">
-                    <img src="./media/5.png"/>
-                  </div>
-                </div>
-                <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/6.png"/>
-                 </div>
-               </div>
-               <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/7.png"/>
-                 </div>
-               </div>
-               <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/8.png"/>
-                 </div>
-               </div>
-               <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/9.png"/>
-                 </div>
-               </div>
-               <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/10.png"/>
-                 </div>
-               </div>
-               <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/11.png"/>
-                 </div>
-               </div>
-               <div class="mdui-col">
-                 <div class="mdui-grid-tile">
-                   <img src="./media/12.png"/>
-                 </div>
-               </div>
-              </div>
-              <p></p>
-              <p></p>
-              <div class="mdui-divider"></div>
-              <h3>下载</h3>
-            </div>
-            <p></p>
-            <div class="mdui-card mdui-hoverable">
-              <ul class="mdui-list">
-                <a href="https://alist.nickdl.site/阿里云盘/Games/Minecraft/村村通">
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">file_download</i>
-                    <div class="mdui-list-item-content">Alist for NDW 下载链接（维护中）</div>
-                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
-                  </li>
-                </a>
+            <h3>下载</h3>
+          </div>
+          <p></p>
+          <div class="mdui-card mdui-hoverable">
+            <ul class="mdui-list">
+              <a href="https://1812191618.share.123pan.cn/123pan/he7rVv-mqO0">
+                <li class="mdui-list-item mdui-ripple">
+                  <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">file_download</i>
+                  <div class="mdui-list-item-content">123 云盘</div>
+                  <div class="mdui-list-item-text"><i class="mdui-icon material-icons">chevron_right</i></div>
+                </li>
+              </a>
               <li class="mdui-divider-inset mdui-m-y-0"></li>
-                <a>
-                  <li class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-600">file_download</i>
-                    <div class="mdui-list-item-content">其他下载方式可以联系我</div>
-                    <div class="mdui-list-item-text"><i class="mdui-icon material-icons"></i></div>
-                  </li>
-                </a>
-              </ul>
-            </div>
-            <p></p>
+              <a href="https://alist.nickdl.site/阿里云盘/Games/Minecraft/村村通">
+                <li class="mdui-list-item mdui-ripple mdui-menu-item" disabled>
+                  <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-grey-600">file_download</i>
+                  <div class="mdui-list-item-content">Alist for NDW 下载链接（维护中）</div>
+                  <div class="mdui-list-item-text"><i class="mdui-icon material-icons"></i></div>
+                </li>
+              </a>
+              <li class="mdui-divider-inset mdui-m-y-0"></li>
+              <a>
+                <li class="mdui-list-item mdui-ripple mdui-menu-item" disabled>
+                  <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue-grey-600">file_download</i>
+                  <div class="mdui-list-item-content">其他下载方式可以联系我</div>
+                  <div class="mdui-list-item-text"><i class="mdui-icon material-icons"></i></div>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <p></p>
           
         </div>
       </div>
@@ -262,7 +345,7 @@
         <div class="mdui-row">
           <div class="mdui-col-sm-12"> 
             <div class="intro mdui-typo" mdui-tooltip="{content: '加油'}">
-              <p>编辑于 2023/11/12。</p>
+              <p>编辑于 2026/08/06。</p>
               <p/><b>©</b>Copyright by Nick_DL 2022-2026. All rights reserved.
             </div>
           </div>
@@ -272,4 +355,3 @@
     <script type="text/javascript" src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
   </body>
 </html>
-    <style>body {background-color: #f1f3f5;}</style>
